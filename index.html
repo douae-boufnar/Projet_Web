@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAROC - Royaume des Sens</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --rouge: #C41E3A;
+            --rouge-fonce: #8B0000;
+            --vert: #006B3C;
+            --dore: #D4AF37;
+            --beige: #F5F5DC;
+            --blanc-casse: #FAF9F6;
+            --noir: #1A1A1A;
+            --gris: #6C757D;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--blanc-casse);
+            color: var(--noir);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            cursor: none;
+            /* Hide default cursor for custom one */
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Zellige Background Pattern */
+        .zellige-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30-15-30z' fill='%23D4AF37' fill-opacity='0.06'/%3E%3C/svg%3E");
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bg-gradient-accents {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 0% 0%, rgba(196, 30, 58, 0.03) 0%, transparent 30%),
+                radial-gradient(circle at 100% 100%, rgba(0, 107, 60, 0.03) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 30%);
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* 1. NAVBAR */
+        .navbar {
+            background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
+            padding: 15px 0;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar.scrolled {
+            padding: 8px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar-brand {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .brand-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--dore) !important;
+            letter-spacing: 2px;
+        }
+
+        .brand-sub {
+            font-size: 0.65rem;
+            color: #fff;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 10px 15px !important;
+            margin: 0 5px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background: var(--dore);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: calc(100% - 30px);
+        }
+
+        /* 2. HERO */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            background-color: var(--rouge-fonce);
+            background-image: linear-gradient(135deg, rgba(196, 30, 58, 0.8), rgba(139, 0, 0, 0.9), rgba(0, 107, 60, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('hero_maroc_cinematic_1778374742658.png') center/cover no-repeat;
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-subtitle {
+            color: #F4E4BC;
+            letter-spacing: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            font-size: 1rem;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            color: #fff;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            color: var(--dore);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero-text {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
+        }
+
+        .btn-hero {
+            padding: 15px 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            margin: 10px;
+        }
+
+        .btn-explorer {
+            background: linear-gradient(to right, var(--dore), #B8941F);
+            color: var(--noir) !important;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-planifier {
+            background: transparent;
+            color: #fff !important;
+            border: 2px solid var(--dore);
+            border-radius: 50px;
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--dore);
+            border-radius: 50%;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 1;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+
+            33% {
+                transform: translateY(-50px) translateX(20px);
+            }
+
+            66% {
+                transform: translateY(50px) translateX(-20px);
+            }
+
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
+        /* 3. THÉMATIQUES */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title-wrapper {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .theme-subtitle {
+            display: inline-block;
+            background: rgba(196, 30, 58, 0.1);
+            color: var(--rouge);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--noir);
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--dore);
+        }
+
+        .theme-card {
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .theme-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .theme-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 70%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+        }
+
+        .theme-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: var(--blanc-casse);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dore);
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-name {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* 4. GOOGLE MAPS */
+        .bg-beige {
+            background-color: var(--beige);
+        }
+
+        .map-container {
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid var(--dore);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            margin-bottom: 40px;
+        }
+
+        .map-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+            height: 100%;
+        }
+
+        .map-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .map-card i {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .city-marrakech {
+            border-top: 5px solid var(--rouge);
+            color: var(--rouge);
+        }
+
+        .city-agadir {
+            border-top: 5px solid var(--vert);
+            color: var(--vert);
+        }
+
+        .city-fes {
+            border-top: 5px solid var(--dore);
+            color: var(--dore);
+        }
+
+        .city-essaouira {
+            border-top: 5px solid #E2725B;
+            color: #E2725B;
+        }
+
+        .map-card h5 {
+            color: var(--noir);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .map-card p {
+            font-size: 0.8rem;
+            color: var(--gris);
+            margin: 0;
+        }
+
+        /* 5. VIDEOTHEQUE */
+        .carousel-item {
+            height: 500px;
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 80px 10%;
+            color: #fff;
+        }
+
+        .carousel-subtitle {
+            color: var(--dore);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .carousel-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .play-btn-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 5;
+            border: 2px solid #fff;
+        }
+
+        .play-btn-overlay:hover {
+            background: var(--rouge);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--dore);
+            border-radius: 50%;
+            background-size: 50%;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--dore);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item {
+                height: 300px;
+            }
+
+            .carousel-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* 6. ACTUALITÉS */
+        .news-card {
+            display: flex;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-img {
+            width: 40%;
+            min-height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        .news-content {
+            width: 60%;
+            padding: 25px 25px 25px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-badge {
+            background-color: var(--dore);
+            color: var(--noir);
+            padding: 4px 12px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        .news-date {
+            color: var(--rouge);
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .news-title {
+            color: var(--noir);
+            font-weight: 800;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            line-height: 1.3;
+        }
+
+        .news-text {
+            color: var(--noir);
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .news-link {
+            color: var(--vert);
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .news-link:hover {
+            color: var(--dore);
+        }
+
+        /* 7. 12 VILLES */
+        .city-grid-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .city-grid-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .city-img-top {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .city-img-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .city-grid-card:hover .city-img-top img {
+            transform: scale(1.08);
+        }
+
+        .city-cat-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .city-card-body {
+            padding: 25px;
+        }
+
+        .city-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--noir);
+            margin-bottom: 12px;
+        }
+
+        .city-card-text {
+            color: var(--noir);
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .city-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 15px;
+        }
+
+        .city-rating {
+            color: var(--dore);
+            font-weight: 700;
+        }
+
+        .btn-city {
+            background: var(--vert);
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-city:hover {
+            background: var(--rouge);
+            transform: translateX(5px);
+        }
+
+        /* MODAL */
+        .modal-content {
+            border-radius: 25px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .modal-header {
+            background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
+            color: #fff;
+            border: none;
+            padding: 25px;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1);
+        }
+
+        .modal-tabs {
+            background: var(--beige);
+            padding: 0 15px;
+        }
+
+        .modal-tabs .nav-link {
+            color: var(--noir) !important;
+            border: none;
+            padding: 15px 20px !important;
+            font-weight: 600;
+            border-radius: 0;
+            background: transparent !important;
+        }
+
+        .modal-tabs .nav-link.active {
+            color: var(--rouge) !important;
+            border-bottom: 3px solid var(--rouge);
+        }
+
+        .modal-body {
+            color: var(--noir);
+            padding: 35px;
+        }
+
+        /* 8. CUISINE */
+        .cuisine-card {
+            text-align: center;
+            margin-bottom: 40px;
+            transition: var(--transition);
+        }
+
+        .cuisine-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--dore);
+            padding: 5px;
+            background: #fff;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .cuisine-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .cuisine-card:hover .cuisine-img {
+            border-color: var(--rouge);
+            transform: rotate(3deg) scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .cuisine-title {
+            color: var(--rouge);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .cuisine-desc {
+            color: var(--noir);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* 9. CULTURE & ARTISANAT */
+        .culture-img-box {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            height: 100%;
+        }
+
+        .culture-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .culture-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .culture-item:hover {
+            transform: translateX(10px);
+            border-left: 4px solid var(--dore);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .culture-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dore);
+            font-size: 1.5rem;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+        }
+
+        .culture-content h5 {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .culture-content p {
+            font-size: 0.9rem;
+            color: var(--noir);
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* 10. NATURE & AVENTURE */
+        .nature-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+
+        .nature-card:hover {
+            transform: translateY(-8px);
+            border-bottom: 4px solid var(--dore);
+        }
+
+        .nature-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .nature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nature-body {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .nature-icon-big {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .icon-desert {
+            color: #E2725B;
+        }
+
+        .icon-montagne {
+            color: var(--vert);
+        }
+
+        .icon-ocean {
+            color: var(--dore);
+        }
+
+        .feature-box {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            background: #fff;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-box i {
+            font-size: 2.5rem;
+            margin-right: 25px;
+        }
+
+        /* 11. INFOS PRATIQUES */
+        .info-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 5px solid var(--vert);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .info-card:hover {
+            transform: translateX(8px);
+            border-left-color: var(--dore);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--rouge);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .info-title {
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .info-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        /* 12. NEWSLETTER */
+        .newsletter {
+            background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            text-align: center;
+        }
+
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--dore) 0%, transparent 70%);
+            opacity: 0.15;
+            transform: translate(-50%, -50%);
+            animation: rotateGlow 20s infinite linear;
+        }
+
+        @keyframes rotateGlow {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 650px;
+            margin: 40px auto 0;
+            gap: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 15px 30px;
+            color: #fff;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            border-color: var(--dore);
+        }
+
+        .btn-newsletter {
+            background: var(--dore);
+            color: var(--noir);
+            border: none;
+            border-radius: 50px;
+            padding: 0 45px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-newsletter:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--dore);
+        }
+
+        /* 13. FOOTER */
+        .footer {
+            background: linear-gradient(to bottom, #4A0000, #1A1A1A);
+            color: #fff;
+            padding: 100px 0 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--dore);
+            margin-bottom: 5px;
+        }
+
+        .footer-sub {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--dore);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--dore);
+            color: var(--noir);
+            transform: translateY(-5px);
+        }
+
+        .footer-title {
+            color: var(--dore);
+            font-weight: 800;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--dore);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            font-size: 0.7rem;
+            margin-right: 12px;
+            color: var(--dore);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--dore);
+            padding-left: 10px;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            color: var(--dore);
+            margin-right: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-bottom a {
+            color: var(--dore);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .newsletter h2 {
+                font-size: 1.8rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .btn-newsletter {
+                padding: 15px;
+            }
+        }
+
+        /* CUSTOM CURSOR */
+        #custom-cursor {
+            width: 30px;
+            height: 30px;
+            background: rgba(212, 175, 55, 0.3);
+            border: 2px solid var(--dore);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            transition: transform 0.1s ease-out, background 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-hover {
+            transform: translate(-50%, -50%) scale(2.5);
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--rouge);
+        }
+
+        @media (max-width: 1024px) {
+            #custom-cursor {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="custom-cursor"></div>
+    <div class="zellige-pattern"></div>
+    <div class="bg-gradient-accents"></div>
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#accueil">
+                <span class="brand-main">MAROC</span>
+                <span class="brand-sub">Royaume des Sens</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#decouvrir">Découvrir</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#villes">Villes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cuisine">Cuisine</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#culture">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nature">Nature</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO -->
+    <header class="hero" id="accueil">
+        <div id="particles-container"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Bienvenue au Royaume des Sens</p>
+            <h1 class="hero-title">Découvrez la <span>magie</span> du Maroc</h1>
+            <p class="hero-text">Laissez-vous envoûter par les couleurs, les saveurs et l'hospitalité légendaire d'un
+                pays millénaire aux mille contrastes.</p>
+            <div class="hero-btns">
+                <a href="#villes" class="btn btn-hero btn-explorer">Explorer les Villes</a>
+                <a href="#contact" class="btn btn-hero btn-planifier">Planifier un Voyage</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. THÉMATIQUES -->
+    <section class="section-padding" id="decouvrir">
+        <div class="container">
+            <div class="section-title-wrapper fade-in">
+                <span class="theme-subtitle">Ce qui vous inspire</span>
+                <h2 class="section-title">Explorez par Thème</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="theme-card">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Plages">
+                        <div class="theme-overlay">
+                            <div class="theme-icon"><i class="fas fa-umbrella-beach"></i></div>
+                            <h3 class="theme-name">Plages & Côtes</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="theme-card">
+                        <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=600" alt="Nature">
+                        <div class="theme-overlay">
+                            <div class="theme-icon"><i class="fas fa-leaf"></i></div>
+                            <h3 class="theme-name">Nature & Jardins</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="theme-card">
+                        <img src="https://images.unsplash.com/photo-1540339832862-4745a9805ad0?w=600" alt="Patrimoine">
+                        <div class="theme-overlay">
+                            <div class="theme-icon"><i class="fas fa-landmark"></i></div>
+                            <h3 class="theme-name">Médina & Patrimoine</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="theme-card">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600" alt="Bien-être">
+                        <div class="theme-overlay">
+                            <div class="theme-icon"><i class="fas fa-spa"></i></div>
+                            <h3 class="theme-name">Bien-être & Thermal</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="theme-card">
+                        <img src="https://images.unsplash.com/photo-1560707303-4e980ce876ad?w=600" alt="Artisanat">
+                        <div class="theme-overlay">
+                            <div class="theme-icon"><i class="fas fa-palette"></i></div>
+                            <h3 class="theme-name">Artisanat & Traditions</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="theme-card">
+                        <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600" alt="Désert">
+                        <div class="theme-overlay">
+                            <div class="theme-icon"><i class="fas fa-sun"></i></div>
+                            <h3 class="theme-name">Désert & Aventure</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. GOOGLE MAPS -->
+    <section class="section-padding bg-beige">
+        <div class="container">
+            <div class="section-title-wrapper fade-in">
+                <h2 class="section-title">Explorez le Maroc</h2>
+            </div>
+            <div class="map-container fade-in">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6944396.578630944!2d-13.1728205765625!3d31.791702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b88619651bbbf%3A0x110b5c5af7f1c78e!2sMaroc!5e0!3m2!1sfr!2sma!4v1704067200000!5m2!1sfr!2sma"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 fade-in">
+                    <div class="map-card city-marrakech">
+                        <i class="fas fa-mosque"></i>
+                        <h5>Marrakech</h5>
+                        <p>31.6295° N, 7.9811° W</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="map-card city-agadir">
+                        <i class="fas fa-umbrella-beach"></i>
+                        <h5>Agadir</h5>
+                        <p>30.4278° N, 9.5981° W</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="map-card city-fes">
+                        <i class="fas fa-archway"></i>
+                        <h5>Fès</h5>
+                        <p>34.0181° N, 5.0078° W</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="map-card city-essaouira">
+                        <i class="fas fa-anchor"></i>
+                        <h5>Essaouira</h5>
+                        <p>31.5085° N, 9.7595° W</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. VIDÉOTHÈQUE -->
+    <section id="videos">
+        <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=1600"
+                        alt="Majorelle Garden">
+                    <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
+                    <div class="carousel-overlay">
+                        <span class="carousel-subtitle">Visit Morocco Originals</span>
+                        <h2 class="carousel-title">Majorelle Garden</h2>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600"
+                        alt="Atlas Mountains">
+                    <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
+                    <div class="carousel-overlay">
+                        <span class="carousel-subtitle">Visit Morocco Originals</span>
+                        <h2 class="carousel-title">Atlas Mountains</h2>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1600"
+                        alt="Merzouga Desert">
+                    <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
+                    <div class="carousel-overlay">
+                        <span class="carousel-subtitle">Visit Morocco Originals</span>
+                        <h2 class="carousel-title">Merzouga Desert</h2>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1582236082404-5820993510c9?w=1600"
+                        alt="Akchour Waterfalls">
+                    <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
+                    <div class="carousel-overlay">
+                        <span class="carousel-subtitle">Visit Morocco Originals</span>
+                        <h2 class="carousel-title">Akchour Waterfalls</h2>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1534234828563-025cf17ebb4d?w=1600" alt="Agafay Desert">
+                    <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
+                    <div class="carousel-overlay">
+                        <span class="carousel-subtitle">Visit Morocco Originals</span>
+                        <h2 class="carousel-title">Agafay Desert</h2>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- 6. ACTUALITÉS -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title-wrapper fade-in">
+                <h2 class="section-title">Actualités</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 fade-in">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1540339832862-4745a9805ad0?w=500" class="news-img"
+                            alt="News">
+                        <div class="news-content">
+                            <span class="news-badge">Nouveau</span>
+                            <p class="news-date">12 MAI 2026</p>
+                            <h4 class="news-title">Inauguration du nouveau Musée de l'Artisanat à Fès</h4>
+                            <p class="news-text">Un espace dédié à la préservation des savoir-faire ancestraux
+                                marocains...</p>
+                            <a href="#" class="news-link">Lire plus <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4 fade-in">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1582236082404-5820993510c9?w=500" class="news-img"
+                            alt="News">
+                        <div class="news-content">
+                            <span class="news-badge">Nouveau</span>
+                            <p class="news-date">10 MAI 2026</p>
+                            <h4 class="news-title">Le Festival Gnaoua d'Essaouira dévoile sa programmation</h4>
+                            <p class="news-text">Découvrez les artistes internationaux qui rejoindront les Maâlems...
+                            </p>
+                            <a href="#" class="news-link">Lire plus <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4 fade-in">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=500" class="news-img"
+                            alt="News">
+                        <div class="news-content">
+                            <span class="news-badge">Nouveau</span>
+                            <p class="news-date">05 MAI 2026</p>
+                            <h4 class="news-title">L'écotourisme en plein essor dans la région du Moyen-Atlas</h4>
+                            <p class="news-text">De nouveaux écolodges ouvrent leurs portes pour les amoureux de
+                                nature...</p>
+                            <a href="#" class="news-link">Lire plus <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 12 VILLES -->
+    <section class="section-padding bg-beige" id="villes">
+        <div class="container">
+            <div class="section-title-wrapper fade-in">
+                <h2 class="section-title">Les 12 Incontournables</h2>
+            </div>
+            <div class="row g-4" id="villes-container">
+                <!-- Généré par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CUISINE -->
+    <section class="section-padding" id="cuisine">
+        <div class="container">
+            <div class="section-title-wrapper fade-in">
+                <span class="theme-subtitle">Gastronomie</span>
+                <h2 class="section-title">L'Excellence Culinaire</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="cuisine-card">
+                        <div class="cuisine-img"><img src="cuisine_tajine_luxury_1778374778160.png" alt="Tajine"></div>
+                        <h4 class="cuisine-title">Le Tajine</h4>
+                        <p class="cuisine-desc">Mijoté à l'étouffée dans son plat d'argile, symbole de partage.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="cuisine-card">
+                        <div class="cuisine-img"><img
+                                src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400" alt="Couscous">
+                        </div>
+                        <h4 class="cuisine-title">Le Couscous</h4>
+                        <p class="cuisine-desc">Le plat sacré du vendredi, harmonie de semoule et sept légumes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="cuisine-card">
+                        <div class="cuisine-img"><img
+                                src="https://images.unsplash.com/photo-1561651823-34a0658ebc9d?w=400" alt="Pastilla">
+                        </div>
+                        <h4 class="cuisine-title">La Pastilla</h4>
+                        <p class="cuisine-desc">L'élégance du sucré-salé fassi dans une feuille de brick croustillante.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="cuisine-card">
+                        <div class="cuisine-img"><img
+                                src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400" alt="Harira">
+                        </div>
+                        <h4 class="cuisine-title">La Harira</h4>
+                        <p class="cuisine-desc">Soupe onctueuse et réconfortante, cœur battant du Ramadan.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="cuisine-card">
+                        <div class="cuisine-img"><img
+                                src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400" alt="Rfissa">
+                        </div>
+                        <h4 class="cuisine-title">La Rfissa</h4>
+                        <p class="cuisine-desc">Un délice traditionnel au poulet, lentilles et feuilles de crêpes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="cuisine-card">
+                        <div class="cuisine-img"><img
+                                src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=400" alt="Chebakia">
+                        </div>
+                        <h4 class="cuisine-title">La Chebakia</h4>
+                        <p class="cuisine-desc">Mignardise mielleuse au sésame, incontournable douceur.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="cuisine-card">
+                        <div class="cuisine-img"><img
+                                src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400"
+                                alt="Thé Menthe"></div>
+                        <h4 class="cuisine-title">Thé à la Menthe</h4>
+                        <p class="cuisine-desc">Le "Whisky Berbère", symbole universel de l'hospitalité.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="cuisine-card">
+                        <div class="cuisine-img"><img
+                                src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400" alt="Méchoui">
+                        </div>
+                        <h4 class="cuisine-title">Le Méchoui</h4>
+                        <p class="cuisine-desc">Agneau rôti à la perfection, croustillant et fondant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CULTURE & ARTISANAT -->
+    <section class="section-padding bg-white" id="culture">
+        <div class="container">
+            <div class="section-title-wrapper fade-in">
+                <h2 class="section-title">Culture & Artisanat</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6 fade-in">
+                    <div class="culture-img-box">
+                        <img src="culture_caftan_premium_1778374871014.png" alt="Culture">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="culture-item fade-in">
+                        <div class="culture-icon"><i class="fas fa-music"></i></div>
+                        <div class="culture-content">
+                            <h5>Musique Gnawa</h5>
+                            <p>Patrimoine de l'UNESCO, une musique de transe spirituelle aux racines africaines
+                                profondes.</p>
+                        </div>
+                    </div>
+                    <div class="culture-item fade-in">
+                        <div class="culture-icon"><i class="fas fa-palette"></i></div>
+                        <div class="culture-content">
+                            <h5>Artisanat Ancestral</h5>
+                            <p>De la finesse du zellige à la noblesse du tapis, un savoir-faire transmis de maître en
+                                apprenti.</p>
+                        </div>
+                    </div>
+                    <div class="culture-item fade-in">
+                        <div class="culture-icon"><i class="fas fa-users"></i></div>
+                        <div class="culture-content">
+                            <h5>Culture Amazighe</h5>
+                            <p>L'âme berbère du Maroc, avec sa langue Tamazight et ses traditions millénaires
+                                préservées.</p>
+                        </div>
+                    </div>
+                    <div class="culture-item fade-in">
+                        <div class="culture-icon"><i class="fas fa-archway"></i></div>
+                        <div class="culture-content">
+                            <h5>Architecture Mauresque</h5>
+                            <p>L'art de vivre entre patios secrets des Riads et kasbahs majestueuses aux portes du
+                                désert.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. NATURE & AVENTURE -->
+    <section class="section-padding" id="nature"
+        style="background: linear-gradient(to bottom, rgba(0,107,60,0.04), rgba(212,175,55,0.04));">
+        <div class="container">
+            <div class="section-title-wrapper fade-in">
+                <h2 class="section-title">Nature & Aventure</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 fade-in">
+                    <div class="nature-card">
+                        <div class="nature-img"><img
+                                src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600" alt="Désert">
+                        </div>
+                        <div class="nature-body">
+                            <i class="fas fa-sun nature-icon-big icon-desert"></i>
+                            <h4 class="fw-bold" style="color: #E2725B;">Le Désert</h4>
+                            <p>Une immersion magique sous les étoiles des dunes de Merzouga.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in">
+                    <div class="nature-card">
+                        <div class="nature-img"><img
+                                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600" alt="Montagne">
+                        </div>
+                        <div class="nature-body">
+                            <i class="fas fa-mountain nature-icon-big icon-montagne"></i>
+                            <h4 class="fw-bold" style="color: var(--vert);">La Montagne</h4>
+                            <p>Randonnées épiques au cœur de l'Atlas majestueux.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in">
+                    <div class="nature-card">
+                        <div class="nature-img"><img
+                                src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600" alt="Océan">
+                        </div>
+                        <div class="nature-body">
+                            <i class="fas fa-water nature-icon-big icon-ocean"></i>
+                            <h4 class="fw-bold" style="color: var(--dore);">L'Océan</h4>
+                            <p>Sensations fortes entre Kitesurf et Surf sur la côte Atlantique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-2">
+                <div class="col-md-6 fade-in">
+                    <div class="feature-box">
+                        <i class="fas fa-swimmer" style="color: #4A90E2;"></i>
+                        <div>
+                            <h4 class="fw-bold">Surf à Dakhla</h4>
+                            <p>Le spot mondial où la lagune rencontre le Sahara.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <div class="feature-box">
+                        <i class="fas fa-hiking" style="color: #E2725B;"></i>
+                        <div>
+                            <h4 class="fw-bold">Randonnées Berberes</h4>
+                            <p>Explorez les villages isolés du Toubkal avec nos guides locaux.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. INFOS PRATIQUES -->
+    <section class="section-padding bg-beige">
+        <div class="container">
+            <div class="section-title-wrapper fade-in">
+                <h2 class="section-title">Infos Pratiques</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="info-card">
+                        <i class="fas fa-plane-departure info-icon"></i>
+                        <h4 class="info-title">Vols & Transport</h4>
+                        <p class="info-text">Vols directs mondiaux vers Casablanca et Marrakech. Excellent réseau de
+                            train (TGV) et autocars.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="info-card">
+                        <i class="fas fa-wallet info-icon"></i>
+                        <h4 class="info-title">Budget Moyen</h4>
+                        <p class="info-text">Comptez 50€ à 150€ par jour. La monnaie est le Dirham (MAD). Cartes
+                            acceptées partout.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="info-card">
+                        <i class="fas fa-bed info-icon"></i>
+                        <h4 class="info-title">Hébergement</h4>
+                        <p class="info-text">Riads intimes dans les médinas, palaces luxueux ou bivouacs confortables
+                            dans le Sahara.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="info-card">
+                        <i class="fas fa-calendar-alt info-icon"></i>
+                        <h4 class="info-title">Meilleure Période</h4>
+                        <p class="info-text">Le printemps (Mars à Mai) et l'automne (Septembre à Novembre) sont les
+                            saisons idéales.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="info-card">
+                        <i class="fas fa-language info-icon"></i>
+                        <h4 class="info-title">Langues</h4>
+                        <p class="info-text">L'Arabe (Darija) et l'Amazigh sont officiels. Le Français et l'Anglais sont
+                            très parlés.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="info-card">
+                        <i class="fas fa-hand-holding-heart info-icon"></i>
+                        <h4 class="info-title">Conseils Culturels</h4>
+                        <p class="info-text">Vêtements respectueux, acceptez le thé, et pratiquez l'art du marchandage
+                            avec le sourire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. NEWSLETTER -->
+    <section class="newsletter">
+        <div class="container newsletter-content fade-in">
+            <h2 class="font-serif">Recevez nos inspirations de voyage</h2>
+            <p>Inscrivez-vous pour ne rien manquer de l'actualité du Royaume des Sens.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse prestige..." required>
+                <button type="submit" class="btn-newsletter">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 13. FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="footer-logo">MAROC</div>
+                    <span class="footer-sub">Royaume des Sens</span>
+                    <p class="opacity-75 mb-4">Une expérience sensorielle unique où chaque paysage, chaque saveur et
+                        chaque rencontre raconte une histoire millénaire.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="footer-title">Explorer</h5>
+                    <ul class="footer-links">
+                        <li><a href="#accueil"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="#decouvrir"><i class="fas fa-chevron-right"></i> Découvrir</a></li>
+                        <li><a href="#villes"><i class="fas fa-chevron-right"></i> Villes</a></li>
+                        <li><a href="#nature"><i class="fas fa-chevron-right"></i> Nature</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="footer-title">Liens Rapides</h5>
+                    <ul class="footer-links">
+                        <li><a href="#cuisine"><i class="fas fa-chevron-right"></i> Cuisine</a></li>
+                        <li><a href="#culture"><i class="fas fa-chevron-right"></i> Culture</a></li>
+                        <li><a href="#accueil"><i class="fas fa-chevron-right"></i> Artisanat</a></li>
+                        <li><a href="#videos"><i class="fas fa-chevron-right"></i> Vidéothèque</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-title">Contact</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Angle Rue Al Araar et Rue Al Jouz, Rabat, Maroc</p>
+                        <p><i class="fas fa-phone"></i> +212 (0)5 37 27 39 39</p>
+                        <p><i class="fas fa-envelope"></i> contact@visitmorocco.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MAROC — Royaume des Sens. Site Officiel Premium.</p>
+                <div class="mt-2">
+                    <a href="#">Mentions Légales</a>
+                    <a href="#">Confidentialité</a>
+                    <a href="#">Accessibilité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL VILLES -->
+    <div class="modal fade" id="cityModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-serif fs-3" id="modalCityTitle">Nom de la Ville</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-tabs">
+                    <ul class="nav nav-tabs border-0" id="cityTab" role="tablist">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab"
+                                data-bs-target="#pres">Présentation</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#lieux">Lieux</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#gastro">Gastronomie</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#art">Artisanat</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#fest">Festivals</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#cult">Culture</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#nat">Nature</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#inf">Infos</button></li>
+                    </ul>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Rempli par JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Data des villes
+        const cities = [
+            { id: 'marrakech', name: 'Marrakech', tag: 'Impériale', img: 'https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800', desc: 'La cité ocre, joyau des Almohades, où le luxe des palais côtoie l\'effervescence des souks.' },
+            { id: 'agadir', name: 'Agadir', tag: 'Solaire', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800', desc: 'La première station balnéaire du pays avec sa baie s\'étendant à perte de vue et son ensoleillement permanent.' },
+            { id: 'fes', name: 'Fès', tag: 'Spirituelle', img: 'https://images.unsplash.com/photo-1540339832862-4745a9805ad0?w=800', desc: 'Le centre intellectuel du Maroc, abritant la plus ancienne université au monde, la Quaraouiyine.' },
+            { id: 'chefchaouen', name: 'Chefchaouen', tag: 'Azurée', img: 'https://images.unsplash.com/photo-1548296846-820373f7293d?w=800', desc: 'Un havre de paix azuré niché dans le Rif, célèbre pour son atmosphère poétique et sereine.' },
+            { id: 'essaouira', name: 'Essaouira', tag: 'Bohème', img: 'https://images.unsplash.com/photo-1559586616-361e18714958?w=800', desc: 'L\'ancienne Mogador, port de pêche fortifié où les vents alizés soufflent un air de liberté.' },
+            { id: 'casablanca', name: 'Casablanca', tag: 'Moderne', img: 'https://images.unsplash.com/photo-1562133561-b3d2d4f9a748?w=800', desc: 'Une métropole tournée vers l\'avenir, symbole du dynamisme économique et architectural.' },
+            { id: 'rabat', name: 'Rabat', tag: 'Lumière', img: 'https://images.unsplash.com/photo-1549944810-2343df9e8b50?w=800', desc: 'La capitale administrative, une ville verte et élégante riche en monuments impériaux.' },
+            { id: 'tanger', name: 'Tanger', tag: 'Mythique', img: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800', desc: 'Carrefour des civilisations au seuil du Détroit, muse éternelle des artistes et écrivains.' },
+            { id: 'ouarzazate', name: 'Ouarzazate', tag: 'Cinéma', img: 'https://images.unsplash.com/photo-1489493512598-d08130f49bea?w=800', desc: 'La porte du grand Sud et le Hollywood africain, célèbre pour ses kasbahs majestueuses.' },
+            { id: 'merzouga', name: 'Merzouga', tag: 'Sahara', img: 'https://images.unsplash.com/photo-1539498508910-091b5e859b1d?w=800', desc: 'Les dunes géantes de l\'Erg Chebbi, pour une immersion totale dans la magie du désert.' },
+            { id: 'ifrane', name: 'Ifrane', tag: 'Nature', img: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?w=800', desc: 'Un paysage alpin au cœur du Moyen-Atlas, entouré de forêts de cèdres millénaires.' },
+            { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'https://images.unsplash.com/photo-1534125825227-28f090710609?w=800', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' }
+        ];
+
+        // Rendu des villes dans la grille
+        const container = document.getElementById('villes-container');
+        cities.forEach(city => {
+            container.innerHTML += `
+                <div class="col-xl-3 col-lg-4 col-md-6 fade-in">
+                    <div class="city-grid-card" onclick="openCityModal('${city.id}')">
+                        <div class="city-img-top">
+                            <img src="${city.img}" alt="${city.name}">
+                            <span class="city-cat-badge">${city.tag}</span>
+                        </div>
+                        <div class="city-card-body">
+                            <h3 class="city-card-title">${city.name}</h3>
+                            <p class="city-card-text">${city.desc.substring(0, 80)}...</p>
+                            <div class="city-card-footer">
+                                <span class="city-rating"><i class="fas fa-star"></i> 4.9</span>
+                                <button class="btn-city">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Gestion du Scroll (Navbar & Fade-in)
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer pour les animations au scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Particules Hero
+        const particlesContainer = document.getElementById('particles-container');
+        for (let i = 0; i < 25; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 10 + 5 + 'px';
+            particle.style.width = size;
+            particle.style.height = size;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Logic Modal
+        const cityModal = new bootstrap.Modal(document.getElementById('cityModal'));
+        function openCityModal(id) {
+            const city = cities.find(c => c.id === id);
+            document.getElementById('modalCityTitle').innerText = city.name;
+            const modalBody = document.getElementById('modalBody');
+
+            modalBody.innerHTML = `
+                <div class="tab-content" id="cityTabContent">
+                    <div class="tab-pane fade show active" id="pres">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="fw-bold mb-3">L'Essence de ${city.name}</h4>
+                                <p>${city.desc}</p>
+                                <div class="mt-4 p-3 bg-light rounded-3">
+                                    <p class="mb-1"><i class="fas fa-temperature-high text-danger me-2"></i> <strong>Climat :</strong> Méditerranéen (24°C moy.)</p>
+                                    <p class="mb-0"><i class="fas fa-sun text-warning me-2"></i> <strong>Ensoleillement :</strong> 300 jours/an</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="${city.img}" class="img-fluid rounded-4 shadow" alt="${city.name}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="lieux">
+                        <h4 class="fw-bold mb-4">Lieux Incontournables</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i> La Médina historique et ses labyrinthes secrets.</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i> Les palais royaux et jardins botaniques.</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i> Les souks traditionnels et artisanat local.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="gastro">
+                        <h4 class="fw-bold mb-4">Saveurs de ${city.name}</h4>
+                        <p>Dégustez les spécialités locales uniques de la région, du tajine traditionnel aux pâtisseries fines à la fleur d'oranger.</p>
+                    </div>
+                    <div class="tab-pane fade" id="art">
+                        <div class="row align-items-center">
+                            <div class="col-md-7">
+                                <h4 class="fw-bold mb-4">Artisanat & Shopping</h4>
+                                <p>Rencontrez les maîtres artisans dans leurs ateliers : maroquinerie, poterie, tissage et travail du cuivre. Chaque pièce raconte une histoire de patience et de passion.</p>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="artisanat_zellige_detail_1778374904012.png" class="img-fluid rounded-4 shadow" alt="Artisanat Detail">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="fest">
+                        <h4 class="fw-bold mb-4">Festivals & Événements</h4>
+                        <p>Agenda culturel riche tout au long de l'année. Ne manquez pas les festivals de musique et les fêtes populaires locales.</p>
+                    </div>
+                    <div class="tab-pane fade" id="cult">
+                        <h4 class="fw-bold mb-4">Culture & Traditions</h4>
+                        <p>Plongez dans l'histoire de la cité, ses coutumes ancestrales et l'hospitalité légendaire de ses habitants.</p>
+                    </div>
+                    <div class="tab-pane fade" id="nat">
+                        <h4 class="fw-bold mb-4">Nature & Activités</h4>
+                        <p>Des excursions dans l'Atlas aux moments de détente sur les plages vierges de la région.</p>
+                    </div>
+                    <div class="tab-pane fade" id="inf">
+                        <h4 class="fw-bold mb-4">Infos Pratiques</h4>
+                        <p><strong>Accès :</strong> Aéroport International à 15 min du centre.<br>
+                        <strong>Transport :</strong> Taxis, bus et calèches traditionnelles.<br>
+                        <strong>Hébergement :</strong> Large choix du riad authentique au palace 5 étoiles.</p>
+                    </div>
+                </div>
+            `;
+            cityModal.show();
+        }
+
+        // Custom Cursor Logic
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button, .city-grid-card, .theme-card').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+
+        // Parallax Hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (scrolled < window.innerHeight) {
+                hero.style.backgroundPositionY = (scrolled * 0.5) + 'px';
+            }
+        });
+
+        // Smooth Scroll pour tous les liens internes
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
