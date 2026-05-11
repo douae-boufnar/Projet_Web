@@ -14,1561 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <style>
-        :root {
-            --rouge: #C41E3A;
-            --rouge-fonce: #8B0000;
-            --vert: #006B3C;
-            --dore: #D4AF37;
-            --beige: #F5F5DC;
-            --blanc-casse: #FAF9F6;
-            --noir: #1A1A1A;
-            --gris: #6C757D;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--blanc-casse);
-            color: var(--noir);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            cursor: none;
-            /* Hide default cursor for custom one */
-        }
-
-        h1,
-        h2,
-        h3,
-        .font-serif {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Zellige Background Pattern */
-        .zellige-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30-15-30z' fill='%23D4AF37' fill-opacity='0.06'/%3E%3C/svg%3E");
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .bg-gradient-accents {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 0% 0%, rgba(196, 30, 58, 0.03) 0%, transparent 30%),
-                radial-gradient(circle at 100% 100%, rgba(0, 107, 60, 0.03) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 30%);
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        /* 1. NAVBAR */
-        .navbar {
-            background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
-            padding: 15px 0;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar.scrolled {
-            padding: 8px 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .navbar-brand {
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
-        }
-
-        .brand-main {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--dore) !important;
-            letter-spacing: 2px;
-        }
-
-        .brand-sub {
-            font-size: 0.65rem;
-            color: #fff;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
-
-        .nav-link {
-            color: rgba(255, 255, 255, 0.9) !important;
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 10px 15px !important;
-            margin: 0 5px;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .nav-link:hover {
-            background: rgba(212, 175, 55, 0.2);
-            border-radius: 4px;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 15px;
-            width: 0;
-            height: 2px;
-            background: var(--dore);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: calc(100% - 30px);
-        }
-
-        /* 2. HERO */
-        .hero {
-            height: 100vh;
-            min-height: 700px;
-            position: relative;
-            background-color: var(--rouge-fonce);
-            background-image: linear-gradient(135deg, rgba(196, 30, 58, 0.8), rgba(139, 0, 0, 0.9), rgba(0, 107, 60, 0.7));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('hero_maroc_cinematic_1778374742658.png') center/cover no-repeat;
-            opacity: 0.6;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 900px;
-            padding: 0 20px;
-        }
-
-        .hero-subtitle {
-            color: #F4E4BC;
-            letter-spacing: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-            font-size: 1rem;
-        }
-
-        .hero-title {
-            font-size: 4.5rem;
-            color: #fff;
-            font-weight: 900;
-            margin-bottom: 25px;
-            line-height: 1.1;
-        }
-
-        .hero-title span {
-            color: var(--dore);
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-        }
-
-        .hero-text {
-            color: #fff;
-            font-size: 1.25rem;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-            opacity: 0.9;
-        }
-
-        .btn-hero {
-            padding: 15px 40px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            margin: 10px;
-        }
-
-        .btn-explorer {
-            background: linear-gradient(to right, var(--dore), #B8941F);
-            color: var(--noir) !important;
-            border: none;
-            border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-planifier {
-            background: transparent;
-            color: #fff !important;
-            border: 2px solid var(--dore);
-            border-radius: 50px;
-        }
-
-        .btn-hero:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .particle {
-            position: absolute;
-            background: var(--dore);
-            border-radius: 50%;
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 1;
-            animation: float 15s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0);
-            }
-
-            33% {
-                transform: translateY(-50px) translateX(20px);
-            }
-
-            66% {
-                transform: translateY(50px) translateX(-20px);
-            }
-
-            100% {
-                transform: translateY(0) translateX(0);
-            }
-        }
-
-        /* 3. THÉMATIQUES */
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-title-wrapper {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .theme-subtitle {
-            display: inline-block;
-            background: rgba(196, 30, 58, 0.1);
-            color: var(--rouge);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--noir);
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--dore);
-        }
-
-        .theme-card {
-            height: 300px;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            margin-bottom: 30px;
-        }
-
-        .theme-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .theme-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .theme-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .theme-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 70%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 25px;
-        }
-
-        .theme-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 45px;
-            height: 45px;
-            background: var(--blanc-casse);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dore);
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .theme-name {
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        /* 4. GOOGLE MAPS */
-        .bg-beige {
-            background-color: var(--beige);
-        }
-
-        .map-container {
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 4px solid var(--dore);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-            margin-bottom: 40px;
-        }
-
-        .map-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            text-align: center;
-            height: 100%;
-        }
-
-        .map-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .map-card i {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .city-marrakech {
-            border-top: 5px solid var(--rouge);
-            color: var(--rouge);
-        }
-
-        .city-agadir {
-            border-top: 5px solid var(--vert);
-            color: var(--vert);
-        }
-
-        .city-fes {
-            border-top: 5px solid var(--dore);
-            color: var(--dore);
-        }
-
-        .city-essaouira {
-            border-top: 5px solid #E2725B;
-            color: #E2725B;
-        }
-
-        .map-card h5 {
-            color: var(--noir);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .map-card p {
-            font-size: 0.8rem;
-            color: var(--gris);
-            margin: 0;
-        }
-
-        /* 5. VIDEOTHEQUE */
-        .carousel-item {
-            height: 500px;
-            position: relative;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 80px 10%;
-            color: #fff;
-        }
-
-        .carousel-subtitle {
-            color: var(--dore);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .carousel-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin: 0;
-        }
-
-        .play-btn-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(212, 175, 55, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 5;
-            border: 2px solid #fff;
-        }
-
-        .play-btn-overlay:hover {
-            background: var(--rouge);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--dore);
-            border-radius: 50%;
-            background-size: 50%;
-        }
-
-        .carousel-indicators [data-bs-target] {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--dore);
-        }
-
-        @media (max-width: 768px) {
-            .carousel-item {
-                height: 300px;
-            }
-
-            .carousel-title {
-                font-size: 2rem;
-            }
-        }
-
-        /* 6. ACTUALITÉS */
-        .news-card {
-            display: flex;
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            margin-bottom: 30px;
-        }
-
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .news-img {
-            width: 40%;
-            min-height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin: 15px;
-        }
-
-        .news-content {
-            width: 60%;
-            padding: 25px 25px 25px 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .news-badge {
-            background-color: var(--dore);
-            color: var(--noir);
-            padding: 4px 12px;
-            border-radius: 5px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: inline-block;
-            width: fit-content;
-            margin-bottom: 10px;
-        }
-
-        .news-date {
-            color: var(--rouge);
-            font-weight: 700;
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-        }
-
-        .news-title {
-            color: var(--noir);
-            font-weight: 800;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            line-height: 1.3;
-        }
-
-        .news-text {
-            color: var(--noir);
-            opacity: 0.8;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        .news-link {
-            color: var(--vert);
-            font-weight: 700;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .news-link:hover {
-            color: var(--dore);
-        }
-
-        /* 7. 12 VILLES */
-        .city-grid-card {
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            cursor: pointer;
-            height: 100%;
-        }
-
-        .city-grid-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .city-img-top {
-            height: 220px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .city-img-top img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .city-grid-card:hover .city-img-top img {
-            transform: scale(1.08);
-        }
-
-        .city-cat-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
-            color: #fff;
-            padding: 6px 18px;
-            border-radius: 25px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .city-card-body {
-            padding: 25px;
-        }
-
-        .city-card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--noir);
-            margin-bottom: 12px;
-        }
-
-        .city-card-text {
-            color: var(--noir);
-            opacity: 0.7;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .city-card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            padding-top: 15px;
-        }
-
-        .city-rating {
-            color: var(--dore);
-            font-weight: 700;
-        }
-
-        .btn-city {
-            background: var(--vert);
-            color: #fff !important;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: none;
-            transition: var(--transition);
-        }
-
-        .btn-city:hover {
-            background: var(--rouge);
-            transform: translateX(5px);
-        }
-
-        /* MODAL */
-        .modal-content {
-            border-radius: 25px;
-            overflow: hidden;
-            border: none;
-        }
-
-        .modal-header {
-            background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
-            color: #fff;
-            border: none;
-            padding: 25px;
-        }
-
-        .modal-header .btn-close {
-            filter: invert(1);
-        }
-
-        .modal-tabs {
-            background: var(--beige);
-            padding: 0 15px;
-        }
-
-        .modal-tabs .nav-link {
-            color: var(--noir) !important;
-            border: none;
-            padding: 15px 20px !important;
-            font-weight: 600;
-            border-radius: 0;
-            background: transparent !important;
-        }
-
-        .modal-tabs .nav-link.active {
-            color: var(--rouge) !important;
-            border-bottom: 3px solid var(--rouge);
-        }
-
-        .modal-body {
-            color: var(--noir);
-            padding: 35px;
-        }
-
-        /* 8. CUISINE */
-        .cuisine-card {
-            text-align: center;
-            margin-bottom: 40px;
-            transition: var(--transition);
-        }
-
-        .cuisine-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid var(--dore);
-            padding: 5px;
-            background: #fff;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .cuisine-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .cuisine-card:hover .cuisine-img {
-            border-color: var(--rouge);
-            transform: rotate(3deg) scale(1.05);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-
-        .cuisine-title {
-            color: var(--rouge);
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .cuisine-desc {
-            color: var(--noir);
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        /* 9. CULTURE & ARTISANAT */
-        .culture-img-box {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-            height: 100%;
-        }
-
-        .culture-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .culture-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: #fff;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            transition: var(--transition);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-        }
-
-        .culture-item:hover {
-            transform: translateX(10px);
-            border-left: 4px solid var(--dore);
-            background: rgba(212, 175, 55, 0.05);
-        }
-
-        .culture-icon {
-            width: 60px;
-            height: 60px;
-            min-width: 60px;
-            background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dore);
-            font-size: 1.5rem;
-            margin-right: 20px;
-            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
-        }
-
-        .culture-content h5 {
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .culture-content p {
-            font-size: 0.9rem;
-            color: var(--noir);
-            opacity: 0.8;
-            margin: 0;
-        }
-
-        /* 10. NATURE & AVENTURE */
-        .nature-card {
-            border-radius: 20px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            margin-bottom: 30px;
-        }
-
-        .nature-card:hover {
-            transform: translateY(-8px);
-            border-bottom: 4px solid var(--dore);
-        }
-
-        .nature-img {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .nature-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .nature-body {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .nature-icon-big {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .icon-desert {
-            color: #E2725B;
-        }
-
-        .icon-montagne {
-            color: var(--vert);
-        }
-
-        .icon-ocean {
-            color: var(--dore);
-        }
-
-        .feature-box {
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            background: #fff;
-            border-radius: 20px;
-            margin-top: 20px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-        }
-
-        .feature-box i {
-            font-size: 2.5rem;
-            margin-right: 25px;
-        }
-
-        /* 11. INFOS PRATIQUES */
-        .info-card {
-            background: #fff;
-            padding: 35px;
-            border-radius: 15px;
-            border-left: 5px solid var(--vert);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            height: 100%;
-        }
-
-        .info-card:hover {
-            transform: translateX(8px);
-            border-left-color: var(--dore);
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .info-icon {
-            font-size: 2.5rem;
-            color: var(--rouge);
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .info-title {
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .info-text {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            opacity: 0.8;
-        }
-
-        /* 12. NEWSLETTER */
-        .newsletter {
-            background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-            color: #fff;
-            text-align: center;
-        }
-
-        .newsletter::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--dore) 0%, transparent 70%);
-            opacity: 0.15;
-            transform: translate(-50%, -50%);
-            animation: rotateGlow 20s infinite linear;
-        }
-
-        @keyframes rotateGlow {
-            from {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-
-            to {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        .newsletter-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .newsletter h2 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            max-width: 650px;
-            margin: 40px auto 0;
-            gap: 15px;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.15);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            padding: 15px 30px;
-            color: #fff;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.25);
-            border-color: var(--dore);
-        }
-
-        .btn-newsletter {
-            background: var(--dore);
-            color: var(--noir);
-            border: none;
-            border-radius: 50px;
-            padding: 0 45px;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-
-        .btn-newsletter:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px var(--dore);
-        }
-
-        /* 13. FOOTER */
-        .footer {
-            background: linear-gradient(to bottom, #4A0000, #1A1A1A);
-            color: #fff;
-            padding: 100px 0 40px;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--dore);
-            margin-bottom: 5px;
-        }
-
-        .footer-sub {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-            display: block;
-            opacity: 0.8;
-        }
-
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--dore);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-right: 12px;
-            font-size: 1.2rem;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .social-link:hover {
-            background: var(--dore);
-            color: var(--noir);
-            transform: translateY(-5px);
-        }
-
-        .footer-title {
-            color: var(--dore);
-            font-weight: 800;
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 12px;
-        }
-
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--dore);
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-links a i {
-            font-size: 0.7rem;
-            margin-right: 12px;
-            color: var(--dore);
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--dore);
-            padding-left: 10px;
-        }
-
-        .contact-info p {
-            color: rgba(255, 255, 255, 0.7);
-            display: flex;
-            margin-bottom: 15px;
-        }
-
-        .contact-info i {
-            color: var(--dore);
-            margin-right: 15px;
-            font-size: 1.1rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 60px;
-            padding-top: 30px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .footer-bottom a {
-            color: var(--dore);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        /* ANIMATIONS */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-
-            .newsletter h2 {
-                font-size: 1.8rem;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .btn-newsletter {
-                padding: 15px;
-            }
-        }
-
-        /* CUSTOM CURSOR */
-        #custom-cursor {
-            width: 30px;
-            height: 30px;
-            background: rgba(212, 175, 55, 0.3);
-            border: 2px solid var(--dore);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 10000;
-            transition: transform 0.1s ease-out, background 0.3s ease;
-            transform: translate(-50%, -50%);
-        }
-
-        .cursor-hover {
-            transform: translate(-50%, -50%) scale(2.5);
-            background: rgba(212, 175, 55, 0.1);
-            border-color: var(--rouge);
-        }
-
-        @media (max-width: 1024px) {
-            #custom-cursor {
-                display: none;
-            }
-
-            body {
-                cursor: auto;
-            }
-        }
-
- 
-  /* ===== CITY PAGE OVERLAY ===== */
-  .city-page {
-    position: fixed;
-    inset: 0;
-    background: var(--blanc-casse);
-    z-index: 9000;
-    overflow-y: auto;
-    transform: translateX(100%);
-    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-    scroll-behavior: smooth;
-  }
- 
-  .city-page.open {
-    transform: translateX(0);
-  }
- 
-  /* ===== BACK BUTTON ===== */
-  .city-back {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 9100;
-    background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
-    color: #fff;
-    border: none;
-    padding: 12px 22px;
-    border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
- 
-  .city-back:hover {
-    transform: translateX(-5px);
-    box-shadow: 0 12px 30px rgba(196, 30, 58, 0.5);
-  }
- 
-  /* ===== HERO ===== */
-  .city-hero {
-    height: 100vh;
-    min-height: 600px;
-    position: relative;
-    overflow: hidden;
-  }
- 
-  .city-hero-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('images/destinations/merzouga/hero.jpg'),
-      url('https://images.unsplash.com/photo-1539498508910-091b5e859b1d?w=1600');
-    background-size: cover;
-    background-position: center;
-    transform: scale(1.05);
-    transition: transform 8s ease;
-  }
- 
-  .city-page.open .city-hero-img {
-    transform: scale(1);
-  }
- 
-  .city-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(20, 10, 0, 0.3) 0%,
-      rgba(20, 10, 0, 0.1) 40%,
-      rgba(139, 60, 0, 0.7) 75%,
-      rgba(80, 30, 0, 0.95) 100%
-    );
-  }
- 
-  .city-hero-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 60px 8%;
-  }
- 
-  .city-tag {
-    display: inline-block;
-    background: rgba(212, 175, 55, 0.25);
-    border: 1px solid rgba(212, 175, 55, 0.5);
-    color: var(--dore);
-    padding: 7px 20px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-  }
- 
-  .city-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    color: #fff;
-    font-weight: 900;
-    line-height: 0.9;
-    margin-bottom: 20px;
-    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
-  }
- 
-  .city-title em {
-    color: var(--dore);
-    font-style: normal;
-  }
- 
-  .city-intro {
-    color: rgba(253, 248, 239, 0.85);
-    font-size: 1.05rem;
-    max-width: 650px;
-    line-height: 1.8;
-  }
- 
-  /* ===== STATS BAR ===== */
-  .city-stats-bar {
-    background: linear-gradient(135deg, var(--rouge-fonce), #4A1800);
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 30px 5%;
-    gap: 20px;
-  }
- 
-  .city-stat {
-    text-align: center;
-    flex: 1;
-    min-width: 120px;
-  }
- 
-  .city-stat-num {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--dore);
-    line-height: 1;
-  }
- 
-  .city-stat-label {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.65);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 5px;
-    display: block;
-  }
- 
-  /* ===== BODY CONTENT ===== */
-  .city-body {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 80px 5%;
-  }
- 
-  /* ===== SECTION TITLES ===== */
-  .city-section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--noir);
-    margin: 60px 0 35px;
-    padding-bottom: 15px;
-    border-bottom: 3px solid var(--dore);
-    position: relative;
-  }
- 
-  .city-section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--rouge);
-  }
- 
-  /* ===== CARDS GRID ===== */
-  .city-grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: 28px;
-  }
- 
-  .city-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 28px;
-  }
- 
-  .city-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0,0,0,0.05);
-  }
- 
-  .city-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-    border-color: rgba(212, 175, 55, 0.3);
-  }
- 
-  .city-card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 18px;
-    background: #f0ece4;
-  }
- 
-  .city-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--noir);
-    margin-bottom: 10px;
-  }
- 
-  .city-card p {
-    font-size: 0.9rem;
-    color: rgba(26,26,26,0.75);
-    line-height: 1.7;
-    margin-bottom: 12px;
-  }
- 
-  .city-card-tag {
-    display: inline-block;
-    background: rgba(212, 175, 55, 0.12);
-    color: #8a6800;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
- 
-  /* ===== FOOD STRIP ===== */
-  .food-strip {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
- 
-  .food-pill {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: #fff;
-    border-radius: 14px;
-    padding: 16px 22px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    border-left: 4px solid var(--dore);
-    transition: all 0.3s ease;
-  }
- 
-  .food-pill:hover {
-    transform: translateX(8px);
-    border-left-color: var(--rouge);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  }
- 
-  .food-pill-img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 3px solid var(--dore);
-  }
- 
-  .food-pill-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--rouge);
-    margin-bottom: 4px;
-  }
- 
-  .food-pill-detail {
-    font-size: 0.88rem;
-    color: rgba(26,26,26,0.7);
-    line-height: 1.5;
-  }
- 
-  /* ===== TIP BOX ===== */
-  .tip-box {
-    background: linear-gradient(135deg, #fffbee, #fff8d6);
-    border: 2px solid var(--dore);
-    border-radius: 16px;
-    padding: 35px 40px;
-    margin-top: 50px;
-    position: relative;
-    overflow: hidden;
-  }
- 
-  .tip-box::before {
-    content: '💡';
-    position: absolute;
-    right: 30px;
-    top: 20px;
-    font-size: 3rem;
-    opacity: 0.15;
-  }
- 
-  .tip-box-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--rouge);
-    margin-bottom: 15px;
-  }
- 
-  .tip-box p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: rgba(26,26,26,0.8);
-    margin: 0;
-  }
- 
-  /* ===== FALLBACK IMAGE ===== */
-  .city-card-img-wrap {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 18px;
-    background: linear-gradient(135deg, #e8d5b0, #c4a87a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-  }
- 
-  .city-card-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
- 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    .city-grid-2,
-    .city-grid-3 {
-      grid-template-columns: 1fr;
-    }
- 
-    .city-title {
-      font-size: 3rem;
-    }
- 
-    .city-hero-content {
-      padding: 40px 6%;
-    }
- 
-    .city-body {
-      padding: 50px 5%;
-    }
- 
-    .tip-box {
-      padding: 25px 20px;
-    }
- 
-    .city-stats-bar {
-      gap: 15px;
-    }
-  }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -2220,216 +666,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-// Data des villes
-const cities = [
-    { id: 'marrakech', name: 'Marrakech', tag: 'Impériale', img: 'https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800', desc: 'La cité ocre, joyau des Almohades, où le luxe des palais côtoie l\'effervescence des souks.' },
-    { id: 'agadir', name: 'Agadir', tag: 'Solaire', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800', desc: 'La première station balnéaire du pays avec sa baie s\'étendant à perte de vue et son ensoleillement permanent.' },
-    { id: 'fes', name: 'Fès', tag: 'Spirituelle', img: 'https://images.unsplash.com/photo-1540339832862-4745a9805ad0?w=800', desc: 'Le centre intellectuel du Maroc, abritant la plus ancienne université au monde, la Quaraouiyine.' },
-    { id: 'chefchaouen', name: 'Chefchaouen', tag: 'Azurée', img: 'https://images.unsplash.com/photo-1548296846-820373f7293d?w=800', desc: 'Un havre de paix azuré niché dans le Rif, célèbre pour son atmosphère poétique et sereine.' },
-    { id: 'essaouira', name: 'Essaouira', tag: 'Bohème', img: 'https://images.unsplash.com/photo-1559586616-361e18714958?w=800', desc: 'L\'ancienne Mogador, port de pêche fortifié où les vents alizés soufflent un air de liberté.' },
-    { id: 'casablanca', name: 'Casablanca', tag: 'Moderne', img: 'https://images.unsplash.com/photo-1562133561-b3d2d4f9a748?w=800', desc: 'Une métropole tournée vers l\'avenir, symbole du dynamisme économique et architectural.' },
-    { id: 'rabat', name: 'Rabat', tag: 'Lumière', img: 'https://images.unsplash.com/photo-1549944810-2343df9e8b50?w=800', desc: 'La capitale administrative, une ville verte et élégante riche en monuments impériaux.' },
-    { id: 'tanger', name: 'Tanger', tag: 'Mythique', img: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800', desc: 'Carrefour des civilisations au seuil du Détroit, muse éternelle des artistes et écrivains.' },
-    { id: 'ouarzazate', name: 'Ouarzazate', tag: 'Cinéma', img: 'https://images.unsplash.com/photo-1489493512598-d08130f49bea?w=800', desc: 'La porte du grand Sud et le Hollywood africain, célèbre pour ses kasbahs majestueuses.' },
-    { id: 'merzouga', name: 'Merzouga', tag: 'Sahara', img: 'https://images.unsplash.com/photo-1539498508910-091b5e859b1d?w=800', desc: 'Les dunes géantes de l\'Erg Chebbi, pour une immersion totale dans la magie du désert.' },
-    { id: 'ifrane', name: 'Ifrane', tag: 'Nature', img: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?w=800', desc: 'Un paysage alpin au cœur du Moyen-Atlas, entouré de forêts de cèdres millénaires.' },
-    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'https://images.unsplash.com/photo-1534125825227-28f090710609?w=800', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' }
-];
-
-// Villes avec page dédiée
-const clickMap = { 'merzouga': true, 'ifrane': true, 'ouarzazate': true };
-
-// Rendu des villes dans la grille
-const container = document.getElementById('villes-container');
-cities.forEach(city => {
-    const clickAction = clickMap[city.id]
-        ? `openCity('${city.id}')`
-        : `openCityModal('${city.id}')`;
-
-    container.innerHTML += `
-        <div class="col-xl-3 col-lg-4 col-md-6 fade-in">
-            <div class="city-grid-card" onclick="${clickAction}">
-                <div class="city-img-top">
-                    <img src="${city.img}" alt="${city.name}">
-                    <span class="city-cat-badge">${city.tag}</span>
-                </div>
-                <div class="city-card-body">
-                    <h3 class="city-card-title">${city.name}</h3>
-                    <p class="city-card-text">${city.desc.substring(0, 80)}...</p>
-                    <div class="city-card-footer">
-                        <span class="city-rating"><i class="fas fa-star"></i> 4.9</span>
-                        <button class="btn-city">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-});
-
-// Gestion du Scroll (Navbar & Fade-in)
-window.addEventListener('scroll', () => {
-    const nav = document.getElementById('mainNav');
-    if (window.scrollY > 100) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
-// Intersection Observer pour les animations au scroll
-const observerOptions = { threshold: 0.1 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Particules Hero
-const particlesContainer = document.getElementById('particles-container');
-for (let i = 0; i < 25; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    const size = Math.random() * 10 + 5 + 'px';
-    particle.style.width = size;
-    particle.style.height = size;
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 15 + 's';
-    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-    particlesContainer.appendChild(particle);
-}
-
-// Logic Modal (villes sans page dédiée)
-const cityModal = new bootstrap.Modal(document.getElementById('cityModal'));
-function openCityModal(id) {
-    const city = cities.find(c => c.id === id);
-    document.getElementById('modalCityTitle').innerText = city.name;
-    const modalBody = document.getElementById('modalBody');
-
-    modalBody.innerHTML = `
-        <div class="tab-content" id="cityTabContent">
-            <div class="tab-pane fade show active" id="pres">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="fw-bold mb-3">L'Essence de ${city.name}</h4>
-                        <p>${city.desc}</p>
-                        <div class="mt-4 p-3 bg-light rounded-3">
-                            <p class="mb-1"><i class="fas fa-temperature-high text-danger me-2"></i> <strong>Climat :</strong> Méditerranéen (24°C moy.)</p>
-                            <p class="mb-0"><i class="fas fa-sun text-warning me-2"></i> <strong>Ensoleillement :</strong> 300 jours/an</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="${city.img}" class="img-fluid rounded-4 shadow" alt="${city.name}">
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="lieux">
-                <h4 class="fw-bold mb-4">Lieux Incontournables</h4>
-                <ul class="list-unstyled">
-                    <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i> La Médina historique et ses labyrinthes secrets.</li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i> Les palais royaux et jardins botaniques.</li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-success me-3"></i> Les souks traditionnels et artisanat local.</li>
-                </ul>
-            </div>
-            <div class="tab-pane fade" id="gastro">
-                <h4 class="fw-bold mb-4">Saveurs de ${city.name}</h4>
-                <p>Dégustez les spécialités locales uniques de la région, du tajine traditionnel aux pâtisseries fines à la fleur d'oranger.</p>
-            </div>
-            <div class="tab-pane fade" id="art">
-                <div class="row align-items-center">
-                    <div class="col-md-7">
-                        <h4 class="fw-bold mb-4">Artisanat & Shopping</h4>
-                        <p>Rencontrez les maîtres artisans dans leurs ateliers : maroquinerie, poterie, tissage et travail du cuivre.</p>
-                    </div>
-                    <div class="col-md-5">
-                        <img src="artisanat_zellige_detail_1778374904012.png" class="img-fluid rounded-4 shadow" alt="Artisanat">
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="fest">
-                <h4 class="fw-bold mb-4">Festivals & Événements</h4>
-                <p>Agenda culturel riche tout au long de l'année. Ne manquez pas les festivals de musique et les fêtes populaires locales.</p>
-            </div>
-            <div class="tab-pane fade" id="cult">
-                <h4 class="fw-bold mb-4">Culture & Traditions</h4>
-                <p>Plongez dans l'histoire de la cité, ses coutumes ancestrales et l'hospitalité légendaire de ses habitants.</p>
-            </div>
-            <div class="tab-pane fade" id="nat">
-                <h4 class="fw-bold mb-4">Nature & Activités</h4>
-                <p>Des excursions dans l'Atlas aux moments de détente sur les plages vierges de la région.</p>
-            </div>
-            <div class="tab-pane fade" id="inf">
-                <h4 class="fw-bold mb-4">Infos Pratiques</h4>
-                <p><strong>Accès :</strong> Aéroport International à 15 min du centre.<br>
-                <strong>Transport :</strong> Taxis, bus et calèches traditionnelles.<br>
-                <strong>Hébergement :</strong> Large choix du riad authentique au palace 5 étoiles.</p>
-            </div>
-        </div>
-    `;
-    cityModal.show();
-}
-
-// Fonctions pages dédiées (Merzouga, Ifrane, Ouarzazate)
-function openCity(id) {
-    const page = document.getElementById('city-' + id);
-    if (page) {
-        page.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        page.scrollTop = 0;
-    }
-}
-
-function closeCity() {
-    document.querySelectorAll('.city-page').forEach(p => p.classList.remove('open'));
-    document.body.style.overflow = '';
-}
-
-// Fermeture avec la touche Échap
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeCity();
-});
-
-// Custom Cursor Logic
-const cursor = document.getElementById('custom-cursor');
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-document.querySelectorAll('a, button, .city-grid-card, .theme-card').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-});
-
-// Parallax Hero
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (scrolled < window.innerHeight) {
-        hero.style.backgroundPositionY = (scrolled * 0.5) + 'px';
-    }
-});
-
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-    </script>
-
+    <script src="main.js"></script>
 
 <div class="city-page" id="city-merzouga">
   <button class="city-back" onclick="closeCity()">← Retour</button>
@@ -3182,6 +1419,313 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   </div>
 </div>
 <!-- ==================== FIN HTML OUARZAZATE ==================== -->
+
+
+<!-- ==================== HTML CHEFCHAOUEN ==================== -->
+
+<div class="city-page" id="city-chefchaouen">
+  <button class="city-back" onclick="closeCity()">← Retour</button>
+
+  <!-- HERO -->
+  <div class="city-hero">
+    <div class="city-hero-img" style="background-image: url('assets/images/chefchaouen_hero.jpg'), url('https://images.unsplash.com/photo-1548296846-820373f7293d?w=1600'); background-position: center 60%;"></div>
+    <div class="city-hero-overlay" style="background: linear-gradient(
+      to bottom,
+      rgba(0, 30, 80, 0.3) 0%,
+      rgba(0, 30, 80, 0.1) 40%,
+      rgba(10, 40, 100, 0.75) 75%,
+      rgba(5, 20, 60, 0.95) 100%
+    );"></div>
+    <div class="city-hero-content">
+      <span class="city-tag">💙 Perle du Rif · Ville Bleue</span>
+      <h1 class="city-title"><em>Chef</em>chaouen<br><span style="font-size:0.5em;color:rgba(200,225,255,0.4);">شفشاون</span></h1>
+      <p class="city-intro">Chefchaouen est une ville située dans les montagnes du Rif au nord du Maroc, célèbre pour sa médina aux maisons bleues, son patrimoine andalou et ses paysages naturels uniques.</p>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="city-stats-bar" style="background: linear-gradient(135deg, #0a1e5e, #1a3a8a);">
+    <div class="city-stat">
+      <span class="city-stat-num">35.1688° N</span>
+      <span class="city-stat-label">Latitude de Chefchaouen</span>
+    </div>
+    <div class="city-stat">
+      <span class="city-stat-num">5.2636° W</span>
+      <span class="city-stat-label">Longitude de Chefchaouen</span>
+    </div>
+    <div class="city-stat">
+      <span class="city-stat-num">≈ 600m</span>
+      <span class="city-stat-label">Altitude de la ville</span>
+    </div>
+    <div class="city-stat">
+      <span class="city-stat-num">≈ 112km</span>
+      <span class="city-stat-label">De Tétouan</span>
+    </div>
+    <div class="city-stat">
+      <span class="city-stat-num">≈ 200km</span>
+      <span class="city-stat-label">De Tanger</span>
+    </div>
+    <div class="city-stat">
+      <span class="city-stat-num">≈ 250km</span>
+      <span class="city-stat-label">De Fès</span>
+    </div>
+  </div>
+
+  <div class="city-body">
+
+    <!-- ===== MONUMENTS ===== -->
+    <h2 class="city-section-title">🏛️ Monuments Historiques</h2>
+    <div class="city-grid-2">
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1545845445-0e97c7bdcdbc?w=800" alt="Kasbah de Chefchaouen" onerror="this.parentElement.innerHTML='🏯'">
+        </div>
+        <h3>La Kasbah de Chefchaouen</h3>
+        <p>Ancienne forteresse construite au XVe siècle, la kasbah protégeait la ville contre les invasions portugaises. Aujourd'hui, elle abrite un musée ethnographique et un jardin andalou.</p>
+        <span class="city-card-tag">📍 XVe siècle · Musée ethnographique · Jardin andalou</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800" alt="Grande Mosquée" onerror="this.parentElement.innerHTML='🕌'">
+        </div>
+        <h3>La Grande Mosquée</h3>
+        <p>Située près de la place principale, cette mosquée est célèbre pour son minaret octogonal rare au Maroc et son architecture inspirée du style andalou.</p>
+        <span class="city-card-tag">📍 Minaret octogonal · Style andalou · Architecture unique</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800" alt="Plaza Uta el Hammam" onerror="this.parentElement.innerHTML='🏛️'">
+        </div>
+        <h3>Plaza Uta el Hammam</h3>
+        <p>Cette place historique est le cœur vivant de la médina. Entourée de cafés et de bâtiments anciens, elle représente le centre culturel et social de Chefchaouen.</p>
+        <span class="city-card-tag">📍 Cœur de la médina · Cafés · Centre culturel</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800" alt="Ras El Ma" onerror="this.parentElement.innerHTML='💧'">
+        </div>
+        <h3>Ras El Ma</h3>
+        <p>Ras El Ma est une source naturelle située à l'entrée de la médina. Autrefois utilisée pour laver le linge et alimenter la ville en eau, elle reste un lieu emblématique et paisible.</p>
+        <span class="city-card-tag">📍 Source naturelle · Emblématique · Lieu paisible</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1548296846-820373f7293d?w=800" alt="Mosquée Espagnole" onerror="this.parentElement.innerHTML='🕌'">
+        </div>
+        <h3>La Mosquée Espagnole</h3>
+        <p>Construite dans les années 1920 sur une colline dominant la ville, elle offre aujourd'hui l'une des plus belles vues panoramiques sur Chefchaouen et les montagnes du Rif.</p>
+        <span class="city-card-tag">📍 Années 1920 · Vue panoramique · Colline du Rif</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1580674684089-7b8d79f8da8c?w=800" alt="Remparts de la médina" onerror="this.parentElement.innerHTML='🏰'">
+        </div>
+        <h3>Les Anciens Remparts de la Médina</h3>
+        <p>Les remparts historiques entourent encore certaines parties de la vieille ville. Ils rappellent le rôle défensif de Chefchaouen pendant les périodes de conflits régionaux.</p>
+        <span class="city-card-tag">📍 Vieille ville · Patrimoine défensif · Histoire régionale</span>
+      </div>
+
+    </div>
+
+    <!-- ===== GASTRONOMIE ===== -->
+    <h2 class="city-section-title">🍽️ Gastronomie Célèbre de Chefchaouen</h2>
+    <div class="food-strip">
+
+      <div class="food-pill">
+        <img class="food-pill-img" src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=200" alt="Fromage de chèvre" onerror="this.style.display='none'">
+        <div>
+          <div class="food-pill-name">Fromage de Chèvre</div>
+          <div class="food-pill-detail">Fromage artisanal des montagnes voisines, fabriqué selon des méthodes traditionnelles ancestrales</div>
+        </div>
+      </div>
+
+      <div class="food-pill">
+        <img class="food-pill-img" src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=200" alt="Tajine rifain" onerror="this.style.display='none'">
+        <div>
+          <div class="food-pill-name">Tajine Rifain</div>
+          <div class="food-pill-detail">Olives, herbes de montagne et huile d'olive locale, cuits lentement dans un tajine parfumé</div>
+        </div>
+      </div>
+
+      <div class="food-pill">
+        <img class="food-pill-img" src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200" alt="Bissara" onerror="this.style.display='none'">
+        <div>
+          <div class="food-pill-name">La Bissara</div>
+          <div class="food-pill-detail">Soupe traditionnelle de fèves sèches, servie chaude avec huile d'olive et cumin</div>
+        </div>
+      </div>
+
+      <div class="food-pill">
+        <img class="food-pill-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200" alt="Pain jebli" onerror="this.style.display='none'">
+        <div>
+          <div class="food-pill-name">Le Pain Jebli</div>
+          <div class="food-pill-detail">Pain traditionnel cuit dans des fours artisanaux, texture dense et goût rustique authentique</div>
+        </div>
+      </div>
+
+      <div class="food-pill">
+        <img class="food-pill-img" src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=200" alt="Thé à la menthe" onerror="this.style.display='none'">
+        <div>
+          <div class="food-pill-name">Thé à la Menthe</div>
+          <div class="food-pill-detail">Symbole d'hospitalité chaouenie, servi avec miel, noix et pâtisseries locales</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== CULTURE ===== -->
+    <h2 class="city-section-title">🎭 Tradition & Culture Jeblie</h2>
+    <div class="city-grid-3">
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1548296846-820373f7293d?w=800" alt="Culture Jeblie" onerror="this.parentElement.innerHTML='👘'">
+        </div>
+        <h3>La Culture Jeblie</h3>
+        <p>L'identité traditionnelle des habitants des montagnes du Rif se distingue par les vêtements rayés colorés, les tissus artisanaux, les chants populaires et un mode de vie attaché à la nature et à la communauté.</p>
+        <span class="city-card-tag">📍 Montagnes du Rif · Traditions ancestrales · Identité berbère</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="assets/images/chefchaouen_hero.jpg" alt="Maisons bleues" onerror="this.parentElement.innerHTML='💙'">
+        </div>
+        <h3>Les Maisons et Ruelles Bleues</h3>
+        <p>Les murs peints en bleu représentent l'image la plus célèbre de Chefchaouen. Cette tradition serait liée à l'héritage andalou et juif de la ville, créant une ambiance calme et fraîche dans la médina.</p>
+        <span class="city-card-tag">📍 Médina bleue · Héritage andalou · Patrimoine unique</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800" alt="Artisanat traditionnel" onerror="this.parentElement.innerHTML='🧶'">
+        </div>
+        <h3>L'Artisanat Traditionnel</h3>
+        <p>Chefchaouen est connue pour ses tapis tissés à la main, couvertures jeblies, objets en laine et travail du cuir. Les artisans utilisent encore des méthodes transmises entre générations.</p>
+        <span class="city-card-tag">📍 Tapis · Laine · Cuir · Méthodes ancestrales</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1519181245277-cffeb31da2e3?w=800" alt="Musique andalouse" onerror="this.parentElement.innerHTML='🎵'">
+        </div>
+        <h3>La Musique Andalouse et Rifaine</h3>
+        <p>La ville possède une forte influence musicale andalouse et rifaine. Les fêtes locales accueillent souvent des groupes jouant du oud, du violon andalou et des chants traditionnels spirituels.</p>
+        <span class="city-card-tag">📍 Oud · Violon andalou · Chants spirituels</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800" alt="Souks de Chefchaouen" onerror="this.parentElement.innerHTML='🛍️'">
+        </div>
+        <h3>Les Marchés et Souks Traditionnels</h3>
+        <p>Les souks de Chefchaouen restent très authentiques. On y trouve des produits locaux, des épices, des vêtements traditionnels et une atmosphère conviviale qui reflète la vie quotidienne rifaine.</p>
+        <span class="city-card-tag">📍 Épices · Vêtements · Vie authentique rifaine</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800" alt="Festivals culturels" onerror="this.parentElement.innerHTML='🎪'">
+        </div>
+        <h3>Les Festivals Culturels</h3>
+        <p>Chefchaouen accueille plusieurs festivals artistiques et spirituels, notamment des événements liés à la musique andalouse, aux arts de rue et à la culture méditerranéenne, attirant artistes et visiteurs du monde entier.</p>
+        <span class="city-card-tag">📍 Musique · Arts de rue · Culture méditerranéenne</span>
+      </div>
+
+    </div>
+
+    <!-- ===== ACTIVITÉS ===== -->
+    <h2 class="city-section-title">🎯 Activités & Expériences</h2>
+    <div class="city-grid-3">
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="assets/images/chefchaouen_hero.jpg" alt="Ruelles bleues" onerror="this.parentElement.innerHTML='🚶'">
+        </div>
+        <h3>Explorer les Ruelles Bleues de la Médina</h3>
+        <p>Les visiteurs aiment marcher dans les petites ruelles bleues pour découvrir les escaliers décorés, les portes artisanales et l'atmosphère paisible typique de Chefchaouen.</p>
+        <span class="city-card-tag">🚶 Balade libre · Escaliers décorés · Portes artisanales</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Randonnée Akchour" onerror="this.parentElement.innerHTML='🥾'">
+        </div>
+        <h3>Randonnée à Akchour</h3>
+        <p>Akchour attire les amoureux de nature grâce à ses cascades, ses sentiers montagneux et son célèbre pont rocheux naturel appelé "God's Bridge".</p>
+        <span class="city-card-tag">🥾 Cascades · God's Bridge · Sentiers naturels</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Parc Talassemtane" onerror="this.parentElement.innerHTML='🌲'">
+        </div>
+        <h3>Parc National Talassemtane</h3>
+        <p>Le parc national de Talassemtane est parfait pour les randonnées, le camping et l'exploration des paysages naturels du Rif avec ses forêts et ses montagnes.</p>
+        <span class="city-card-tag">🌲 Randonnées · Camping · Forêts du Rif</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="Cuisine locale" onerror="this.parentElement.innerHTML='🍽️'">
+        </div>
+        <h3>Découvrir la Cuisine Locale</h3>
+        <p>Les touristes peuvent goûter les spécialités rifaines comme les tajines locaux, le fromage de chèvre et le pain jebli dans une ambiance authentique.</p>
+        <span class="city-card-tag">🍽️ Tajines · Fromage · Pain jebli · Ambiance authentic</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800" alt="Shopping artisanal" onerror="this.parentElement.innerHTML='🛍️'">
+        </div>
+        <h3>Shopping dans les Souks Artisanaux</h3>
+        <p>Les marchés traditionnels proposent des tapis tissés à la main, des vêtements jeblis, des produits naturels et des objets artisanaux typiques de la région.</p>
+        <span class="city-card-tag">🛍️ Tapis · Vêtements jeblis · Produits naturels</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800" alt="Cafés panoramiques" onerror="this.parentElement.innerHTML='☕'">
+        </div>
+        <h3>Profiter des Cafés Panoramiques</h3>
+        <p>Les cafés situés sur les hauteurs de la ville offrent une ambiance calme avec une vue magnifique sur les montagnes et les maisons bleues.</p>
+        <span class="city-card-tag">☕ Vue panoramique · Montagnes · Maisons bleues</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800" alt="Excursions Rif" onerror="this.parentElement.innerHTML='🏔️'">
+        </div>
+        <h3>Excursions dans les Montagnes du Rif</h3>
+        <p>Des guides locaux organisent des excursions pour découvrir les villages voisins, les paysages ruraux et la culture montagnarde rifaine.</p>
+        <span class="city-card-tag">🏔️ Guides locaux · Villages · Culture rifaine</span>
+      </div>
+
+      <div class="city-card">
+        <div class="city-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800" alt="Festivals événements" onerror="this.parentElement.innerHTML='🎭'">
+        </div>
+        <h3>Assister aux Festivals & Événements</h3>
+        <p>Chefchaouen accueille des événements artistiques et musicaux qui permettent aux visiteurs de découvrir la culture andalouse et les traditions locales.</p>
+        <span class="city-card-tag">🎭 Musique andalouse · Arts · Traditions locales</span>
+      </div>
+
+    </div>
+
+    <!-- ===== CONSEIL ===== -->
+    <div class="tip-box" style="background: linear-gradient(135deg, #eef3ff, #dce8ff); border-color: #3a6bc9;">
+      <div class="tip-box-title">💡 Conseil du Voyageur</div>
+      <p>Chefchaouen se visite idéalement au <strong>printemps (mars-mai)</strong> pour les lumières douces et les températures agréables, ou en <strong>automne (sept-nov)</strong> pour éviter la foule estivale. Prévoyez <strong>2 à 3 jours minimum</strong> pour explorer la médina, faire la randonnée à Akchour et visiter la Mosquée Espagnole pour le coucher du soleil. Portez des chaussures confortables : les ruelles sont pavées et en pente. <strong>À ne pas rater :</strong> les premières heures du matin dans la médina, avant l'afflux touristique — la lumière bleue est absolument magique.</p>
+    </div>
+
+  </div>
+</div>
+<!-- ==================== FIN HTML CHEFCHAOUEN ==================== -->
 
 </body>
 
