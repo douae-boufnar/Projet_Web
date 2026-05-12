@@ -15,7 +15,7 @@ const cities = [
 ];
 
 // Villes avec page dédiée
-const clickMap = { 'merzouga': true, 'ifrane': true, 'ouarzazate': true, 'chefchaouen': true, 'marrakech': true, 'agadir': true, 'fes': true };
+const clickMap = { 'merzouga': true, 'ifrane': true, 'ouarzazate': true, 'chefchaouen': true, 'marrakech': true, 'agadir': true, 'fes': true, 'essaouira': true, 'dakhla': true };
 
 // Rendu des villes dans la grille
 const container = document.getElementById('villes-container');
@@ -151,7 +151,7 @@ function openCityModal(id) {
     cityModal.show();
 }
 
-// Fonctions pages dédiées (Merzouga, Ifrane, Ouarzazate, Chefchaouen, Marrakech, Agadir, Fès)
+// Fonctions pages dédiées (Merzouga, Ifrane, Ouarzazate, Chefchaouen, Marrakech, Agadir, Fès, Essaouira, Dakhla)
 function openCity(id) {
     const page = document.getElementById('city-' + id);
     if (page) {
