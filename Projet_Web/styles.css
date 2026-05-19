@@ -138,9 +138,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('hero_maroc_cinematic_1778374742658.png') center/cover no-repeat;
-            opacity: 0.6;
+            background: url('images/Acceuil/hero.png') center/cover no-repeat;
+            opacity: 0.85;
             z-index: 0;
+            transform: scale(1.04);
+            animation: heroKenburns 28s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(165deg,
+                    rgba(15, 8, 12, 0.55) 0%,
+                    rgba(90, 12, 24, 0.45) 35%,
+                    rgba(8, 40, 28, 0.5) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes heroKenburns {
+            0% {
+                transform: scale(1.04) translate(0, 0);
+            }
+
+            100% {
+                transform: scale(1.12) translate(-1.2%, 0.8%);
+            }
         }
 
         .hero-content {
@@ -148,6 +172,19 @@
             z-index: 10;
             max-width: 900px;
             padding: 0 20px;
+            animation: heroContentIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes heroContentIn {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-subtitle {
@@ -156,7 +193,7 @@
             font-weight: 600;
             text-transform: uppercase;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
             font-size: 1rem;
         }
 
@@ -166,6 +203,7 @@
             font-weight: 900;
             margin-bottom: 25px;
             line-height: 1.1;
+            text-shadow: 0 6px 40px rgba(0, 0, 0, 0.55);
         }
 
         .hero-title span {
@@ -177,8 +215,11 @@
             color: #fff;
             font-size: 1.25rem;
             margin-bottom: 40px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-            opacity: 0.9;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
+            opacity: 0.95;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn-hero {
@@ -196,6 +237,23 @@
             border: none;
             border-radius: 50px;
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-explorer::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+
+        .btn-explorer:hover::after {
+            opacity: 1;
         }
 
         .btn-planifier {
@@ -238,7 +296,7 @@
             }
         }
 
-        /* 3. THÉMATIQUES */
+        /* SECTIONS ACCUEIL */
         .section-padding {
             padding: 100px 0;
         }
@@ -277,65 +335,6 @@
             width: 80px;
             height: 4px;
             background: var(--dore);
-        }
-
-        .theme-card {
-            height: 300px;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            margin-bottom: 30px;
-        }
-
-        .theme-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .theme-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .theme-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .theme-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 70%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 25px;
-        }
-
-        .theme-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 45px;
-            height: 45px;
-            background: var(--blanc-casse);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dore);
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .theme-name {
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 0;
         }
 
         /* 4. GOOGLE MAPS */
@@ -569,7 +568,16 @@
             color: var(--dore);
         }
 
-        /* 7. 12 VILLES */
+        /* DESTINATIONS — VILLES */
+        .home-section-intro {
+            max-width: 720px;
+            margin: 0 auto 50px;
+            text-align: center;
+            color: var(--gris);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
         .city-grid-card {
             background: #fff;
             border-radius: 20px;
@@ -578,6 +586,23 @@
             transition: var(--transition);
             cursor: pointer;
             height: 100%;
+        }
+
+        a.city-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.city-card-link:hover,
+        a.city-card-link:focus {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a.city-card-link:focus-visible {
+            outline: 3px solid var(--dore);
+            outline-offset: 4px;
         }
 
         .city-grid-card:hover {
@@ -655,6 +680,8 @@
             font-weight: 600;
             border: none;
             transition: var(--transition);
+            display: inline-block;
+            pointer-events: none;
         }
 
         .btn-city:hover {
@@ -662,213 +689,369 @@
             transform: translateX(5px);
         }
 
-        /* MODAL */
-        .modal-content {
-            border-radius: 25px;
+        /* MODAL HÔTELS */
+        #hotelsModal .modal-dialog {
+            max-width: 1100px;
+        }
+
+        #hotelsModal .modal-content {
+            border-radius: 24px;
             overflow: hidden;
             border: none;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
         }
 
-        .modal-header {
-            background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
+        #hotelsModal .modal-header {
+            background: linear-gradient(135deg, var(--rouge-fonce), var(--rouge));
             color: #fff;
             border: none;
-            padding: 25px;
+            padding: 1.5rem 2rem;
         }
 
-        .modal-header .btn-close {
+        #hotelsModal .modal-header .btn-close {
             filter: invert(1);
         }
 
-        .modal-tabs {
-            background: var(--beige);
-            padding: 0 15px;
+        #hotelsModal .modal-body {
+            padding: 2rem;
+            background: var(--blanc-casse);
         }
 
-        .modal-tabs .nav-link {
-            color: var(--noir) !important;
+        .hotel-card {
             border: none;
-            padding: 15px 20px !important;
-            font-weight: 600;
-            border-radius: 0;
-            background: transparent !important;
-        }
-
-        .modal-tabs .nav-link.active {
-            color: var(--rouge) !important;
-            border-bottom: 3px solid var(--rouge);
-        }
-
-        .modal-body {
-            color: var(--noir);
-            padding: 35px;
-        }
-
-        /* 8. CUISINE */
-        .cuisine-card {
-            text-align: center;
-            margin-bottom: 40px;
-            transition: var(--transition);
-        }
-
-        .cuisine-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid var(--dore);
-            padding: 5px;
-            background: #fff;
-            margin: 0 auto 20px;
+            border-radius: 18px;
             overflow: hidden;
+            background: #fff;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            height: 100%;
         }
 
-        .cuisine-img img {
+        .hotel-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.14);
+        }
+
+        .hotel-card-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hotel-card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%;
+            transition: transform 0.65s ease;
         }
 
-        .cuisine-card:hover .cuisine-img {
-            border-color: var(--rouge);
-            transform: rotate(3deg) scale(1.05);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        .hotel-card:hover .hotel-card-img img {
+            transform: scale(1.08);
         }
 
-        .cuisine-title {
-            color: var(--rouge);
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .cuisine-desc {
+        .hotel-offer-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, var(--dore), #b8941f);
             color: var(--noir);
-            opacity: 0.8;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 6px 12px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* 9. CULTURE & ARTISANAT */
-        .culture-img-box {
+        .hotel-card-body {
+            padding: 1.35rem 1.5rem 1.5rem;
+        }
+
+        .hotel-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--noir);
+        }
+
+        .hotel-price {
+            color: var(--rouge);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .hotel-location {
+            font-size: 0.82rem;
+            color: var(--gris);
+            margin-bottom: 0.75rem;
+        }
+
+        .hotel-location i {
+            color: var(--dore);
+            margin-right: 6px;
+        }
+
+        .hotel-desc {
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: rgba(26, 26, 26, 0.78);
+            margin-bottom: 1rem;
+        }
+
+        .btn-hotel-visit {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--vert), #004d2b);
+            color: #fff !important;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 22px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-hotel-visit:hover {
+            background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
+            transform: translateX(4px);
+            color: #fff !important;
+        }
+
+        /* NATURE & PAYSAGES */
+        .nature-landscape-card {
+            border: none;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            background: #fff;
+            box-shadow: 0 14px 45px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
             height: 100%;
         }
 
-        .culture-img-box img {
+        .nature-landscape-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.14);
+        }
+
+        .nature-landscape-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .nature-landscape-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.7s ease;
         }
 
-        .culture-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: #fff;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            transition: var(--transition);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+        .nature-landscape-card:hover .nature-landscape-img img {
+            transform: scale(1.1);
         }
 
-        .culture-item:hover {
-            transform: translateX(10px);
-            border-left: 4px solid var(--dore);
-            background: rgba(212, 175, 55, 0.05);
+        .nature-landscape-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 55%);
+            pointer-events: none;
         }
 
-        .culture-icon {
-            width: 60px;
-            height: 60px;
-            min-width: 60px;
-            background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dore);
-            font-size: 1.5rem;
-            margin-right: 20px;
-            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+        .nature-landscape-body {
+            padding: 1.5rem 1.75rem 1.75rem;
         }
 
-        .culture-content h5 {
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .culture-content p {
-            font-size: 0.9rem;
+        .nature-landscape-body h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 0.65rem;
             color: var(--noir);
-            opacity: 0.8;
+        }
+
+        .nature-landscape-body p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: rgba(26, 26, 26, 0.75);
             margin: 0;
         }
 
-        /* 10. NATURE & AVENTURE */
-        .nature-card {
-            border-radius: 20px;
+        /* CUISINE MAROCAINE */
+        .cuisine-premium-card {
+            border: none;
+            border-radius: 18px;
             overflow: hidden;
             background: #fff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
             transition: var(--transition);
-            margin-bottom: 30px;
+            height: 100%;
         }
 
-        .nature-card:hover {
+        .cuisine-premium-card:hover {
             transform: translateY(-8px);
-            border-bottom: 4px solid var(--dore);
+            box-shadow: 0 20px 45px rgba(196, 30, 58, 0.12);
         }
 
-        .nature-img {
-            height: 250px;
+        .cuisine-premium-img {
+            height: 200px;
             overflow: hidden;
         }
 
-        .nature-img img {
+        .cuisine-premium-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.65s ease;
         }
 
-        .nature-body {
-            padding: 25px;
+        .cuisine-premium-card:hover .cuisine-premium-img img {
+            transform: scale(1.1);
+        }
+
+        .cuisine-premium-body {
+            padding: 1.25rem 1.35rem 1.5rem;
             text-align: center;
         }
 
-        .nature-icon-big {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            display: block;
+        .cuisine-premium-body h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--rouge);
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .icon-desert {
-            color: #E2725B;
+        .cuisine-premium-body p {
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: rgba(26, 26, 26, 0.75);
+            margin: 0;
         }
 
-        .icon-montagne {
-            color: var(--vert);
-        }
-
-        .icon-ocean {
-            color: var(--dore);
-        }
-
-        .feature-box {
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            background: #fff;
+        /* ART, CULTURE & ARTISANAT */
+        .culture-premium-card {
+            border: none;
             border-radius: 20px;
-            margin-top: 20px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            height: 100%;
         }
 
-        .feature-box i {
-            font-size: 2.5rem;
-            margin-right: 25px;
+        .culture-premium-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.14);
+        }
+
+        .culture-premium-img {
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .culture-premium-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .culture-premium-card:hover .culture-premium-img img {
+            transform: scale(1.08);
+        }
+
+        .culture-premium-body {
+            padding: 1.5rem 1.75rem 1.75rem;
+        }
+
+        .culture-premium-body h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--noir);
+        }
+
+        .culture-premium-body p {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: rgba(26, 26, 26, 0.78);
+            margin: 0;
+        }
+
+        /* ACTIVITÉS */
+        .activity-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            height: 100%;
+            cursor: default;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 55px rgba(0, 107, 60, 0.15);
+        }
+
+        .activity-card-img {
+            height: 260px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .activity-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .activity-card:hover .activity-card-img img {
+            transform: scale(1.1);
+        }
+
+        .activity-card-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 50%);
+        }
+
+        .activity-card-body {
+            padding: 1.35rem 1.5rem 1.5rem;
+        }
+
+        .activity-card-body h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--noir);
+        }
+
+        .activity-card-body p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: rgba(26, 26, 26, 0.75);
+            margin: 0;
+        }
+
+        .section-nature {
+            background: linear-gradient(180deg, rgba(0, 107, 60, 0.04) 0%, rgba(212, 175, 55, 0.06) 100%);
+        }
+
+        .section-culture-home {
+            background: #fff;
+        }
+
+        .section-activities {
+            background: var(--beige);
         }
 
         /* 11. INFOS PRATIQUES */
@@ -1127,6 +1310,20 @@
         @media (max-width: 576px) {
             .hero-title {
                 font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                letter-spacing: 4px;
+                font-size: 0.85rem;
+            }
+
+            .nature-landscape-img,
+            .activity-card-img {
+                height: 220px;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
 
             .newsletter h2 {
