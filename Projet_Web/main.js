@@ -1,17 +1,17 @@
 // Data des villes
 const cities = [
-    { id: 'marrakech', name: 'Marrakech', tag: 'Impériale', img: 'https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800', desc: 'La cité ocre, joyau des Almohades, où le luxe des palais côtoie l\'effervescence des souks.' },
-    { id: 'agadir', name: 'Agadir', tag: 'Solaire', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800', desc: 'La première station balnéaire du pays avec sa baie s\'étendant à perte de vue et son ensoleillement permanent.' },
-    { id: 'fes', name: 'Fès', tag: 'Spirituelle', img: 'https://images.unsplash.com/photo-1540339832862-4745a9805ad0?w=800', desc: 'Le centre intellectuel du Maroc, abritant la plus ancienne université au monde, la Quaraouiyine.' },
-    { id: 'chefchaouen', name: 'Chefchaouen', tag: 'Azurée', img: 'https://images.unsplash.com/photo-1548296846-820373f7293d?w=800', desc: 'Un havre de paix azuré niché dans le Rif, célèbre pour son atmosphère poétique et sereine.' },
-    { id: 'essaouira', name: 'Essaouira', tag: 'Bohème', img: 'https://images.unsplash.com/photo-1559586616-361e18714958?w=800', desc: 'L\'ancienne Mogador, port de pêche fortifié où les vents alizés soufflent un air de liberté.' },
-    { id: 'casablanca', name: 'Casablanca', tag: 'Moderne', img: 'https://images.unsplash.com/photo-1562133561-b3d2d4f9a748?w=800', desc: 'Une métropole tournée vers l\'avenir, symbole du dynamisme économique et architectural.' },
-    { id: 'rabat', name: 'Rabat', tag: 'Lumière', img: 'https://images.unsplash.com/photo-1549944810-2343df9e8b50?w=800', desc: 'La capitale administrative, une ville verte et élégante riche en monuments impériaux.' },
-    { id: 'tanger', name: 'Tanger', tag: 'Mythique', img: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800', desc: 'Carrefour des civilisations au seuil du Détroit, muse éternelle des artistes et écrivains.' },
-    { id: 'ouarzazate', name: 'Ouarzazate', tag: 'Cinéma', img: 'https://images.unsplash.com/photo-1489493512598-d08130f49bea?w=800', desc: 'La porte du grand Sud et le Hollywood africain, célèbre pour ses kasbahs majestueuses.' },
-    { id: 'merzouga', name: 'Merzouga', tag: 'Sahara', img: 'https://images.unsplash.com/photo-1539498508910-091b5e859b1d?w=800', desc: 'Les dunes géantes de l\'Erg Chebbi, pour une immersion totale dans la magie du désert.' },
-    { id: 'ifrane', name: 'Ifrane', tag: 'Nature', img: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?w=800', desc: 'Un paysage alpin au cœur du Moyen-Atlas, entouré de forêts de cèdres millénaires.' },
-    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'https://images.unsplash.com/photo-1534125825227-28f090710609?w=800', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' }
+    { id: 'marrakech', name: 'Marrakech', tag: 'Impériale', img: 'Acceuil/Marrakech.jpg', desc: 'La cité ocre, joyau des Almohades, où le luxe des palais côtoie l\'effervescence des souks.' },
+    { id: 'agadir', name: 'Agadir', tag: 'Solaire', img: 'Acceuil/Agadir , Morocco.jpg', desc: 'La première station balnéaire du pays avec sa baie s\'étendant à perte de vue et son ensoleillement permanent.' },
+    { id: 'fes', name: 'Fès', tag: 'Spirituelle', img: 'Acceuil/Fès, Morocco 🇲🇦.jpg', desc: 'Le centre intellectuel du Maroc, abritant la plus ancienne université au monde, la Quaraouiyine.' },
+    { id: 'chefchaouen', name: 'Chefchaouen', tag: 'Azurée', img: 'Acceuil/Chefchaouen, Morocco 🇲🇦.jpg', desc: 'Un havre de paix azuré niché dans le Rif, célèbre pour son atmosphère poétique et sereine.' },
+    { id: 'essaouira', name: 'Essaouira', tag: 'Bohème', img: 'Acceuil/essaouira.jpg', desc: 'L\'ancienne Mogador, port de pêche fortifié où les vents alizés soufflent un air de liberté.' },
+    { id: 'casablanca', name: 'Casablanca', tag: 'Moderne', img: 'Acceuil/Casa.jpg', desc: 'Une métropole tournée vers l\'avenir, symbole du dynamisme économique et architectural.' },
+    { id: 'rabat', name: 'Rabat', tag: 'Lumière', img: 'Acceuil/Rabat.jpg', desc: 'La capitale administrative, une ville verte et élégante riche en monuments impériaux.' },
+    { id: 'tanger', name: 'Tanger', tag: 'Mythique', img: 'Acceuil/Tanger, Morocco.jpg', desc: 'Carrefour des civilisations au seuil du Détroit, muse éternelle des artistes et écrivains.' },
+    { id: 'ouarzazate', name: 'Ouarzazate', tag: 'Cinéma', img: 'Acceuil/Ouarzazate.jpg', desc: 'La porte du grand Sud et le Hollywood africain, célèbre pour ses kasbahs majestueuses.' },
+    { id: 'merzouga', name: 'Merzouga', tag: 'Sahara', img: 'Acceuil/Merzouga desert 🇲🇦.jpg', desc: 'Les dunes géantes de l\'Erg Chebbi, pour une immersion totale dans la magie du désert.' },
+    { id: 'ifrane', name: 'Ifrane', tag: 'Nature', img: 'Acceuil/Ifrane city.jpg', desc: 'Un paysage alpin au cœur du Moyen-Atlas, entouré de forêts de cèdres millénaires.' },
+    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'Acceuil/Dakhla.jpg', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' }
 ];
 
 // Villes avec page dédiée
