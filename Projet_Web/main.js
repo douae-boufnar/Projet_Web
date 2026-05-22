@@ -15,7 +15,7 @@ const cities = [
 ];
 
 // Villes avec page dédiée
-const clickMap = { 'merzouga': true, 'ifrane': true, 'ouarzazate': true, 'chefchaouen': true, 'marrakech': true, 'agadir': true, 'fes': true, 'essaouira': true, 'dakhla': true };
+const clickMap = { 'merzouga': true, 'ifrane': true, 'ouarzazate': true, 'chefchaouen': true, 'marrakech': true, 'agadir': true, 'fes': true, 'essaouira': true, 'dakhla': true , 'casablanca': true, 'rabat': true, 'tanger': true};
 
 // Rendu des villes dans la grille
 const container = document.getElementById('villes-container');
