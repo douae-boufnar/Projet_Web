@@ -40,6 +40,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
           <li class="nav-item"><a class="nav-link" href="#villes">Villes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#transport">Transport</a></li>
           <li class="nav-item"><a class="nav-link" href="#cuisine">Cuisine</a></li>
           <li class="nav-item"><a class="nav-link" href="#culture">Culture</a></li>
           <li class="nav-item"><a class="nav-link" href="#nature">Nature</a></li>
@@ -117,6 +118,78 @@
             <i class="fas fa-anchor"></i>
             <h5>Essaouira</h5>
             <p>31.5085° N, 9.7595° W</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TRANSPORT -->
+  <section class="section-padding bg-white" id="transport">
+    <div class="container">
+      <div class="section-title-wrapper fade-in">
+        <span class="theme-subtitle">Déplacements</span>
+        <h2 class="section-title">Moyens de Transport au Maroc</h2>
+      </div>
+      
+      <p class="text-center mx-auto mb-5 fade-in" style="max-width: 800px; font-size: 1.1rem; color: var(--gris); line-height: 1.6;">
+        Le Maroc dispose d’un réseau de transport varié permettant les déplacements nationaux et internationaux. Les moyens de transport peuvent être classés en quatre catégories principales :
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <!-- 1. Aérien -->
+        <div class="col-lg-3 col-md-6 fade-in">
+          <div class="transport-card" onclick="openTransportModal('aérien')" style="cursor: pointer;">
+            <div class="transport-icon-wrapper bg-aérien">
+              <i class="fas fa-plane"></i>
+            </div>
+            <div class="transport-body">
+              <h4 class="transport-card-title">Transport Aérien</h4>
+              <p class="transport-card-desc">Déplacements rapides nationaux et internationaux. Vols réguliers et low-cost assurés par Royal Air Maroc, Air Arabia et Ryanair.</p>
+              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Maritime -->
+        <div class="col-lg-3 col-md-6 fade-in">
+          <div class="transport-card" onclick="openTransportModal('maritime')" style="cursor: pointer;">
+            <div class="transport-icon-wrapper bg-maritime">
+              <i class="fas fa-ship"></i>
+            </div>
+            <div class="transport-body">
+              <h4 class="transport-card-title">Transport Maritime</h4>
+              <p class="transport-card-desc">Liaisons maritimes régulières reliant le Maroc à l'Europe (principalement l'Espagne) via Balearia, AML et FRS Ferry.</p>
+              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Terrestre -->
+        <div class="col-lg-3 col-md-6 fade-in">
+          <div class="transport-card" onclick="openTransportModal('terrestre')" style="cursor: pointer;">
+            <div class="transport-icon-wrapper bg-terrestre">
+              <i class="fas fa-train-subway"></i>
+            </div>
+            <div class="transport-body">
+              <h4 class="transport-card-title">Transport Terrestre</h4>
+              <p class="transport-card-desc">Réseau ferré national (ONCF, TGV Al Boraq) et autocars interurbains (CTM, Supratours) reliant les grandes villes du Royaume.</p>
+              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Local & Touristique -->
+        <div class="col-lg-3 col-md-6 fade-in">
+          <div class="transport-card" onclick="openTransportModal('local')" style="cursor: pointer;">
+            <div class="transport-icon-wrapper bg-local">
+              <i class="fas fa-bicycle"></i>
+            </div>
+            <div class="transport-body">
+              <h4 class="transport-card-title">Local & Touristique</h4>
+              <p class="transport-card-desc">Circuits touristiques en bus à impériale, balades traditionnelles en calèche à Marrakech, ou location de vélos et motos.</p>
+              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+            </div>
           </div>
         </div>
       </div>
@@ -714,6 +787,21 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
         </div>
         <div class="modal-body p-4" id="modalHotelsBody">
+          <!-- Rempli dynamiquement par JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TRANSPORT -->
+  <div class="modal fade" id="transportModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 25px; overflow: hidden; border: none;">
+        <div class="modal-header" style="background: linear-gradient(to right, var(--rouge), var(--rouge-fonce)); color: #fff; border: none; padding: 25px;">
+          <h5 class="modal-title font-serif fs-3" id="modalTransportTitle">Moyens de Transport</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+        </div>
+        <div class="modal-body p-4" id="modalTransportBody">
           <!-- Rempli dynamiquement par JS -->
         </div>
       </div>

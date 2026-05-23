@@ -11,11 +11,7 @@ const cities = [
     { id: 'ouarzazate', name: 'Ouarzazate', tag: 'Cinéma', img: 'Acceuil/Ouarzazate.jpg', desc: 'La porte du grand Sud et le Hollywood africain, célèbre pour ses kasbahs majestueuses.' },
     { id: 'merzouga', name: 'Merzouga', tag: 'Sahara', img: 'Acceuil/Merzouga desert 🇲🇦.jpg', desc: 'Les dunes géantes de l\'Erg Chebbi, pour une immersion totale dans la magie du désert.' },
     { id: 'ifrane', name: 'Ifrane', tag: 'Nature', img: 'Acceuil/Ifrane city.jpg', desc: 'Un paysage alpin au cœur du Moyen-Atlas, entouré de forêts de cèdres millénaires.' },
-    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'Acceuil/Dakhla.jpg', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' },
-    { id: 'meknes', name: 'Meknès', tag: 'Impériale', img: 'https://images.unsplash.com/photo-1596489370725-d72b226e6de3?w=800', desc: 'Une ville impériale majestueuse, abritant la célèbre porte Bab Mansour, le mausolée de Moulay Ismaïl et les ruines de Volubilis.' },
-    { id: 'alhoceima', name: 'Al Hoceima', tag: 'Balnéaire', img: 'https://images.unsplash.com/photo-1623940177727-4a0b38ff1bd7?w=800', desc: 'Surnommée la Perle de la Méditerranée, réputée pour ses criques sauvages aux eaux turquoise et ses panoramas côtiers.' },
-    { id: 'taroudant', name: 'Taroudant', tag: 'Remparts', img: 'https://images.unsplash.com/photo-1601918774946-25832a4be0d6?w=800', desc: 'Surnommée la "petite Marrakech" en raison de ses majestueux remparts d\'ocre rouge et de ses souks d\'artisanat authentiques.' },
-    { id: 'oujda', name: 'Oujda', tag: 'Orientale', img: 'https://images.unsplash.com/photo-1595166299008-013fa096df30?w=800', desc: 'Capitale de l\'Oriental marocain, porte d\'entrée historique du Grand Sud réputée pour sa gastronomie et sa musique Raï.' }
+    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'Acceuil/Dakhla.jpg', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' }
 ];
 
 // Villes avec page dédiée
@@ -185,7 +181,7 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.top = e.clientY + 'px';
 });
 
-document.querySelectorAll('a, button, .city-grid-card, .theme-card').forEach(el => {
+document.querySelectorAll('a, button, .city-grid-card, .theme-card, .transport-card').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
 });
@@ -273,26 +269,6 @@ const hotelsData = {
         { name: "La Crique Nature & Spa", type: "Éco-lodge d'exception 5★", rating: "4.8", desc: "Des suites prestigieuses nichées entre falaise et lagune pour une déconnexion totale.", icon: "fa-dove" },
         { name: "Dakhla Attitude", type: "Spot légendaire de glisse", rating: "4.7", desc: "La référence mondiale pour les amateurs de kitesurf et de planche à voile.", icon: "fa-wind" },
         { name: "Ocean Vagabond Dakhla", type: "Éco-charme & Glisse", rating: "4.6", desc: "Un camp haut de gamme dans un jardin verdoyant de la lagune, à l'esprit bohème.", icon: "fa-water" }
-    ],
-    meknes: [
-        { name: "Riad Yacout", type: "Palais Traditionnel", rating: "4.7", desc: "Demeure historique du XIXe siècle restaurée dans le pur style traditionnel, au cœur de la médina.", icon: "fa-hotel" },
-        { name: "Le Château de Bel Air", type: "Hôtel de charme 4★", rating: "4.5", desc: "Niché dans un parc arboré offrant une vue panoramique sur la médina et un calme absolu.", icon: "fa-tree" },
-        { name: "Riad Lahboul", type: "Riad Authentique", rating: "4.6", desc: "Idéalement situé au bord des remparts de la médina, offrant une terrasse panoramique d'exception.", icon: "fa-archway" }
-    ],
-    alhoceima: [
-        { name: "Radisson Blu Resort Al Hoceima", type: "Luxe & Plage 5★", rating: "4.8", desc: "Un resort haut de gamme posé sur le sable fin avec une vue spectaculaire sur la Méditerranée.", icon: "fa-umbrella-beach" },
-        { name: "Hôtel Suites Bella Vista", type: "Hôtel de charme 4★", rating: "4.5", desc: "Offre des suites élégantes et une vue panoramique inoubliable sur la célèbre baie d'Al Hoceima.", icon: "fa-eye" },
-        { name: "Mercure Quemado Resort", type: "Face à la falaise 4★", rating: "4.4", desc: "Idéalement situé en surplomb de la magnifique plage de Quemado, offrant confort et design marin.", icon: "fa-ship" }
-    ],
-    taroudant: [
-        { name: "Hôtel Palais Salam", type: "Palace historique 4★", rating: "4.6", desc: "Un ancien palais du Pacha bâti dans les remparts, entouré de jardins de bananiers centenaires.", icon: "fa-crown" },
-        { name: "Dar al Hossoun", type: "Eco-Lodge de prestige", rating: "4.9", desc: "Un jardin d'Eden contemporain conçu par des botanistes, mêlant luxe durable et zénitude.", icon: "fa-leaf" },
-        { name: "Riad Dar Zhar", type: "Maison d'hôtes traditionnelle", rating: "4.7", desc: "Un havre de paix chaleureux au cœur de la médina, réputé pour sa cuisine typique sous la pergola.", icon: "fa-utensils" }
-    ],
-    oujda: [
-        { name: "Hôtel Terminus & Spa", type: "Grand Confort 5★", rating: "4.7", desc: "Un hôtel moderne de grande classe avec spa prestigieux, situé au centre de la capitale de l'Oriental.", icon: "fa-spa" },
-        { name: "Atlas Orient", type: "Charme traditionnel 4★", rating: "4.3", desc: "Situé près de la médina, offrant une piscine extérieure dans un écrin de jardins verdoyants.", icon: "fa-water" },
-        { name: "Riad Oujda", type: "Riad authentique", rating: "4.5", desc: "Une demeure traditionnelle avec cour intérieure arborée, alliant accueil familial et calme absolu.", icon: "fa-hotel" }
     ]
 };
 
@@ -456,11 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ouarzazate: [30.9189, -6.9118],
         merzouga: [31.0802, -4.0033],
         ifrane: [33.5273, -5.1094],
-        dakhla: [23.6848, -15.9580],
-        meknes: [33.8938, -5.5547],
-        alhoceima: [35.2472, -3.9311],
-        taroudant: [30.4703, -8.8769],
-        oujda: [34.6867, -1.9114]
+        dakhla: [23.6848, -15.9580]
     };
 
     // Initialiser la carte Leaflet centrée sur le Maroc
@@ -499,3 +471,170 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Données pour la modal de transport
+const transportData = {
+    aérien: {
+        title: "Transport Aérien ✈️",
+        iconClass: "bg-aérien",
+        icon: "fa-plane",
+        items: [
+            {
+                name: "Royal Air Maroc",
+                desc: "Compagnie nationale du Maroc proposant des vols nationaux et internationaux.",
+                url: "https://www.royalairmaroc.com"
+            },
+            {
+                name: "Air Arabia Maroc",
+                desc: "Compagnie low-cost reliant le Maroc à plusieurs destinations.",
+                url: "https://www.airarabia.com/fr/morocco"
+            },
+            {
+                name: "Ryanair",
+                desc: "Compagnie aérienne économique desservant plusieurs villes marocaines.",
+                url: "https://www.ryanair.com"
+            }
+        ]
+    },
+    maritime: {
+        title: "Transport Maritime ⛴️",
+        iconClass: "bg-maritime",
+        icon: "fa-ship",
+        items: [
+            {
+                name: "Balearia",
+                desc: "Compagnie maritime reliant le Maroc à l’Espagne.",
+                url: "https://www.balearia.com"
+            },
+            {
+                name: "AML – Africa Morocco Link",
+                desc: "Service ferry entre Tanger Med et l’Espagne.",
+                url: "https://www.aml.ma"
+            },
+            {
+                name: "FRS Ferry",
+                desc: "Transport maritime rapide Maroc–Espagne.",
+                url: "https://www.frs.es"
+            }
+        ]
+    },
+    terrestre: {
+        title: "Transport Terrestre 🚆🚌",
+        iconClass: "bg-terrestre",
+        icon: "fa-train-subway",
+        items: [
+            {
+                name: "ONCF",
+                desc: "Réseau ferroviaire national du Maroc.",
+                url: "https://www.oncf-voyages.ma"
+            },
+            {
+                name: "Al Boraq",
+                desc: "TGV marocain reliant Tanger, Rabat et Casablanca.",
+                url: "https://www.oncf-voyages.ma"
+            },
+            {
+                name: "CTM",
+                desc: "Transport interurbain entre les grandes villes.",
+                url: "https://www.ctm.ma"
+            },
+            {
+                name: "Supratours",
+                desc: "Autocars connectés au réseau ferroviaire ONCF.",
+                url: "https://www.supratours.ma"
+            }
+        ]
+    },
+    local: {
+        title: "Transport Local & Touristique 🚲🐎",
+        iconClass: "bg-local",
+        icon: "fa-bicycle",
+        items: [
+            {
+                name: "Bus Touristique Tanger",
+                desc: "Découverte des monuments et attractions de la ville.",
+                url: "#"
+            },
+            {
+                name: "Bus Touristique Marrakech",
+                desc: "Circuit touristique Hop-On Hop-Off.",
+                url: "https://www.alsa.ma"
+            },
+            {
+                name: "Calèches – Marrakech",
+                desc: "Transport touristique traditionnel dans la médina et Jemaa el-Fna.",
+                url: ""
+            },
+            {
+                name: "Location de vélos et motos",
+                desc: "Déplacements courts et tourisme urbain.",
+                url: ""
+            }
+        ]
+    }
+};
+
+// Instance de la modal transport
+let transportModal;
+document.addEventListener('DOMContentLoaded', () => {
+    transportModal = new bootstrap.Modal(document.getElementById('transportModal'));
+});
+
+// Fonction pour ouvrir la modal de transport
+function openTransportModal(categoryId) {
+    const category = transportData[categoryId];
+    if (!category) return;
+
+    document.getElementById('modalTransportTitle').innerHTML = `Moyens de Transport — <span style="color: var(--dore);">${category.title}</span>`;
+    
+    const modalBody = document.getElementById('modalTransportBody');
+    let html = '<div class="hotels-list">';
+    
+    category.items.forEach(item => {
+        let buttonHtml = '';
+        if (item.url && item.url !== "#" && item.url !== "") {
+            buttonHtml = `
+                <a href="${item.url}" target="_blank" class="btn-hotel-book" style="background: var(--vert); border: none;">
+                    Réserver <i class="fas fa-external-link-alt ms-1"></i>
+                </a>
+            `;
+        } else if (item.url === "#") {
+            buttonHtml = `
+                <span class="btn-hotel-book" style="background: var(--gris); cursor: default; border: none; color: #fff !important;">
+                    Sur Place / En Ligne <i class="fas fa-info-circle ms-1"></i>
+                </span>
+            `;
+        } else {
+            buttonHtml = `
+                <span class="btn-hotel-book" style="background: var(--gris); cursor: default; border: none; color: #fff !important;">
+                    Sur Place <i class="fas fa-map-marker-alt ms-1"></i>
+                </span>
+            `;
+        }
+
+        html += `
+            <div class="hotel-card">
+                <div class="hotel-img-wrap ${category.iconClass} transport-modal-icon-wrap">
+                    <i class="fas ${category.icon}"></i>
+                </div>
+                <div class="hotel-details">
+                    <div class="hotel-header">
+                        <div>
+                            <h4 class="hotel-name">${item.name}</h4>
+                        </div>
+                    </div>
+                    <p class="hotel-desc">${item.desc}</p>
+                    <div class="hotel-footer">
+                        ${buttonHtml}
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    html += '</div>';
+    modalBody.innerHTML = html;
+    
+    if (transportModal) {
+        transportModal.show();
+    }
+}
