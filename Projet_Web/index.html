@@ -40,26 +40,42 @@
           <li class="nav-item"><a class="nav-link" href="#cuisine">Cuisine</a></li>
           <li class="nav-item"><a class="nav-link" href="#culture">Culture</a></li>
           <li class="nav-item"><a class="nav-link" href="#nature">Nature</a></li>
+          <li class="nav-item">
+  <a class="nav-link" href="#infos-pratiques">Infos</a>
+</li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- 2. HERO -->
-  <header class="hero" id="accueil">
-    <div id="particles-container"></div>
-    <div class="hero-content">
-      <p class="hero-subtitle">Bienvenue au Royaume des Sens</p>
-      <h1 class="hero-title">Découvrez la <span>magie</span> du Maroc</h1>
-      <p class="hero-text">Laissez-vous envoûter par les couleurs, les saveurs et l'hospitalité légendaire d'un
-        pays millénaire aux mille contrastes.</p>
-      <div class="hero-btns">
-        <a href="#villes" class="btn btn-hero btn-explorer">Explorer les Villes</a>
-        <a href="#contact" class="btn btn-hero btn-planifier">Planifier un Voyage</a>
-      </div>
+<section class="hero" id="accueil">
+
+  <!-- Vidéo YouTube arrière-plan -->
+  <div class="hero-video-wrapper">
+    <iframe 
+src="https://www.youtube.com/embed/TPHwUGTxgiw?autoplay=1&mute=1&loop=1&playlist=TPHwUGTxgiw&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Overlay -->
+  <div class="hero-video-overlay"></div>
+
+  <!-- Ton contenu hero existant (ne change pas) -->
+  <div class="hero-content">
+    <p class="hero-subtitle">Bienvenue au</p>
+    <h1 class="hero-title font-serif">Royaume du <span>Maroc</span></h1>
+    
+    <p class="hero-text">Découvrez un pays où chaque pierre raconte une histoire millénaire...</p>
+    <div>
+      <a href="#villes" class="btn btn-hero btn-explorer">Explorer les villes</a>
+      <a href="#" class="btn btn-hero btn-planifier">Planifier mon voyage</a>
     </div>
-  </header>
+  </div>
+
+  <div id="particles-container"></div>
+</section>
 
 
 
@@ -107,68 +123,7 @@
     </div>
   </section>
 
-  <!-- 5. VIDÉOTHÈQUE -->
-  <section id="videos">
-    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="3"></button>
-        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="4"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=1600" alt="Majorelle Garden">
-          <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
-          <div class="carousel-overlay">
-            <span class="carousel-subtitle">Visit Morocco Originals</span>
-            <h2 class="carousel-title">Majorelle Garden</h2>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600" alt="Atlas Mountains">
-          <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
-          <div class="carousel-overlay">
-            <span class="carousel-subtitle">Visit Morocco Originals</span>
-            <h2 class="carousel-title">Atlas Mountains</h2>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1600" alt="Merzouga Desert">
-          <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
-          <div class="carousel-overlay">
-            <span class="carousel-subtitle">Visit Morocco Originals</span>
-            <h2 class="carousel-title">Merzouga Desert</h2>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="https://images.unsplash.com/photo-1582236082404-5820993510c9?w=1600" alt="Akchour Waterfalls">
-          <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
-          <div class="carousel-overlay">
-            <span class="carousel-subtitle">Visit Morocco Originals</span>
-            <h2 class="carousel-title">Akchour Waterfalls</h2>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="https://images.unsplash.com/photo-1534234828563-025cf17ebb4d?w=1600" alt="Agafay Desert">
-          <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
-          <div class="carousel-overlay">
-            <span class="carousel-subtitle">Visit Morocco Originals</span>
-            <h2 class="carousel-title">Agafay Desert</h2>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-  </section>
-
-  <!-- 7. 12 VILLES -->
+    <!-- 7. 12 VILLES -->
   <section class="section-padding bg-beige" id="villes">
     <div class="container">
       <div class="section-title-wrapper fade-in">
@@ -328,7 +283,9 @@
             </div>
             <div class="culture-card-body">
               <h4 class="culture-card-title">Le Malhoun</h4>
-              <p class="culture-card-desc">Le Malhoun est un art musical traditionnel du Maroc basé sur des poèmes chantés en Darija. Il parle souvent de l’amour, de la sagesse et de la vie quotidienne, accompagné d’instruments traditionnels marocains.</p>
+              <p class="culture-card-desc">Le Malhoun est un art musical et poétique traditionnel du Maroc basé sur des poèmes chantés en darija. Il parle de l’amour, de la sagesse, de la spiritualité et de la vie quotidienne. Accompagné d’instruments traditionnels marocains, il représente est reconnu par l’UNESCO comme patrimoine culturel immatériel.
+
+</p>
             </div>
           </div>
         </div>
@@ -410,32 +367,40 @@
   </section>
 
   <!-- 11. INFOS PRATIQUES -->
-  <section class="section-padding bg-beige">
-    <div class="container">
-      <div class="section-title-wrapper fade-in">
-        <h2 class="section-title">Infos Pratiques</h2>
-      </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-6 col-md-6 fade-in">
-          <div class="info-card">
-            <i class="fas fa-language info-icon"></i>
-            <h4 class="info-title">Langues</h4>
-            <p class="info-text">L'Arabe (Darija) et l'Amazigh sont officiels. Découvrez la richesse et la diversité de nos dialectes régionaux.</p>
-            <button class="btn btn-city" data-bs-toggle="modal" data-bs-target="#languagesModal">Explorer les dialectes</button>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 fade-in">
-          <div class="info-card">
-            <i class="fas fa-hand-holding-heart info-icon"></i>
-            <h4 class="info-title">Conseils Culturels</h4>
-            <p class="info-text">Vêtements respectueux, acceptez le thé, et pratiquez l'art du marchandage
-              avec le sourire.</p>
-          </div>
-        </div>
-      </div>
+<section id="infos-pratiques" class="section-padding bg-beige">
+  <div class="container">
+    <div class="section-title-wrapper fade-in">
+      <h2 class="section-title">Infos Pratiques</h2>
     </div>
-  </section>
+    <div class="row g-4 justify-content-center">
 
+      <!-- Langues -->
+      <div class="col-lg-6 col-md-6 fade-in">
+        <div class="info-card">
+          <i class="fas fa-language info-icon"></i>
+          <h4 class="info-title">Langues</h4>
+          <p class="info-text">L'Arabe (Darija) et l'Amazigh sont officiels. Découvrez la richesse et la diversité de nos dialectes régionaux.</p>
+          <button class="btn btn-city" data-bs-toggle="modal" data-bs-target="#languagesModal">
+            Explorer les dialectes
+          </button>
+        </div>
+      </div>
+
+      <!-- Conseils Culturels -->
+      <div class="col-lg-6 col-md-6 fade-in">
+        <div class="info-card">
+          <i class="fas fa-hand-holding-heart info-icon"></i>
+          <h4 class="info-title">Conseils Culturels</h4>
+          <p class="info-text">Vêtements respectueux, acceptez le thé, et pratiquez l'art du marchandage avec le sourire.</p>
+          <button class="btn btn-city" data-bs-toggle="modal" data-bs-target="#conseillsModal">
+            Voir les conseils
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
   <!-- 12. NEWSLETTER -->
   <section class="newsletter">
     <div class="container newsletter-content fade-in">
@@ -472,15 +437,14 @@
             <li><a href="#cuisine"><i class="fas fa-chevron-right"></i> Cuisine</a></li>
             <li><a href="#culture"><i class="fas fa-chevron-right"></i> Culture</a></li>
             <li><a href="#accueil"><i class="fas fa-chevron-right"></i> Artisanat</a></li>
-            <li><a href="#videos"><i class="fas fa-chevron-right"></i> Vidéothèque</a></li>
           </ul>
         </div>
         <div class="col-lg-4">
           <h5 class="footer-title">Contact</h5>
           <div class="contact-info">
             <p><i class="fas fa-map-marker-alt"></i> Angle Rue Al Araar et Rue Al Jouz, Rabat, Maroc</p>
-            <p><i class="fas fa-phone"></i> +212 (0)5 37 27 39 39</p>
-            <p><i class="fas fa-envelope"></i> contact@visitmorocco.com</p>
+            <p><i class="fas fa-phone"></i> +212 777436080 </p>
+            <p><i class="fas fa-envelope"></i> contact@royaumesens.com</p>
           </div>
         </div>
       </div>
@@ -622,6 +586,113 @@
       </div>
     </div>
   </div>
+
+  <!-- MODAL CONSEILS CULTURELS -->
+<div class="modal fade" id="conseillsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-serif fs-3" id="modalConseillsTitle">Conseils Culturels pour les Touristes au Maroc</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <p class="text-muted mb-4">Découvrez les coutumes et traditions marocaines pour un voyage respectueux et authentique. Voici nos conseils pour une meilleure expérience culturelle au Maroc.</p>
+                <div class="row g-3">
+                    
+                    <!-- 1 - Vert -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--vert) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Habillez-vous de manière respectueuse</h5>
+                            <p class="small text-muted mb-0">Privilégiez des vêtements modestes couvrant épaules et genoux, surtout dans les lieux de culte.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 2 - Doré -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--dore) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Acceptez le thé à la menthe</h5>
+                            <p class="small text-muted mb-0">Le thé à la menthe symbolise l'hospitalité ; refuser peut être perçu comme un manque de respect.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 3 - Rouge -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--rouge) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Saluez avec politesse (Salam Alaikoum)</h5>
+                            <p class="small text-muted mb-0">Un salut chaleureux accompagné d'une poignée de main montre du respect.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 4 - Vert -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--vert) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Demandez permission avant de photographier</h5>
+                            <p class="small text-muted mb-0">Toujours demander poliment avant de prendre la photo de personnes, surtout femmes et enfants.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 5 - Doré -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--dore) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Marchandage dans les souks avec le sourire</h5>
+                            <p class="small text-muted mb-0">Le marchandage est un jeu convivial ; négociez avec humour et courtoisie.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 6 - Rouge -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--rouge) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Respectez les horaires de prière et Ramadan</h5>
+                            <p class="small text-muted mb-0">Soyez attentifs aux appels à la prière. Durant le Ramadan les commerces ferment aux heures de jeûne.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 7 - Vert -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--vert) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Évitez de manger/boire/fumer pendant Ramadan</h5>
+                            <p class="small text-muted mb-0">En journée pendant le Ramadan, abstenez-vous de consommer en public afin de ne pas offenser les jeûneurs.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 8 - Doré -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--dore) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Évitez les démonstrations d'affection trop visibles</h5>
+                            <p class="small text-muted mb-0">Les gestes intimes en public sont mal vus ; restez discret.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 9 - Rouge -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--rouge) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Goûtez la cuisine locale et la main droite</h5>
+                            <p class="small text-muted mb-0">Savourez les tajines, couscous, etc., en mangeant avec la main droite, comme le veut la tradition.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 10 - Vert -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--vert) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Soyez prudents avec les faux guides</h5>
+                            <p class="small text-muted mb-0">Préférez les guides certifiés par le ministère du Tourisme pour éviter les arnaques.</p>
+                        </div>
+                    </div>
+ 
+                    <!-- 11 - Doré -->
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded h-100 bg-white" style="border-left: 4px solid var(--dore) !important;">
+                            <h5 class="fw-bold mb-2 text-dark" style="font-size: 1.05rem;">Apprenez quelques mots en arabe/darija</h5>
+                            <p class="small text-muted mb-0">Dire « Salam », « Shukran » ou « Bslama » fait toujours forte impression de respect.</p>
+                        </div>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
