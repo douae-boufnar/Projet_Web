@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --rouge: #C41E3A;
     --rouge-fonce: #8B0000;
     --vert: #006B3C;
@@ -138,7 +138,7 @@ h3,
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('hero_maroc_cinematic_1778374742658.png') center/cover no-repeat;
+    background: url('images/accueil/hero_maroc_cinematic_1778374742658.png') center/cover no-repeat;
     opacity: 0.6;
     z-index: 0;
 }
@@ -1961,7 +1961,7 @@ h3,
 
 /* ===== PAGE CHEFCHAOUEN — Hero spécifique ===== */
 #city-chefchaouen .city-hero-img {
-    background-image: url('assets/images/chefchaouen_hero.jpg'),
+    background-image: url('images/chefchaouen/chefchaouen_hero.jpg'),
         url('https://images.unsplash.com/photo-1548296846-820373f7293d?w=1600');
     background-position: center 60%;
 }
@@ -2247,3 +2247,28 @@ h3,
         font-size: 0.8rem;
     }
 }
+
+
+/* Google Translate Custom Styles */
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0px !important; }
+#google_translate_element select { background-color: transparent; color: var(--blanc); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 5px; padding: 5px; font-family: 'Poppins', sans-serif; outline: none; }
+#google_translate_element select option { background-color: var(--nuit); color: var(--blanc); }
+
+
+
+.contact-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+.contact-link:hover {
+    color: var(--dore);
+    transform: translateX(5px);
+}
+.hero-title, .hero-subtitle, .hero-desc {
+    color: #ffffff !important;
+}
+
+

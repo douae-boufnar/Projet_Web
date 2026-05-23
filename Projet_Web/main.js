@@ -1,17 +1,17 @@
-// Data des villes
+﻿// Data des villes
 const cities = [
-    { id: 'marrakech', name: 'Marrakech', tag: 'Impériale', img: 'Acceuil/Marrakech.jpg', desc: 'La cité ocre, joyau des Almohades, où le luxe des palais côtoie l\'effervescence des souks.' },
-    { id: 'agadir', name: 'Agadir', tag: 'Solaire', img: 'Acceuil/Agadir , Morocco.jpg', desc: 'La première station balnéaire du pays avec sa baie s\'étendant à perte de vue et son ensoleillement permanent.' },
-    { id: 'fes', name: 'Fès', tag: 'Spirituelle', img: 'Acceuil/Fès, Morocco 🇲🇦.jpg', desc: 'Le centre intellectuel du Maroc, abritant la plus ancienne université au monde, la Quaraouiyine.' },
-    { id: 'chefchaouen', name: 'Chefchaouen', tag: 'Azurée', img: 'Acceuil/Chefchaouen, Morocco 🇲🇦.jpg', desc: 'Un havre de paix azuré niché dans le Rif, célèbre pour son atmosphère poétique et sereine.' },
-    { id: 'essaouira', name: 'Essaouira', tag: 'Bohème', img: 'Acceuil/essaouira.jpg', desc: 'L\'ancienne Mogador, port de pêche fortifié où les vents alizés soufflent un air de liberté.' },
-    { id: 'casablanca', name: 'Casablanca', tag: 'Moderne', img: 'Acceuil/Casa.jpg', desc: 'Une métropole tournée vers l\'avenir, symbole du dynamisme économique et architectural.' },
-    { id: 'rabat', name: 'Rabat', tag: 'Lumière', img: 'Acceuil/Rabat.jpg', desc: 'La capitale administrative, une ville verte et élégante riche en monuments impériaux.' },
-    { id: 'tanger', name: 'Tanger', tag: 'Mythique', img: 'Acceuil/Tanger, Morocco.jpg', desc: 'Carrefour des civilisations au seuil du Détroit, muse éternelle des artistes et écrivains.' },
-    { id: 'ouarzazate', name: 'Ouarzazate', tag: 'Cinéma', img: 'Acceuil/Ouarzazate.jpg', desc: 'La porte du grand Sud et le Hollywood africain, célèbre pour ses kasbahs majestueuses.' },
-    { id: 'merzouga', name: 'Merzouga', tag: 'Sahara', img: 'Acceuil/Merzouga desert 🇲🇦.jpg', desc: 'Les dunes géantes de l\'Erg Chebbi, pour une immersion totale dans la magie du désert.' },
-    { id: 'ifrane', name: 'Ifrane', tag: 'Nature', img: 'Acceuil/Ifrane city.jpg', desc: 'Un paysage alpin au cœur du Moyen-Atlas, entouré de forêts de cèdres millénaires.' },
-    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'Acceuil/Dakhla.jpg', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' }
+    { id: 'marrakech', name: 'Marrakech', tag: 'Impériale', img: 'images/accueil/Marrakech.jpg', desc: 'La cité ocre, joyau des Almohades, où le luxe des palais côtoie l\'effervescence des souks.' },
+    { id: 'agadir', name: 'Agadir', tag: 'Solaire', img: 'images/accueil/Agadir , Morocco.jpg', desc: 'La première station balnéaire du pays avec sa baie s\'étendant à perte de vue et son ensoleillement permanent.' },
+    { id: 'fes', name: 'Fès', tag: 'Spirituelle', img: 'images/accueil/Fès, Morocco 🇲🇦.jpg', desc: 'Le centre intellectuel du Maroc, abritant la plus ancienne université au monde, la Quaraouiyine.' },
+    { id: 'chefchaouen', name: 'Chefchaouen', tag: 'Azurée', img: 'images/accueil/Chefchaouen, Morocco 🇲🇦.jpg', desc: 'Un havre de paix azuré niché dans le Rif, célèbre pour son atmosphère poétique et sereine.' },
+    { id: 'essaouira', name: 'Essaouira', tag: 'Bohème', img: 'images/accueil/essaouira.jpg', desc: 'L\'ancienne Mogador, port de pêche fortifié où les vents alizés soufflent un air de liberté.' },
+    { id: 'casablanca', name: 'Casablanca', tag: 'Moderne', img: 'images/accueil/Casa.jpg', desc: 'Une métropole tournée vers l\'avenir, symbole du dynamisme économique et architectural.' },
+    { id: 'rabat', name: 'Rabat', tag: 'Lumière', img: 'images/accueil/Rabat.jpg', desc: 'La capitale administrative, une ville verte et élégante riche en monuments impériaux.' },
+    { id: 'tanger', name: 'Tanger', tag: 'Mythique', img: 'images/accueil/Tanger, Morocco.jpg', desc: 'Carrefour des civilisations au seuil du Détroit, muse éternelle des artistes et écrivains.' },
+    { id: 'ouarzazate', name: 'Ouarzazate', tag: 'Cinéma', img: 'images/accueil/Ouarzazate.jpg', desc: 'La porte du grand Sud et le Hollywood africain, célèbre pour ses kasbahs majestueuses.' },
+    { id: 'merzouga', name: 'Merzouga', tag: 'Sahara', img: 'images/accueil/Merzouga desert 🇲🇦.jpg', desc: 'Les dunes géantes de l\'Erg Chebbi, pour une immersion totale dans la magie du désert.' },
+    { id: 'ifrane', name: 'Ifrane', tag: 'Nature', img: 'images/accueil/Ifrane city.jpg', desc: 'Un paysage alpin au cœur du Moyen-Atlas, entouré de forêts de cèdres millénaires.' },
+    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'images/accueil/Dakhla.jpg', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' }
 ];
 
 // Villes avec page dédiée
@@ -211,64 +211,64 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Données des hôtels et riads prestigieux par ville
 const hotelsData = {
     marrakech: [
-        { name: "La Mamounia", type: "Palace historique 5★", rating: "4.9", desc: "Un havre de paix mythique alliant artisanat marocain d'exception et élégance moderne.", icon: "fa-mosque" },
-        { name: "Royal Mansour Marrakech", type: "Luxe absolu 5★", rating: "5.0", desc: "Un chef-d'œuvre architectural composé de riads privés d'exception avec majordome.", icon: "fa-crown" },
-        { name: "Riad Kniza", type: "Riad historique de prestige", rating: "4.8", desc: "Une demeure du XVIIIe siècle restaurée dans les règles de l'art par un antiquaire réputé.", icon: "fa-hotel" }
+        { name: "La Mamounia", type: "Palace historique 5★", rating: "4.9", desc: "Un havre de paix mythique alliant artisanat marocain d'exception et élégance moderne.", img: "images/marrakech/La Mamounia.jpg" },
+        { name: "Royal Mansour Marrakech", type: "Luxe absolu 5★", rating: "5.0", desc: "Un chef-d'œuvre architectural composé de riads privés d'exception avec majordome.", img: "images/marrakech/The Royal Mansour in Marrakech.jpg" },
+        { name: "Kenzi Menara Palace", type: "Riad historique de prestige", rating: "4.8", desc: "Une demeure du XVIIIe siècle restaurée dans les règles de l'art par un antiquaire réputé.", img: "images/accueil/Kenzi Menara Palace, Marrakech.jpg" }
     ],
     agadir: [
-        { name: "Sofitel Agadir Thalassa Sea & Spa", type: "Luxe & Bien-être 5★", rating: "4.7", desc: "Hôtel d'exception face à l'océan, alliant soins thalasso et design contemporain épuré.", icon: "fa-water" },
-        { name: "Hyatt Place Taghazout Bay", type: "Resort & Surf 5★", rating: "4.8", desc: "Niché sur les hauteurs de Taghazout, offrant une vue imprenable sur la baie et l'océan.", icon: "fa-umbrella-beach" },
-        { name: "Riad Villa Blanche", type: "Boutique Hôtel de charme", rating: "4.6", desc: "Une oasis de calme et de raffinement à quelques pas de la magnifique plage d'Agadir.", icon: "fa-spa" }
+        { name: "Sofitel Agadir Royal Bay Resort", type: "Luxe & Bien-être 5★", rating: "4.7", desc: "Hôtel d'exception face à l'océan, alliant soins thalasso et design contemporain épuré.", img: "images/agadir/Sofitel Agadir Royal Bay Resort.jpg" },
+        { name: "Hyatt Place Taghazout Bay", type: "Resort & Surf 5★", rating: "4.8", desc: "Niché sur les hauteurs de Taghazout, offrant une vue imprenable sur la baie et l'océan.", img: "images/accueil/Hyatt Place Taghazout Bay.jpg" },
+        { name: "Riad Villa Blanche", type: "Boutique Hôtel de charme", rating: "4.6", desc: "Une oasis de calme et de raffinement à quelques pas de la magnifique plage d'Agadir.", img: "images/accueil/Riad .jpg" }
     ],
     fes: [
-        { name: "Riad Fès - Relais & Châteaux", type: "Splendeur arabo-andalouse", rating: "4.9", desc: "Un palais prestigieux au cœur de la médina, alliant modernité et architecture traditionnelle.", icon: "fa-archway" },
-        { name: "Karawan Riad", type: "Boutique Riad intime", rating: "4.8", desc: "Un joyau de design mariant la noblesse des matériaux traditionnels et le confort moderne.", icon: "fa-gem" },
-        { name: "Palais Faraj Suites & Spa", type: "Palace de charme 5★", rating: "4.7", desc: "Offre une vue panoramique époustouflante sur la plus grande médina médiévale du monde.", icon: "fa-eye" }
+        { name: "Riad Fès - Relais & Châteaux", type: "Splendeur arabo-andalouse", rating: "4.9", desc: "Un palais prestigieux au cœur de la médina, alliant modernité et architecture traditionnelle.", img: "images/accueil/Riad Fès Hotel, Fez 5 Star Hotel Fez.jpg" },
+        { name: "Barceló Fès Medina", type: "Boutique Riad intime", rating: "4.8", desc: "Un joyau de design mariant la noblesse des matériaux traditionnels et le confort moderne.", img: "images/accueil/Barceló Fès Medina.jpg" },
+        { name: "Palais Faraj Suites & Spa", type: "Palace de charme 5★", rating: "4.7", desc: "Offre une vue panoramique époustouflante sur la plus grande médina médiévale du monde.", img: "images/fes/Palais Faraj Suites & Spa.jpg" }
     ],
     chefchaouen: [
-        { name: "Lina Ryad & Spa", type: "Havre de paix au cœur de la médina", rating: "4.8", desc: "Un riad d'exception avec piscine intérieure chauffée et spa, tout en nuances de bleu.", icon: "fa-water" },
-        { name: "Riad Cherifa", type: "Charme & Tradition", rating: "4.7", desc: "Idéalement situé, offrant une décoration raffinée et un magnifique patio avec piscine.", icon: "fa-hotel" },
-        { name: "Casa Hassan", type: "Riad historique familial", rating: "4.5", desc: "Une demeure traditionnelle chaleureuse réputée pour sa table d'hôtes et son accueil unique.", icon: "fa-utensils" }
+        { name: "Lina Ryad & Spa", type: "Havre de paix au cœur de la médina", rating: "4.8", desc: "Un riad d'exception avec piscine intérieure chauffée et spa, tout en nuances de bleu.", img: "images/chefchaouen/LINA RYAD & SPA r.jpg" },
+        { name: "Dar Echchaouen", type: "Charme & Tradition", rating: "4.7", desc: "Idéalement situé, offrant une décoration raffinée et un magnifique patio avec piscine.", img: "images/chefchaouen/Dar Echchaouen.jpg" },
+        { name: "Casa Hassan", type: "Riad historique familial", rating: "4.5", desc: "Une demeure traditionnelle chaleureuse réputée pour sa table d'hôtes et son accueil unique.", img: "images/accueil/Riad .jpg" }
     ],
     essaouira: [
-        { name: "Heure Bleue Palais - Relais & Châteaux", type: "Demeure historique 5★", rating: "4.8", desc: "Ancien palais d'un caïd, ce riad luxueux offre une magnifique piscine chauffée sur le toit.", icon: "fa-ship" },
-        { name: "Le Jardin des Douars", type: "Oasis de sérénité", rating: "4.9", desc: "Un ksar de charme niché au cœur d'un jardin luxuriant, idéal pour déconnecter.", icon: "fa-tree" },
-        { name: "Riad Mimouna", type: "Riad face à l'océan", rating: "4.6", desc: "Bâtie sur la falaise de la médina, cette demeure offre un panorama grandiose sur les vagues.", icon: "fa-wind" }
+        { name: "Heure Bleue Palais", type: "Demeure historique 5★", rating: "4.8", desc: "Ancien palais d'un caïd, ce riad luxueux offre une magnifique piscine chauffée sur le toit.", img: "images/accueil/Heure Bleue Palais.jpg" },
+        { name: "Atlas Essaouira & Spa", type: "Oasis de sérénité", rating: "4.9", desc: "Un ksar de charme niché au cœur d'un jardin luxuriant, idéal pour déconnecter.", img: "images/essaouira/Atlas Essaouira & Spa .jpg" },
+        { name: "Villa Quieta", type: "Riad face à l'océan", rating: "4.6", desc: "Bâtie sur la falaise de la médina, cette demeure offre un panorama grandiose sur les vagues.", img: "images/accueil/Villa Quieta.jpg" }
     ],
     casablanca: [
-        { name: "Four Seasons Hotel Casablanca", type: "Luxe en bord de mer 5★", rating: "4.8", desc: "Hôtel contemporain prestigieux offrant une vue panoramique sur l'océan Atlantique.", icon: "fa-water" },
-        { name: "Le Royal Mansour Casablanca", type: "Palace mythique 5★", rating: "4.9", desc: "Le renouveau d'une icône de la ville, incarnant le luxe ultime et l'art de recevoir.", icon: "fa-crown" },
-        { name: "Barceló Anfa Casablanca", type: "Design moderne 5★", rating: "4.6", desc: "Situé sur le boulevard d'Anfa, mariant style Art déco et prestations haut de gamme.", icon: "fa-building" }
+        { name: "Four Seasons Hotel Casablanca", type: "Luxe en bord de mer 5★", rating: "4.8", desc: "Hôtel contemporain prestigieux offrant une vue panoramique sur l'océan Atlantique.", img: "images/accueil/Four seasons hotel.jpg" },
+        { name: "Barceló Anfa Casablanca", type: "Palace mythique 5★", rating: "4.9", desc: "Le renouveau d'une icône de la ville, incarnant le luxe ultime et l'art de recevoir.", img: "images/accueil/Hotel Barcelo Anfa Casablanca .jpg" },
+        { name: "ONOMO Airport Casablanca", type: "Design moderne 5★", rating: "4.6", desc: "Situé sur le boulevard d'Anfa, mariant style Art déco et prestations haut de gamme.", img: "images/accueil/ONOMO Airport Casablanca.jpg" }
     ],
     rabat: [
-        { name: "La Villa Mandarine", type: "Oasis de verdure", rating: "4.8", desc: "Une ancienne demeure entourée d'un immense jardin d'orangers, de fleurs et de calme.", icon: "fa-leaf" },
-        { name: "Sofitel Rabat Jardin des Roses", type: "Palace luxueux 5★", rating: "4.7", desc: "Niché dans un parc de 8 hectares, célèbre pour ses jardins de roses et son confort ultime.", icon: "fa-seedling" },
-        { name: "Riad Kalaa", type: "Demeure du XVIIe siècle", rating: "4.6", desc: "Niché au cœur de la médina, un riad fortifié offrant calme historique et élégance.", icon: "fa-hotel" }
+        { name: "Fairmont Marina Rabat", type: "Oasis de verdure", rating: "4.8", desc: "Une ancienne demeure entourée d'un immense jardin d'orangers, de fleurs et de calme.", img: "images/accueil/Fairmont Marina Rabat .jpg" },
+        { name: "Sofitel Rabat Jardin des Roses", type: "Palace luxueux 5★", rating: "4.7", desc: "Niché dans un parc de 8 hectares, célèbre pour ses jardins de roses et son confort ultime.", img: "images/rabat/SOFITEL RABAT JARDIN DES ROSES.jpg" },
+        { name: "Riad Kalaa", type: "Demeure du XVIIe siècle", rating: "4.6", desc: "Niché au cœur de la médina, un riad fortifié offrant calme historique et élégance.", img: "images/accueil/Riad .jpg" }
     ],
     tanger: [
-        { name: "El Minzah Hotel", type: "Hôtel légendaire 5★", rating: "4.6", desc: "Établissement mythique de style hispano-mauresque ayant accueilli les plus grandes stars.", icon: "fa-guitar" },
-        { name: "Fairmont Tazi Palace Tanger", type: "Luxe souverain 5★", rating: "4.9", desc: "Niché sur les collines, un palais majestueux offrant une vue unique sur la vieille ville.", icon: "fa-monument" },
-        { name: "Riad Tanja", type: "Maison d'hôtes de charme", rating: "4.7", desc: "Un havre de paix culturel au cœur de la Kasbah, décoré d'œuvres d'art locales.", icon: "fa-paint-brush" }
+        { name: "Marina Bay Tangier", type: "Hôtel légendaire 5★", rating: "4.6", desc: "Établissement mythique de style hispano-mauresque ayant accueilli les plus grandes stars.", img: "images/accueil/HOTEL MARINA BAY ANGIER CITY.jpg" },
+        { name: "Fairmont Tazi Palace Tanger", type: "Luxe souverain 5★", rating: "4.9", desc: "Niché sur les collines, un palais majestueux offrant une vue unique sur la vieille ville.", img: "images/accueil/Fairmont Tazi Palace Tangier.jpg" },
+        { name: "Hilton Tangier Al Houara", type: "Maison d'hôtes de charme", rating: "4.7", desc: "Un havre de paix culturel au cœur de la Kasbah, décoré d'œuvres d'art locales.", img: "images/accueil/Hilton Tangier Al Houara Resort & Spa.jpg" }
     ],
     ouarzazate: [
-        { name: "Le Berbère Palace", type: "Luxe saharien 5★", rating: "4.7", desc: "L'hôtel de prédilection des stars du cinéma mondial lors des tournages à Ouarzazate.", icon: "fa-film" },
-        { name: "Dar Kamar", type: "Riad historique au Ksar", rating: "4.6", desc: "Ancienne maison du pacha du XVIIe siècle, au cœur de la Kasbah de Taourirt.", icon: "fa-archway" },
-        { name: "Temple des Arts", type: "Boutique Hôtel Cinéma 5★", rating: "4.8", desc: "Chaque suite est une œuvre d'art inspirée des grands chefs-d'œuvre du cinéma.", icon: "fa-clapperboard" }
+        { name: "Le Berbère Palace", type: "Luxe saharien 5★", rating: "4.7", desc: "L'hôtel de prédilection des stars du cinéma mondial lors des tournages à Ouarzazate.", img: "images/ouarzazate/Le Berbère Palace _ Accueil _ Hôtel Ouarzazate.jpg" },
+        { name: "Oscar Hotel by Atlas Studios", type: "Riad historique au Ksar", rating: "4.6", desc: "Ancienne maison du pacha du XVIIe siècle, au cœur de la Kasbah de Taourirt.", img: "images/accueil/Oscar Hotel by Atlas Studios.jpg" },
+        { name: "Temple des Arts", type: "Boutique Hôtel Cinéma 5★", rating: "4.8", desc: "Chaque suite est une œuvre d'art inspirée des grands chefs-d'œuvre du cinéma.", img: "images/accueil/Le Temple Des Arts, Ouarzazate .jpg" }
     ],
     merzouga: [
-        { name: "Merzouga Luxury Desert Camp", type: "Bivouac de luxe absolu", rating: "4.9", desc: "Vivez la magie du Sahara sous des tentes impériales tout confort au milieu des dunes.", icon: "fa-campground" },
-        { name: "Kasbah Mohayut", type: "Hôtel traditionnel en pisé", rating: "4.7", desc: "Détendez-vous au bord de la piscine face aux dunes dorées de l'Erg Chebbi.", icon: "fa-umbrella-beach" },
-        { name: "Riad Madu", type: "Élégance & Authenticité", rating: "4.8", desc: "Un riad d'exception aux portes du désert offrant des chambres spacieuses et raffinées.", icon: "fa-sun" }
+        { name: "Merzouga Luxury Desert Camp", type: "Bivouac de luxe absolu", rating: "4.9", desc: "Vivez la magie du Sahara sous des tentes impériales tout confort au milieu des dunes.", img: "images/accueil/Merzouga desert 🇲🇦.jpg" },
+        { name: "Kasbah Mohayut", type: "Hôtel traditionnel en pisé", rating: "4.7", desc: "Détendez-vous au bord de la piscine face aux dunes dorées de l'Erg Chebbi.", img: "images/accueil/Riad .jpg" },
+        { name: "Riad Madu", type: "Élégance & Authenticité", rating: "4.8", desc: "Un riad d'exception aux portes du désert offrant des chambres spacieuses et raffinées.", img: "images/accueil/sahara.jpg" }
     ],
     ifrane: [
-        { name: "Michlifen Resort & Golf", type: "Chalet de luxe alpin 5★", rating: "4.9", desc: "Un resort thermal d'exception digne des plus grands chalets suisses dans le Moyen-Atlas.", icon: "fa-snowflake" },
-        { name: "Hôtel Farah Inn Ifrane", type: "Résidence confortable", rating: "4.3", desc: "Idéal pour les familles, offrant des chalets équipés au cœur de la forêt de cèdres.", icon: "fa-users" },
-        { name: "Hôtel Chamonix", type: "Style chalet montagnard", rating: "4.2", desc: "Un hôtel historique et accueillant en plein cœur de la ville d'Ifrane.", icon: "fa-mountain" }
+        { name: "Michlifen Resort & Golf", type: "Chalet de luxe alpin 5★", rating: "4.9", desc: "Un resort thermal d'exception digne des plus grands chalets suisses dans le Moyen-Atlas.", img: "images/accueil/Ifrane city.jpg" },
+        { name: "Hôtel Farah Inn Ifrane", type: "Résidence confortable", rating: "4.3", desc: "Idéal pour les familles, offrant des chalets équipés au cœur de la forêt de cèdres.", img: "images/accueil/Amazigh Atlas.jpg" },
+        { name: "Hôtel Chamonix", type: "Style chalet montagnard", rating: "4.2", desc: "Un hôtel historique et accueillant en plein cœur de la ville d'Ifrane.", img: "images/accueil/Atlas Mountains.jpg" }
     ],
     dakhla: [
-        { name: "La Crique Nature & Spa", type: "Éco-lodge d'exception 5★", rating: "4.8", desc: "Des suites prestigieuses nichées entre falaise et lagune pour une déconnexion totale.", icon: "fa-dove" },
-        { name: "Dakhla Attitude", type: "Spot légendaire de glisse", rating: "4.7", desc: "La référence mondiale pour les amateurs de kitesurf et de planche à voile.", icon: "fa-wind" },
-        { name: "Ocean Vagabond Dakhla", type: "Éco-charme & Glisse", rating: "4.6", desc: "Un camp haut de gamme dans un jardin verdoyant de la lagune, à l'esprit bohème.", icon: "fa-water" }
+        { name: "La Crique Nature & Spa", type: "Éco-lodge d'exception 5★", rating: "4.8", desc: "Des suites prestigieuses nichées entre falaise et lagune pour une déconnexion totale.", img: "images/accueil/Dakhla.jpg" },
+        { name: "Dakhla PK25", type: "Spot légendaire de glisse", rating: "4.7", desc: "La référence mondiale pour les amateurs de kitesurf et de planche à voile.", img: "images/accueil/DAKHLA PK 25.jpg" },
+        { name: "Dakhla Club Hotel & Spa", type: "Éco-charme & Glisse", rating: "4.6", desc: "Un camp haut de gamme dans un jardin verdoyant de la lagune, à l'esprit bohème.", img: "images/accueil/Dakhla Club Hotel & Spa.jpg" }
     ]
 };
 
@@ -301,8 +301,8 @@ function openHotelsModal(cityId) {
             const bookingUrl = `https://www.booking.com/searchresults.fr.html?ss=${encodeURIComponent(hotel.name + ' ' + city.name)}`;
             html += `
                 <div class="hotel-card">
-                    <div class="hotel-img-wrap">
-                        <i class="fas ${hotel.icon}"></i>
+                    <div class="hotel-img-wrap" style="padding: 0; overflow: hidden;">
+                        <img src="${hotel.img}" alt="${hotel.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                     </div>
                     <div class="hotel-details">
                         <div class="hotel-header">
@@ -482,17 +482,20 @@ const transportData = {
             {
                 name: "Royal Air Maroc",
                 desc: "Compagnie nationale du Maroc proposant des vols nationaux et internationaux.",
-                url: "https://www.royalairmaroc.com"
+                url: "https://www.royalairmaroc.com",
+                img: "images/transport/avion royal air maroc.jpeg"
             },
             {
                 name: "Air Arabia Maroc",
                 desc: "Compagnie low-cost reliant le Maroc à plusieurs destinations.",
-                url: "https://www.airarabia.com/fr/morocco"
+                url: "https://www.airarabia.com/fr/morocco",
+                img: "images/transport/avion air arabia.jpeg"
             },
             {
                 name: "Ryanair",
                 desc: "Compagnie aérienne économique desservant plusieurs villes marocaines.",
-                url: "https://www.ryanair.com"
+                url: "https://www.ryanair.com",
+                img: "images/transport/avion rayan air.jpeg"
             }
         ]
     },
@@ -504,17 +507,20 @@ const transportData = {
             {
                 name: "Balearia",
                 desc: "Compagnie maritime reliant le Maroc à l’Espagne.",
-                url: "https://www.balearia.com"
+                url: "https://www.balearia.com",
+                img: "images/transport/Balearia.jpeg"
             },
             {
                 name: "AML – Africa Morocco Link",
                 desc: "Service ferry entre Tanger Med et l’Espagne.",
-                url: "https://www.aml.ma"
+                url: "https://www.aml.ma",
+                img: "images/transport/AML – Africa Morocco Link.jpeg"
             },
             {
                 name: "FRS Ferry",
                 desc: "Transport maritime rapide Maroc–Espagne.",
-                url: "https://www.frs.es"
+                url: "https://www.frs.es",
+                img: "images/transport/FRS ferry.jpeg"
             }
         ]
     },
@@ -526,22 +532,26 @@ const transportData = {
             {
                 name: "ONCF",
                 desc: "Réseau ferroviaire national du Maroc.",
-                url: "https://www.oncf-voyages.ma"
+                url: "https://www.oncf-voyages.ma",
+                img: "images/transport/oncf.jpeg"
             },
             {
                 name: "Al Boraq",
                 desc: "TGV marocain reliant Tanger, Rabat et Casablanca.",
-                url: "https://www.oncf-voyages.ma"
+                url: "https://www.oncf-voyages.ma",
+                img: "images/transport/tgv.jpeg"
             },
             {
                 name: "CTM",
                 desc: "Transport interurbain entre les grandes villes.",
-                url: "https://www.ctm.ma"
+                url: "https://www.ctm.ma",
+                img: "images/transport/ctm.jpeg"
             },
             {
                 name: "Supratours",
                 desc: "Autocars connectés au réseau ferroviaire ONCF.",
-                url: "https://www.supratours.ma"
+                url: "https://www.supratours.ma",
+                img: "images/transport/supratour.jpeg"
             }
         ]
     },
@@ -553,22 +563,26 @@ const transportData = {
             {
                 name: "Bus Touristique Tanger",
                 desc: "Découverte des monuments et attractions de la ville.",
-                url: "#"
+                url: "#",
+                img: "images/transport/bus touristique de tanger.jpeg"
             },
             {
                 name: "Bus Touristique Marrakech",
                 desc: "Circuit touristique Hop-On Hop-Off.",
-                url: "https://www.alsa.ma"
+                url: "https://www.alsa.ma",
+                img: "images/transport/Bus Touristique Marrakech.jpeg"
             },
             {
                 name: "Calèches – Marrakech",
                 desc: "Transport touristique traditionnel dans la médina et Jemaa el-Fna.",
-                url: ""
+                url: "",
+                img: "images/transport/Calèches – Marrakech.jpeg"
             },
             {
                 name: "Location de vélos et motos",
                 desc: "Déplacements courts et tourisme urbain.",
-                url: ""
+                url: "",
+                img: "images/transport/Location de vélos et motos.webp"
             }
         ]
     }
@@ -614,8 +628,8 @@ function openTransportModal(categoryId) {
 
         html += `
             <div class="hotel-card">
-                <div class="hotel-img-wrap ${category.iconClass} transport-modal-icon-wrap">
-                    <i class="fas ${category.icon}"></i>
+                <div class="hotel-img-wrap transport-modal-icon-wrap" style="padding: 0; overflow: hidden; background: transparent;">
+                    <img src="${item.img}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                 </div>
                 <div class="hotel-details">
                     <div class="hotel-header">
@@ -638,3 +652,8 @@ function openTransportModal(categoryId) {
         transportModal.show();
     }
 }
+
+
+
+
+
