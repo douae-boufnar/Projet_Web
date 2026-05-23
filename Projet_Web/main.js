@@ -11,7 +11,11 @@ const cities = [
     { id: 'ouarzazate', name: 'Ouarzazate', tag: 'Cinéma', img: 'Acceuil/Ouarzazate.jpg', desc: 'La porte du grand Sud et le Hollywood africain, célèbre pour ses kasbahs majestueuses.' },
     { id: 'merzouga', name: 'Merzouga', tag: 'Sahara', img: 'Acceuil/Merzouga desert 🇲🇦.jpg', desc: 'Les dunes géantes de l\'Erg Chebbi, pour une immersion totale dans la magie du désert.' },
     { id: 'ifrane', name: 'Ifrane', tag: 'Nature', img: 'Acceuil/Ifrane city.jpg', desc: 'Un paysage alpin au cœur du Moyen-Atlas, entouré de forêts de cèdres millénaires.' },
-    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'Acceuil/Dakhla.jpg', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' }
+    { id: 'dakhla', name: 'Dakhla', tag: 'Lagune', img: 'Acceuil/Dakhla.jpg', desc: 'Une perle rare entre désert et océan, paradis mondial pour les sports de glisse.' },
+    { id: 'meknes', name: 'Meknès', tag: 'Impériale', img: 'https://images.unsplash.com/photo-1596489370725-d72b226e6de3?w=800', desc: 'Une ville impériale majestueuse, abritant la célèbre porte Bab Mansour, le mausolée de Moulay Ismaïl et les ruines de Volubilis.' },
+    { id: 'alhoceima', name: 'Al Hoceima', tag: 'Balnéaire', img: 'https://images.unsplash.com/photo-1623940177727-4a0b38ff1bd7?w=800', desc: 'Surnommée la Perle de la Méditerranée, réputée pour ses criques sauvages aux eaux turquoise et ses panoramas côtiers.' },
+    { id: 'taroudant', name: 'Taroudant', tag: 'Remparts', img: 'https://images.unsplash.com/photo-1601918774946-25832a4be0d6?w=800', desc: 'Surnommée la "petite Marrakech" en raison de ses majestueux remparts d\'ocre rouge et de ses souks d\'artisanat authentiques.' },
+    { id: 'oujda', name: 'Oujda', tag: 'Orientale', img: 'https://images.unsplash.com/photo-1595166299008-013fa096df30?w=800', desc: 'Capitale de l\'Oriental marocain, porte d\'entrée historique du Grand Sud réputée pour sa gastronomie et sa musique Raï.' }
 ];
 
 // Villes avec page dédiée
@@ -36,7 +40,10 @@ cities.forEach(city => {
                     <p class="city-card-text">${city.desc.substring(0, 80)}...</p>
                     <div class="city-card-footer">
                         <span class="city-rating"><i class="fas fa-star"></i> 4.9</span>
-                        <button class="btn-city">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+                        <div class="city-buttons-wrapper">
+                            <button class="btn-city" onclick="event.stopPropagation(); ${clickAction}">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+                            <button class="btn-city btn-hotel" onclick="event.stopPropagation(); openHotelsModal('${city.id}')">Hôtels <i class="fas fa-hotel ms-1"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -201,6 +208,294 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Données des hôtels et riads prestigieux par ville
+const hotelsData = {
+    marrakech: [
+        { name: "La Mamounia", type: "Palace historique 5★", rating: "4.9", desc: "Un havre de paix mythique alliant artisanat marocain d'exception et élégance moderne.", icon: "fa-mosque" },
+        { name: "Royal Mansour Marrakech", type: "Luxe absolu 5★", rating: "5.0", desc: "Un chef-d'œuvre architectural composé de riads privés d'exception avec majordome.", icon: "fa-crown" },
+        { name: "Riad Kniza", type: "Riad historique de prestige", rating: "4.8", desc: "Une demeure du XVIIIe siècle restaurée dans les règles de l'art par un antiquaire réputé.", icon: "fa-hotel" }
+    ],
+    agadir: [
+        { name: "Sofitel Agadir Thalassa Sea & Spa", type: "Luxe & Bien-être 5★", rating: "4.7", desc: "Hôtel d'exception face à l'océan, alliant soins thalasso et design contemporain épuré.", icon: "fa-water" },
+        { name: "Hyatt Place Taghazout Bay", type: "Resort & Surf 5★", rating: "4.8", desc: "Niché sur les hauteurs de Taghazout, offrant une vue imprenable sur la baie et l'océan.", icon: "fa-umbrella-beach" },
+        { name: "Riad Villa Blanche", type: "Boutique Hôtel de charme", rating: "4.6", desc: "Une oasis de calme et de raffinement à quelques pas de la magnifique plage d'Agadir.", icon: "fa-spa" }
+    ],
+    fes: [
+        { name: "Riad Fès - Relais & Châteaux", type: "Splendeur arabo-andalouse", rating: "4.9", desc: "Un palais prestigieux au cœur de la médina, alliant modernité et architecture traditionnelle.", icon: "fa-archway" },
+        { name: "Karawan Riad", type: "Boutique Riad intime", rating: "4.8", desc: "Un joyau de design mariant la noblesse des matériaux traditionnels et le confort moderne.", icon: "fa-gem" },
+        { name: "Palais Faraj Suites & Spa", type: "Palace de charme 5★", rating: "4.7", desc: "Offre une vue panoramique époustouflante sur la plus grande médina médiévale du monde.", icon: "fa-eye" }
+    ],
+    chefchaouen: [
+        { name: "Lina Ryad & Spa", type: "Havre de paix au cœur de la médina", rating: "4.8", desc: "Un riad d'exception avec piscine intérieure chauffée et spa, tout en nuances de bleu.", icon: "fa-water" },
+        { name: "Riad Cherifa", type: "Charme & Tradition", rating: "4.7", desc: "Idéalement situé, offrant une décoration raffinée et un magnifique patio avec piscine.", icon: "fa-hotel" },
+        { name: "Casa Hassan", type: "Riad historique familial", rating: "4.5", desc: "Une demeure traditionnelle chaleureuse réputée pour sa table d'hôtes et son accueil unique.", icon: "fa-utensils" }
+    ],
+    essaouira: [
+        { name: "Heure Bleue Palais - Relais & Châteaux", type: "Demeure historique 5★", rating: "4.8", desc: "Ancien palais d'un caïd, ce riad luxueux offre une magnifique piscine chauffée sur le toit.", icon: "fa-ship" },
+        { name: "Le Jardin des Douars", type: "Oasis de sérénité", rating: "4.9", desc: "Un ksar de charme niché au cœur d'un jardin luxuriant, idéal pour déconnecter.", icon: "fa-tree" },
+        { name: "Riad Mimouna", type: "Riad face à l'océan", rating: "4.6", desc: "Bâtie sur la falaise de la médina, cette demeure offre un panorama grandiose sur les vagues.", icon: "fa-wind" }
+    ],
+    casablanca: [
+        { name: "Four Seasons Hotel Casablanca", type: "Luxe en bord de mer 5★", rating: "4.8", desc: "Hôtel contemporain prestigieux offrant une vue panoramique sur l'océan Atlantique.", icon: "fa-water" },
+        { name: "Le Royal Mansour Casablanca", type: "Palace mythique 5★", rating: "4.9", desc: "Le renouveau d'une icône de la ville, incarnant le luxe ultime et l'art de recevoir.", icon: "fa-crown" },
+        { name: "Barceló Anfa Casablanca", type: "Design moderne 5★", rating: "4.6", desc: "Situé sur le boulevard d'Anfa, mariant style Art déco et prestations haut de gamme.", icon: "fa-building" }
+    ],
+    rabat: [
+        { name: "La Villa Mandarine", type: "Oasis de verdure", rating: "4.8", desc: "Une ancienne demeure entourée d'un immense jardin d'orangers, de fleurs et de calme.", icon: "fa-leaf" },
+        { name: "Sofitel Rabat Jardin des Roses", type: "Palace luxueux 5★", rating: "4.7", desc: "Niché dans un parc de 8 hectares, célèbre pour ses jardins de roses et son confort ultime.", icon: "fa-seedling" },
+        { name: "Riad Kalaa", type: "Demeure du XVIIe siècle", rating: "4.6", desc: "Niché au cœur de la médina, un riad fortifié offrant calme historique et élégance.", icon: "fa-hotel" }
+    ],
+    tanger: [
+        { name: "El Minzah Hotel", type: "Hôtel légendaire 5★", rating: "4.6", desc: "Établissement mythique de style hispano-mauresque ayant accueilli les plus grandes stars.", icon: "fa-guitar" },
+        { name: "Fairmont Tazi Palace Tanger", type: "Luxe souverain 5★", rating: "4.9", desc: "Niché sur les collines, un palais majestueux offrant une vue unique sur la vieille ville.", icon: "fa-monument" },
+        { name: "Riad Tanja", type: "Maison d'hôtes de charme", rating: "4.7", desc: "Un havre de paix culturel au cœur de la Kasbah, décoré d'œuvres d'art locales.", icon: "fa-paint-brush" }
+    ],
+    ouarzazate: [
+        { name: "Le Berbère Palace", type: "Luxe saharien 5★", rating: "4.7", desc: "L'hôtel de prédilection des stars du cinéma mondial lors des tournages à Ouarzazate.", icon: "fa-film" },
+        { name: "Dar Kamar", type: "Riad historique au Ksar", rating: "4.6", desc: "Ancienne maison du pacha du XVIIe siècle, au cœur de la Kasbah de Taourirt.", icon: "fa-archway" },
+        { name: "Temple des Arts", type: "Boutique Hôtel Cinéma 5★", rating: "4.8", desc: "Chaque suite est une œuvre d'art inspirée des grands chefs-d'œuvre du cinéma.", icon: "fa-clapperboard" }
+    ],
+    merzouga: [
+        { name: "Merzouga Luxury Desert Camp", type: "Bivouac de luxe absolu", rating: "4.9", desc: "Vivez la magie du Sahara sous des tentes impériales tout confort au milieu des dunes.", icon: "fa-campground" },
+        { name: "Kasbah Mohayut", type: "Hôtel traditionnel en pisé", rating: "4.7", desc: "Détendez-vous au bord de la piscine face aux dunes dorées de l'Erg Chebbi.", icon: "fa-umbrella-beach" },
+        { name: "Riad Madu", type: "Élégance & Authenticité", rating: "4.8", desc: "Un riad d'exception aux portes du désert offrant des chambres spacieuses et raffinées.", icon: "fa-sun" }
+    ],
+    ifrane: [
+        { name: "Michlifen Resort & Golf", type: "Chalet de luxe alpin 5★", rating: "4.9", desc: "Un resort thermal d'exception digne des plus grands chalets suisses dans le Moyen-Atlas.", icon: "fa-snowflake" },
+        { name: "Hôtel Farah Inn Ifrane", type: "Résidence confortable", rating: "4.3", desc: "Idéal pour les familles, offrant des chalets équipés au cœur de la forêt de cèdres.", icon: "fa-users" },
+        { name: "Hôtel Chamonix", type: "Style chalet montagnard", rating: "4.2", desc: "Un hôtel historique et accueillant en plein cœur de la ville d'Ifrane.", icon: "fa-mountain" }
+    ],
+    dakhla: [
+        { name: "La Crique Nature & Spa", type: "Éco-lodge d'exception 5★", rating: "4.8", desc: "Des suites prestigieuses nichées entre falaise et lagune pour une déconnexion totale.", icon: "fa-dove" },
+        { name: "Dakhla Attitude", type: "Spot légendaire de glisse", rating: "4.7", desc: "La référence mondiale pour les amateurs de kitesurf et de planche à voile.", icon: "fa-wind" },
+        { name: "Ocean Vagabond Dakhla", type: "Éco-charme & Glisse", rating: "4.6", desc: "Un camp haut de gamme dans un jardin verdoyant de la lagune, à l'esprit bohème.", icon: "fa-water" }
+    ],
+    meknes: [
+        { name: "Riad Yacout", type: "Palais Traditionnel", rating: "4.7", desc: "Demeure historique du XIXe siècle restaurée dans le pur style traditionnel, au cœur de la médina.", icon: "fa-hotel" },
+        { name: "Le Château de Bel Air", type: "Hôtel de charme 4★", rating: "4.5", desc: "Niché dans un parc arboré offrant une vue panoramique sur la médina et un calme absolu.", icon: "fa-tree" },
+        { name: "Riad Lahboul", type: "Riad Authentique", rating: "4.6", desc: "Idéalement situé au bord des remparts de la médina, offrant une terrasse panoramique d'exception.", icon: "fa-archway" }
+    ],
+    alhoceima: [
+        { name: "Radisson Blu Resort Al Hoceima", type: "Luxe & Plage 5★", rating: "4.8", desc: "Un resort haut de gamme posé sur le sable fin avec une vue spectaculaire sur la Méditerranée.", icon: "fa-umbrella-beach" },
+        { name: "Hôtel Suites Bella Vista", type: "Hôtel de charme 4★", rating: "4.5", desc: "Offre des suites élégantes et une vue panoramique inoubliable sur la célèbre baie d'Al Hoceima.", icon: "fa-eye" },
+        { name: "Mercure Quemado Resort", type: "Face à la falaise 4★", rating: "4.4", desc: "Idéalement situé en surplomb de la magnifique plage de Quemado, offrant confort et design marin.", icon: "fa-ship" }
+    ],
+    taroudant: [
+        { name: "Hôtel Palais Salam", type: "Palace historique 4★", rating: "4.6", desc: "Un ancien palais du Pacha bâti dans les remparts, entouré de jardins de bananiers centenaires.", icon: "fa-crown" },
+        { name: "Dar al Hossoun", type: "Eco-Lodge de prestige", rating: "4.9", desc: "Un jardin d'Eden contemporain conçu par des botanistes, mêlant luxe durable et zénitude.", icon: "fa-leaf" },
+        { name: "Riad Dar Zhar", type: "Maison d'hôtes traditionnelle", rating: "4.7", desc: "Un havre de paix chaleureux au cœur de la médina, réputé pour sa cuisine typique sous la pergola.", icon: "fa-utensils" }
+    ],
+    oujda: [
+        { name: "Hôtel Terminus & Spa", type: "Grand Confort 5★", rating: "4.7", desc: "Un hôtel moderne de grande classe avec spa prestigieux, situé au centre de la capitale de l'Oriental.", icon: "fa-spa" },
+        { name: "Atlas Orient", type: "Charme traditionnel 4★", rating: "4.3", desc: "Situé près de la médina, offrant une piscine extérieure dans un écrin de jardins verdoyants.", icon: "fa-water" },
+        { name: "Riad Oujda", type: "Riad authentique", rating: "4.5", desc: "Une demeure traditionnelle avec cour intérieure arborée, alliant accueil familial et calme absolu.", icon: "fa-hotel" }
+    ]
+};
+
+// Instance du modal pour les hôtels
+let hotelsModal;
+document.addEventListener('DOMContentLoaded', () => {
+    hotelsModal = new bootstrap.Modal(document.getElementById('hotelsModal'));
+});
+
+// Fonction pour ouvrir le modal des hôtels d'une ville
+function openHotelsModal(cityId) {
+    const city = cities.find(c => c.id === cityId);
+    if (!city) return;
+
+    document.getElementById('modalHotelsTitle').innerHTML = `Hôtels & Riads de Prestige — <span style="color: var(--dore);">${city.name}</span>`;
+    
+    const modalBody = document.getElementById('modalHotelsBody');
+    const hotels = hotelsData[cityId] || [];
+    
+    if (hotels.length === 0) {
+        modalBody.innerHTML = `
+            <div class="text-center p-5">
+                <i class="fas fa-hotel fa-3x text-muted mb-3"></i>
+                <p class="text-muted">Aucun hôtel n'est actuellement répertorié pour cette ville.</p>
+            </div>
+        `;
+    } else {
+        let html = '<div class="hotels-list">';
+        hotels.forEach(hotel => {
+            const bookingUrl = `https://www.booking.com/searchresults.fr.html?ss=${encodeURIComponent(hotel.name + ' ' + city.name)}`;
+            html += `
+                <div class="hotel-card">
+                    <div class="hotel-img-wrap">
+                        <i class="fas ${hotel.icon}"></i>
+                    </div>
+                    <div class="hotel-details">
+                        <div class="hotel-header">
+                            <div>
+                                <h4 class="hotel-name">${hotel.name}</h4>
+                                <p class="hotel-type">${hotel.type}</p>
+                            </div>
+                            <span class="hotel-rating-badge">
+                                <i class="fas fa-star text-warning me-1"></i> ${hotel.rating}
+                            </span>
+                        </div>
+                        <p class="hotel-desc">${hotel.desc}</p>
+                        <div class="hotel-footer">
+                            <a href="${bookingUrl}" target="_blank" class="btn-hotel-book">
+                                Réserver <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += '</div>';
+        modalBody.innerHTML = html;
+    }
+    
+    if (hotelsModal) {
+        hotelsModal.show();
+    }
+}
+
+// ==================== LOGIQUE DU CONVERTISSEUR DE DEVISES ====================
+
+// Taux de change par rapport au Dirham Marocain (MAD)
+const exchangeRates = {
+    EUR: 10.80,
+    USD: 10.05,
+    GBP: 12.75,
+    CAD: 7.35,
+    CHF: 11.10
+};
+
+// Initialisation des éléments du convertisseur après chargement du DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const foreignSelect = document.getElementById('foreignCurrencySelect');
+    const foreignInput = document.getElementById('foreignAmountInput');
+    const madInput = document.getElementById('madAmountInput');
+    const rateText = document.getElementById('exchangeRateText');
+    const swapBtn = document.getElementById('swapCurrencyBtn');
+
+    if (!foreignSelect || !foreignInput || !madInput || !rateText || !swapBtn) return;
+
+    // Met à jour l'affichage du taux indicatif
+    function updateRateDisplay() {
+        const currency = foreignSelect.value;
+        const rate = exchangeRates[currency];
+        rateText.innerText = `1 ${currency} = ${rate.toFixed(2)} MAD`;
+    }
+
+    // Effectue la conversion Devise Étrangère -> MAD
+    function convertForeignToMad() {
+        const currency = foreignSelect.value;
+        const rate = exchangeRates[currency];
+        const amount = parseFloat(foreignInput.value);
+
+        if (isNaN(amount) || amount < 0) {
+            madInput.value = '';
+            return;
+        }
+
+        madInput.value = (amount * rate).toFixed(2);
+    }
+
+    // Effectue la conversion MAD -> Devise Étrangère
+    function convertMadToForeign() {
+        const currency = foreignSelect.value;
+        const rate = exchangeRates[currency];
+        const amount = parseFloat(madInput.value);
+
+        if (isNaN(amount) || amount < 0) {
+            foreignInput.value = '';
+            return;
+        }
+
+        foreignInput.value = (amount / rate).toFixed(2);
+    }
+
+    // Écouteurs d'événements
+    foreignInput.addEventListener('input', convertForeignToMad);
+    madInput.addEventListener('input', convertMadToForeign);
+
+    foreignSelect.addEventListener('change', () => {
+        updateRateDisplay();
+        // Recalcule la conversion avec le nouveau taux
+        convertForeignToMad();
+    });
+
+    // Inversion des montants lors du clic sur le bouton d'échange
+    swapBtn.addEventListener('click', () => {
+        const foreignVal = foreignInput.value;
+        const madVal = madInput.value;
+        
+        foreignInput.value = madVal;
+        convertForeignToMad();
+    });
+
+    // Initialiser les valeurs par défaut
+    foreignInput.value = '10';
+    convertForeignToMad();
+    updateRateDisplay();
+});
+
+// ==================== INITIALISATION DE LA CARTE INTERACTIVE LEAFLET ====================
+document.addEventListener('DOMContentLoaded', () => {
+    const mapElement = document.getElementById('interactive-map');
+    if (!mapElement) return;
+
+    // Coordonnées réelles de chaque ville pour le positionnement géographique sur la carte
+    const cityCoords = {
+        marrakech: [31.6295, -7.9811],
+        agadir: [30.4278, -9.5981],
+        fes: [34.0181, -5.0078],
+        chefchaouen: [35.1688, -5.2636],
+        essaouira: [31.5085, -9.7595],
+        casablanca: [33.5731, -7.5898],
+        rabat: [34.0209, -6.8416],
+        tanger: [35.7595, -5.8340],
+        ouarzazate: [30.9189, -6.9118],
+        merzouga: [31.0802, -4.0033],
+        ifrane: [33.5273, -5.1094],
+        dakhla: [23.6848, -15.9580],
+        meknes: [33.8938, -5.5547],
+        alhoceima: [35.2472, -3.9311],
+        taroudant: [30.4703, -8.8769],
+        oujda: [34.6867, -1.9114]
+    };
+
+    // Initialiser la carte Leaflet centrée sur le Maroc
+    // [28.5, -9.5] et zoom 5.5 est l'échelle idéale pour tout voir du nord jusqu'à Dakhla au sud
+    const map = L.map('interactive-map', {
+        scrollWheelZoom: false // Désactivé pour que la molette ne gêne pas le défilement de la page
+    }).setView([29.0, -8.8], 5.5);
+
+    // Charger le fond de carte CartoDB Voyager
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://carto.com/">CARTO</a>'
+    }).addTo(map);
+
+    // Créer l'icône personnalisée (point doré par défaut, épingle rouge au survol gérée en CSS)
+    const customIcon = L.divIcon({
+        html: '<div class="map-dot"></div><i class="fas fa-map-marker-alt text-danger pin-icon"></i>',
+        className: 'custom-pin',
+        iconSize: [26, 26],
+        iconAnchor: [13, 13] // Centré sur la coordonnée géographique
+    });
+
+    // Ajouter les épingles géographiques pour toutes les villes
+    cities.forEach(city => {
+        const coords = cityCoords[city.id];
+        if (coords) {
+            const marker = L.marker(coords, { icon: customIcon }).addTo(map);
+            
+            // Tooltip stylisé au survol affichant uniquement le nom de la ville
+            marker.bindTooltip(`<strong>${city.name}</strong>`, {
+                permanent: false,
+                direction: 'top',
+                className: 'map-tooltip',
+                offset: [0, -15]
+            });
         }
     });
 });

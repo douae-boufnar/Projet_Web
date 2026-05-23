@@ -256,21 +256,18 @@ h3,
     pointer-events: none;
 }
 
-.hero-video-wrapper iframe {
+.hero-video-wrapper iframe,
+.hero-video-wrapper video {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border: none;
 }
 
 .hero-video-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(139, 0, 0, 0.7),
-        rgba(196, 30, 58, 0.5),
-        rgba(0, 107, 60, 0.4)
-    );
+    background: rgba(0, 0, 0, 0.3); /* Voile sombre neutre pour conserver les vraies couleurs de la vidéo tout en garantissant la lisibilité du texte */
     z-index: 1;
 }
 
@@ -619,7 +616,191 @@ h3,
 
 .btn-city:hover {
     background: var(--rouge);
-    transform: translateX(5px);
+    transform: translateY(-2px);
+}
+
+.city-buttons-wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.city-card-footer .btn-city {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+.city-card-footer .btn-hotel {
+    background: var(--dore);
+    color: var(--noir) !important;
+}
+
+.city-card-footer .btn-hotel:hover {
+    background: var(--rouge);
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* Hotels Modal Styles */
+.hotel-card {
+    display: flex;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hotel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-img-wrap {
+    width: 150px;
+    min-height: 120px;
+    background: var(--beige);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hotel-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotel-img-wrap i {
+    font-size: 2.5rem;
+    color: var(--dore);
+}
+
+.hotel-details {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hotel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--noir);
+    margin: 0 0 5px 0;
+}
+
+.hotel-type {
+    font-size: 0.8rem;
+    color: var(--gris);
+    font-weight: 500;
+    margin: 0;
+}
+
+.hotel-rating-badge {
+    background: rgba(212, 175, 55, 0.15);
+    color: #b8941f;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.hotel-desc {
+    font-size: 0.85rem;
+    color: var(--gris);
+    margin: 10px 0 15px 0;
+    line-height: 1.5;
+}
+
+.hotel-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-hotel-book {
+    background: var(--vert);
+    color: #fff !important;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-hotel-book:hover {
+    background: var(--rouge);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .hotel-card {
+        flex-direction: column;
+    }
+    .hotel-img-wrap {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+/* Currency Converter Styles */
+.btn-swap-currency {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--vert) !important;
+    color: #fff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+.btn-swap-currency:hover {
+    background: var(--rouge) !important;
+    transform: rotate(180deg) scale(1.1);
+}
+
+.currency-converter-container .form-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.currency-converter-container .form-control:focus,
+.currency-converter-container .form-select:focus {
+    border-color: var(--dore) !important;
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
+}
+
+.currency-converter-container input[type=number]::-webkit-inner-spin-button, 
+.currency-converter-container input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.currency-converter-container input[type=number] {
+    -moz-appearance: textfield;
 }
 
 /* MODAL */
@@ -1796,4 +1977,78 @@ h3,
 
 #city-chefchaouen .city-stat-num {
     font-size: 1.1rem;
+}
+
+/* Interactive Leaflet Map Styles */
+#interactive-map {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Custom Tooltip Styling */
+.map-tooltip {
+    background-color: #fff !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    color: var(--noir) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.map-tooltip::before {
+    border-top-color: #fff !important;
+}
+
+/* Custom Pin Styling & Animation */
+.custom-pin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px !important;
+    height: 26px !important;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Discret Gold Dot by Default */
+.custom-pin .map-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--dore);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Red Pin Hidden by Default */
+.custom-pin .pin-icon {
+    display: none;
+    font-size: 26px;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+    transform: translateY(-10px); /* Décale vers le haut pour que la pointe soit alignée avec la coordonnée */
+}
+
+/* Hover State: Hide Gold Dot and Reveal Red Pin */
+.custom-pin:hover .map-dot {
+    display: none;
+}
+
+.custom-pin:hover .pin-icon {
+    display: block;
+    animation: pinPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes pinPulse {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
 }

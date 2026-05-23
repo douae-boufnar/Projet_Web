@@ -13,6 +13,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <!-- Leaflet Map CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -51,12 +54,12 @@
 
 <section class="hero" id="accueil">
 
-  <!-- Vidéo YouTube arrière-plan -->
+  <!-- Vidéo locale arrière-plan -->
   <div class="hero-video-wrapper">
-    <iframe 
-src="https://www.youtube.com/embed/TPHwUGTxgiw?autoplay=1&mute=1&loop=1&playlist=TPHwUGTxgiw&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
+    <video autoplay muted loop playsinline id="hero-video">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+    </video>
   </div>
 
   <!-- Overlay -->
@@ -70,7 +73,6 @@ src="https://www.youtube.com/embed/TPHwUGTxgiw?autoplay=1&mute=1&loop=1&playlist
     <p class="hero-text">Découvrez un pays où chaque pierre raconte une histoire millénaire...</p>
     <div>
       <a href="#villes" class="btn btn-hero btn-explorer">Explorer les villes</a>
-      <a href="#" class="btn btn-hero btn-planifier">Planifier mon voyage</a>
     </div>
   </div>
 
@@ -85,10 +87,8 @@ src="https://www.youtube.com/embed/TPHwUGTxgiw?autoplay=1&mute=1&loop=1&playlist
       <div class="section-title-wrapper fade-in">
         <h2 class="section-title">Explorez le Maroc</h2>
       </div>
-      <div class="map-container fade-in">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6944396.578630944!2d-13.1728205765625!3d31.791702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b88619651bbbf%3A0x110b5c5af7f1c78e!2sMaroc!5e0!3m2!1sfr!2sma!4v1704067200000!5m2!1sfr!2sma"
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <div class="map-container fade-in" style="position: relative; overflow: visible;">
+        <div id="interactive-map" style="width: 100%; height: 500px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05); z-index: 5;"></div>
       </div>
       <div class="row g-4">
         <div class="col-md-3 fade-in">
@@ -375,7 +375,7 @@ src="https://www.youtube.com/embed/TPHwUGTxgiw?autoplay=1&mute=1&loop=1&playlist
     <div class="row g-4 justify-content-center">
 
       <!-- Langues -->
-      <div class="col-lg-6 col-md-6 fade-in">
+      <div class="col-lg-4 col-md-6 fade-in">
         <div class="info-card">
           <i class="fas fa-language info-icon"></i>
           <h4 class="info-title">Langues</h4>
@@ -387,13 +387,25 @@ src="https://www.youtube.com/embed/TPHwUGTxgiw?autoplay=1&mute=1&loop=1&playlist
       </div>
 
       <!-- Conseils Culturels -->
-      <div class="col-lg-6 col-md-6 fade-in">
+      <div class="col-lg-4 col-md-6 fade-in">
         <div class="info-card">
           <i class="fas fa-hand-holding-heart info-icon"></i>
           <h4 class="info-title">Conseils Culturels</h4>
           <p class="info-text">Vêtements respectueux, acceptez le thé, et pratiquez l'art du marchandage avec le sourire.</p>
           <button class="btn btn-city" data-bs-toggle="modal" data-bs-target="#conseillsModal">
             Voir les conseils
+          </button>
+        </div>
+      </div>
+
+      <!-- Monnaie & Change -->
+      <div class="col-lg-4 col-md-6 fade-in">
+        <div class="info-card">
+          <i class="fas fa-money-bill-transfer info-icon" style="color: var(--dore);"></i>
+          <h4 class="info-title">Monnaie & Change</h4>
+          <p class="info-text">La devise officielle est le Dirham Marocain (MAD). Convertissez instantanément vos devises préférées (EUR, USD, GBP...).</p>
+          <button class="btn btn-city" data-bs-toggle="modal" data-bs-target="#currencyModal">
+            Calculer le change
           </button>
         </div>
       </div>
@@ -693,6 +705,78 @@ src="https://www.youtube.com/embed/TPHwUGTxgiw?autoplay=1&mute=1&loop=1&playlist
     </div>
 </div>
  
+  <!-- MODAL HOTELS -->
+  <div class="modal fade" id="hotelsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 25px; overflow: hidden; border: none;">
+        <div class="modal-header" style="background: linear-gradient(to right, var(--rouge), var(--rouge-fonce)); color: #fff; border: none; padding: 25px;">
+          <h5 class="modal-title font-serif fs-3" id="modalHotelsTitle">Hôtels & Riads</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+        </div>
+        <div class="modal-body p-4" id="modalHotelsBody">
+          <!-- Rempli dynamiquement par JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CONVERTISSEUR DE DEVISES -->
+  <div class="modal fade" id="currencyModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 25px; overflow: hidden; border: none; box-shadow: 0 15px 50px rgba(0,0,0,0.2);">
+        <div class="modal-header" style="background: linear-gradient(to right, var(--rouge), var(--rouge-fonce)); color: #fff; border: none; padding: 25px;">
+          <h5 class="modal-title font-serif fs-3"><i class="fas fa-money-bill-transfer me-2"></i> Convertisseur de Devises</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+        </div>
+        <div class="modal-body p-4" style="background-color: var(--blanc-casse);">
+          <p class="text-muted text-center mb-4" style="font-size: 0.9rem;">Calculez la valeur de vos devises en Dirham Marocain (MAD).</p>
+          
+          <div class="currency-converter-container">
+            <!-- Source input group -->
+            <div class="converter-group mb-3">
+              <label class="form-label small fw-bold text-dark">Devise Étrangère</label>
+              <div class="input-group">
+                <select class="form-select border-end-0" id="foreignCurrencySelect" style="max-width: 120px; font-weight: 600; border-radius: 12px 0 0 12px; border: 1px solid #ced4da;">
+                  <option value="EUR" selected>EUR (€)</option>
+                  <option value="USD">USD ($)</option>
+                  <option value="GBP">GBP (£)</option>
+                  <option value="CAD">CAD ($)</option>
+                  <option value="CHF">CHF (fr.)</option>
+                </select>
+                <input type="number" class="form-control" id="foreignAmountInput" placeholder="0.00" style="font-weight: 600; border-radius: 0 12px 12px 0; border: 1px solid #ced4da;" min="0">
+              </div>
+            </div>
+
+            <!-- Swap button -->
+            <div class="text-center my-3">
+              <button type="button" class="btn-swap-currency" id="swapCurrencyBtn" title="Inverser les devises" style="width: 40px; height: 40px; border-radius: 50%; border: none; background: var(--vert); color: #fff; display: inline-flex; align-items: center; justify-content: center; transition: var(--transition); box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                <i class="fas fa-arrows-up-down"></i>
+              </button>
+            </div>
+
+            <!-- Target input group -->
+            <div class="converter-group mb-4">
+              <label class="form-label small fw-bold text-dark">Dirham Marocain (MAD)</label>
+              <div class="input-group">
+                <span class="input-group-text border-end-0 bg-white" style="font-weight: 700; color: var(--vert); border-radius: 12px 0 0 12px; border: 1px solid #ced4da;">MAD (dh)</span>
+                <input type="number" class="form-control" id="madAmountInput" placeholder="0.00" style="font-weight: 600; border-radius: 0 12px 12px 0; border: 1px solid #ced4da;" min="0">
+              </div>
+            </div>
+
+            <!-- Taux de change card -->
+            <div class="p-3 rounded-3 mb-2" style="background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2);">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="small text-muted"><i class="fas fa-info-circle me-1"></i> Taux indicatif :</span>
+                <span class="fw-bold text-dark" id="exchangeRateText">1 EUR = 10.80 MAD</span>
+              </div>
+            </div>
+            
+            <p class="text-center text-muted mb-0 mt-3" style="font-size: 0.75rem;"><i class="fas fa-clock me-1"></i> Taux de change de référence actualisé.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
