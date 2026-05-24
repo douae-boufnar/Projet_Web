@@ -2,42 +2,51 @@
 <html lang="fr">
 
 <head>
+  <!-- Définition de l'encodage des caractères -->
   <meta charset="UTF-8">
+   <!-- Permet l'affichage responsive sur mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre affiché dans l'onglet du navigateur -->
   <title>MAROC - Royaume des Sens</title>
-  <!-- Bootstrap 5 -->
+   <!-- Importation de Bootstrap pour le design responsive -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- importer les avatars -->
+    <!-- Bibliothèque d’icônes Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Google Fonts -->
+  <!-- Importation des polices Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
-  <!-- Leaflet Map CDN -->
+  <!-- Bibliothèque Leaflet pour la carte interactive -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
+  <!-- Fichier CSS principal du projet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
+  <!-- Curseur personnalisé -->
   <div id="custom-cursor"></div>
+  <!-- Motif décoratif style zellige -->
   <div class="zellige-pattern"></div>
+    <!-- Effets visuels d’arrière-plan -->
   <div class="bg-gradient-accents"></div>
 
-  <!-- 1. NAVBAR -->
+   <!-- ================= NAVBAR ================= -->
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
+        <!-- Logo / Nom du site -->
       <a class="navbar-brand" href="#accueil">
         <span class="brand-main">MAROC</span>
         <span class="brand-sub">Royaume des Sens</span>
       </a>
+        <!-- Bouton menu responsive -->
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
       </button>
+        <!-- Liens de navigation -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+             <!-- Liens vers les différentes sections -->
           <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
           <li class="nav-item"><a class="nav-link" href="#villes">Villes</a></li>
           <li class="nav-item"><a class="nav-link" href="#transport">Transport</a></li>
@@ -50,6 +59,7 @@
           <li class="nav-item"><a class="nav-link" href="#temoignages">Témoignages</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
+            <!-- Zone Google Traduction -->
             <div id="google_translate_element"></div>
           </li>
         </ul>
@@ -57,9 +67,10 @@
     </div>
   </nav>
 
+  <!-- ================= HERO SECTION ================= -->
   <section class="hero" id="accueil">
 
-    <!-- Vidéo locale arrière-plan -->
+   <!-- Vidéo de fond -->
     <div class="hero-video-wrapper">
       <video autoplay muted loop playsinline id="hero-video">
         <source src="videos/hero.mp4" type="video/mp4">
@@ -67,36 +78,44 @@
       </video>
     </div>
 
-    <!-- Overlay -->
+   <!-- Couche sombre au dessus de la vidéo -->
     <div class="hero-video-overlay"></div>
 
-    <!-- Ton contenu hero existant (ne change pas) -->
+    <!-- Contenu principal de la bannière -->
     <div class="hero-content fade-in-up">
+           <!-- Grand titre -->
       <h1 class="hero-title">MAROC</h1>
+           <!-- Citation -->
       <p class="hero-subtitle">« Le Maroc est un arbre dont les racines plongent en Afrique et qui respire par ses
         feuilles en Europe. »</p>
+         <!-- Bouton d’exploration -->
       <div class="hero-buttons">
         <a href="#villes" class="btn btn-hero btn-explorer">Explorer les villes</a>
       </div>
     </div>
 
+    <!-- Particules décoratives -->
     <div id="particles-container"></div>
   </section>
 
 
 
-  <!-- 4. GOOGLE MAPS -->
+  <!-- ================= SECTION CARTE (Google map)================= -->
   <section class="section-padding bg-beige">
     <div class="container">
+       <!-- Titre de section -->
       <div class="section-title-wrapper fade-in">
         <h2 class="section-title">Explorez le Maroc</h2>
       </div>
+        <!-- Carte interactive -->
       <div class="map-container fade-in" style="position: relative; overflow: visible;">
         <div id="interactive-map"
           style="width: 100%; height: 500px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05); z-index: 5;">
         </div>
       </div>
+       <!-- Cartes des villes -->
       <div class="row g-4">
+         <!-- Marrakech -->
         <div class="col-md-3 fade-in">
           <div class="map-card city-marrakech">
             <i class="fas fa-mosque"></i>
@@ -104,6 +123,7 @@
             <p>31.6295° N, 7.9811° W</p>
           </div>
         </div>
+          <!-- Agadir -->
         <div class="col-md-3 fade-in">
           <div class="map-card city-agadir">
             <i class="fas fa-umbrella-beach"></i>
@@ -111,6 +131,7 @@
             <p>30.4278° N, 9.5981° W</p>
           </div>
         </div>
+          <!-- Fès -->
         <div class="col-md-3 fade-in">
           <div class="map-card city-fes">
             <i class="fas fa-archway"></i>
@@ -118,6 +139,7 @@
             <p>34.0181° N, 5.0078° W</p>
           </div>
         </div>
+        <!-- Essaouira -->
         <div class="col-md-3 fade-in">
           <div class="map-card city-essaouira">
             <i class="fas fa-anchor"></i>
@@ -129,33 +151,42 @@
     </div>
   </section>
 
-  <!-- 7. 12 VILLES -->
+   <!-- ================= SECTION VILLES ================= -->
   <section class="section-padding bg-beige" id="villes">
     <div class="container">
       <div class="section-title-wrapper fade-in">
         <h2 class="section-title">Les Joyaux du Royaume</h2>
       </div>
+      <!-- Contenu généré dynamiquement par JavaScript -->
       <div class="row g-4" id="villes-container">
         <!-- Généré par JavaScript -->
       </div>
     </div>
   </section>
 
-  <!-- 8. CUISINE -->
+  <!-- ================= SECTION CUISINE ================= -->
   <section class="section-padding" id="cuisine">
     <div class="container">
+         <!-- En-tête -->
       <div class="section-title-wrapper fade-in">
         <span class="theme-subtitle">Gastronomie</span>
         <h2 class="section-title">L'Art Culinaire</h2>
       </div>
+      <!-- Liste des plats marocains -->
       <div class="row g-4 justify-content-center">
+           <!-- Exemple carte plat -->
         <div class="col-lg-3 col-md-6 fade-in">
           <div class="cuisine-card">
+                <!-- Image du plat -->
             <div class="cuisine-img"><img src="images/accueil/Tagine.jpg" alt="Tajine"></div>
+           <!-- Nom du plat -->
             <h4 class="cuisine-title">Le Tajine</h4>
+             <!-- Description -->
             <p class="cuisine-desc">Mijoté à l'étouffée dans son plat d'argile, symbole de partage.</p>
           </div>
         </div>
+         <!-- Les autres cartes suivent la même structure -->
+        <!-- Couscous, Pastilla, Harira, etc. -->
         <div class="col-lg-3 col-md-6 fade-in">
           <div class="cuisine-card">
             <div class="cuisine-img"><img src="images/accueil/Couscous.jpg" alt="Couscous"></div>
@@ -239,19 +270,24 @@
     </div>
   </section>
 
-  <!-- 9. CULTURE CERTIFIÉE PAR L'UNESCO -->
+ 
+  <!-- ================= SECTION CULTURE ================= -->
   <section class="section-padding bg-white" id="culture">
     <div class="container">
+           <!-- Titre -->
       <div class="section-title-wrapper fade-in">
         <h2 class="section-title">Un Héritage Millénaire</h2>
       </div>
+      <!-- Cartes culturelles -->
       <div class="row g-4 justify-content-center">
-        <!-- Zellige -->
+         <!-- Carte Zellige -->
         <div class="col-lg-3 col-md-6 fade-in">
           <div class="culture-card">
+               <!-- Image -->
             <div class="culture-card-img">
               <img src="images/accueil/Zellij.jpg" alt="Zellige">
             </div>
+              <!-- Contenu -->
             <div class="culture-card-body">
               <h4 class="culture-card-title">Zellige</h4>
               <p class="culture-card-desc">Le zellige est un art décoratif marocain ancestral fait de petits morceaux de
@@ -261,6 +297,7 @@
             </div>
           </div>
         </div>
+         <!-- Les autres cartes culturelles utilisent le même modèle -->
         <!-- Caftan marocain -->
         <div class="col-lg-3 col-md-6 fade-in">
           <div class="culture-card">
@@ -311,18 +348,22 @@
       </div>
     </div>
   </section>
-
-  <!-- 10. NATURE & AVENTURE -->
+ <!-- ================= SECTION NATURE ================= -->
   <section class="section-padding" id="nature"
     style="background: linear-gradient(to bottom, rgba(0,107,60,0.04), rgba(212,175,55,0.04));">
     <div class="container">
+       <!-- Titre -->
       <div class="section-title-wrapper fade-in">
         <h2 class="section-title">Horizons Infinis</h2>
       </div>
+           <!-- Cartes nature -->
       <div class="row g-4 justify-content-center">
+         <!-- Carte montagne -->
         <div class="col-lg-4 col-md-6 fade-in">
           <div class="nature-card">
+                <!-- Image -->
             <div class="nature-img"><img src="images/accueil/Atlas Mountains.jpg" alt="Montagne"></div>
+             <!-- Texte -->
             <div class="nature-body">
               <i class="fas fa-mountain nature-icon-big icon-montagne"></i>
               <h4 class="fw-bold" style="color: var(--vert);">La Montagne</h4>
@@ -385,37 +426,41 @@
     </div>
   </section>
 
-  <!-- 5. TRANSPORT -->
+   <!-- ================= SECTION TRANSPORT ================= -->
   <section class="section-padding bg-white" id="transport">
     <div class="container">
+         <!-- Titre -->
       <div class="section-title-wrapper fade-in">
         <span class="theme-subtitle">Déplacements</span>
         <h2 class="section-title">Tracer sa Route</h2>
       </div>
-
+  <!-- Introduction -->
       <p class="text-center mx-auto mb-5 fade-in"
         style="max-width: 800px; font-size: 1.1rem; color: var(--gris); line-height: 1.6;">
         Le Maroc dispose d’un réseau de transport varié permettant les déplacements nationaux et internationaux. Les
         moyens de transport peuvent être classés en quatre catégories principales :
       </p>
-
+   <!-- Cartes des transports -->
       <div class="row g-4 justify-content-center">
-        <!-- 1. Aérien -->
+        <!--  Aérien -->
         <div class="col-lg-3 col-md-6 fade-in">
           <div class="transport-card" onclick="openTransportModal('aérien')" style="cursor: pointer;">
+              <!-- Icône -->
             <div class="transport-icon-wrapper bg-aérien">
               <i class="fas fa-plane"></i>
             </div>
+                       <!-- Contenu -->
             <div class="transport-body">
               <h4 class="transport-card-title">Transport Aérien</h4>
               <p class="transport-card-desc">Déplacements rapides nationaux et internationaux. Vols réguliers et
                 low-cost assurés par Royal Air Maroc, Air Arabia et Ryanair.</p>
-              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+                 <!-- Bouton -->
+                <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
             </div>
           </div>
         </div>
-
-        <!-- 2. Maritime -->
+ <!-- Les autres cartes utilisent le même principe -->
+        <!--  Maritime -->
         <div class="col-lg-3 col-md-6 fade-in">
           <div class="transport-card" onclick="openTransportModal('maritime')" style="cursor: pointer;">
             <div class="transport-icon-wrapper bg-maritime">
@@ -430,7 +475,7 @@
           </div>
         </div>
 
-        <!-- 3. Terrestre -->
+        <!--  Terrestre -->
         <div class="col-lg-3 col-md-6 fade-in">
           <div class="transport-card" onclick="openTransportModal('terrestre')" style="cursor: pointer;">
             <div class="transport-icon-wrapper bg-terrestre">
@@ -445,7 +490,7 @@
           </div>
         </div>
 
-        <!-- 4. Local & Touristique -->
+        <!--  Local & Touristique -->
         <div class="col-lg-3 col-md-6 fade-in">
           <div class="transport-card" onclick="openTransportModal('local')" style="cursor: pointer;">
             <div class="transport-icon-wrapper bg-local">
@@ -463,21 +508,28 @@
     </div>
   </section>
 
-  <!-- 11. INFOS PRATIQUES -->
+ <!-- ================= SECTION INFORMATIONS PRATIQUES ================= -->
   <section id="infos-pratiques" class="section-padding bg-beige">
     <div class="container">
+         <!-- Titre principal de la section -->
       <div class="section-title-wrapper fade-in">
         <h2 class="section-title">Carnet de Voyage</h2>
       </div>
+          <!-- Ligne contenant les différentes cartes d’informations -->
       <div class="row g-4 justify-content-center">
 
         <!-- Langues -->
         <div class="col-lg-4 col-md-6 fade-in">
           <div class="info-card">
+
+          <!-- Icône représentant les langues -->
             <i class="fas fa-language info-icon"></i>
+             <!-- Titre -->
             <h4 class="info-title">Langues</h4>
+              <!-- Petit texte descriptif -->
             <p class="info-text">L'Arabe (Darija) et l'Amazigh sont officiels. Découvrez la richesse et la diversité de
               nos dialectes régionaux.</p>
+              <!-- Bouton ouvrant la fenêtre des dialectes -->
             <button class="btn btn-city" data-bs-toggle="modal" data-bs-target="#languagesModal">
               Explorer les dialectes
             </button>
@@ -487,10 +539,14 @@
         <!-- Conseils Culturels -->
         <div class="col-lg-4 col-md-6 fade-in">
           <div class="info-card">
+             <!-- Icône -->
             <i class="fas fa-hand-holding-heart info-icon"></i>
+            <!-- Titre -->
             <h4 class="info-title">Conseils Culturels</h4>
+              <!-- Description -->
             <p class="info-text">Vêtements respectueux, acceptez le thé, et pratiquez l'art du marchandage avec le
               sourire.</p>
+                <!-- Bouton ouvrant les conseils -->
             <button class="btn btn-city" data-bs-toggle="modal" data-bs-target="#conseillsModal">
               Voir les conseils
             </button>
@@ -500,10 +556,14 @@
         <!-- Monnaie & Change -->
         <div class="col-lg-4 col-md-6 fade-in">
           <div class="info-card">
+            <!-- Icône liée à l’argent -->
             <i class="fas fa-money-bill-transfer info-icon" style="color: var(--dore);"></i>
+              <!-- Titre -->
             <h4 class="info-title">Monnaie & Change</h4>
+              <!-- Description -->
             <p class="info-text">La devise officielle est le Dirham Marocain (MAD). Convertissez instantanément vos
               devises préférées (EUR, USD, GBP...).</p>
+                 <!-- Bouton ouvrant le convertisseur -->
             <button class="btn btn-city" data-bs-toggle="modal" data-bs-target="#currencyModal">
               Calculer le change
             </button>
@@ -517,43 +577,56 @@
   <!-- ==================== SECTION TÉMOIGNAGES ==================== -->
   <section id="temoignages" class="section-padding"
     style="background: linear-gradient(135deg, #0d1f15 0%, #1a3a26 50%, #0a1810 100%); position: relative; overflow: hidden;">
+      <!-- Motif décoratif en arrière-plan -->
     <div class="zellige-pattern" style="opacity: 0.03; z-index: 0;"></div>
     <div class="container position-relative" style="z-index: 1;">
+     <!-- En-tête de la section -->
       <div class="section-title-wrapper fade-in text-center mb-5">
+        <!-- Titre -->
         <h2 class="section-title" style="color: var(--dore); text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Partagez Votre
           Expérience</h2>
+            <!-- Petit texte sous le titre -->
         <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto;">Votre avis nous aide à promouvoir la
           magie du Maroc.</p>
       </div>
-
+<!-- Centrage du formulaire -->
       <div class="row justify-content-center">
         <div class="col-lg-8">
+           <!-- Conteneur principal -->
           <div class="temoignage-container fade-in">
 
-            <!-- Success Message (Hidden by default) -->
+           <!-- ================= Message de remerciement ================= -->
+          <!-- Caché au départ puis affiché après l’envoi -->
             <div id="temoignage-success" class="d-none text-center py-5">
+             <!-- Titre -->
               <h3
                 style="color: var(--dore); font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">
                 Merci !
               </h3>
+                <!-- Message -->
               <p style="color: white; font-size: 1.1rem; margin-bottom: 30px;">
                 Nous vous remercions chaleureusement pour votre témoignage. Votre voix contribue à faire rayonner le
                 Maroc à travers le monde !
               </p>
+                <!-- Bouton permettant de réinitialiser le formulaire -->
               <button class="btn btn-outline-light" onclick="resetTemoignageForm()">Soumettre un autre
                 témoignage</button>
             </div>
 
-            <!-- The Form -->
+            <!-- ================= Formulaire ================= -->
             <form id="temoignage-form">
               <div class="row g-4">
+                        <!-- ===== Champ prénom ===== -->
                 <div class="col-md-6">
                   <label class="form-label"
                     style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Votre
                     prénom <span style="color:#e74c3c">*</span></label>
-                  <input type="text" class="form-control" id="t-prenom" required placeholder="Ex: Jean">
-                  <div class="invalid-feedback">Veuillez entrer votre prénom.</div>
+                  <!-- Champ texte -->
+                    <input type="text" class="form-control" id="t-prenom" required placeholder="Ex: Jean">
+                  <!-- Message d’erreur -->
+                    <div class="invalid-feedback">Veuillez entrer votre prénom.</div>
                 </div>
+                     <!-- ===== Champ pays ===== -->
                 <div class="col-md-6">
                   <label class="form-label"
                     style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Pays
@@ -561,28 +634,33 @@
                   <input type="text" class="form-control" id="t-pays" required placeholder="Ex: France">
                   <div class="invalid-feedback">Veuillez renseigner votre pays.</div>
                 </div>
-
+              <!-- ===== Question visite du Maroc ===== -->
                 <div class="col-12">
                   <label class="form-label d-block"
                     style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Avez-vous
                     déjà visité le Maroc ?</label>
+                     <!-- Boutons radio -->
                   <div class="d-flex gap-3">
+                                      <!-- Option 1 -->
+
                     <div class="form-check custom-radio-pill">
                       <input class="form-check-input" type="radio" name="t-visite" id="v-oui" value="jamais" checked>
                       <label class="form-check-label" for="v-oui">Jamais visité</label>
                     </div>
+                     <!-- Option 2 -->
                     <div class="form-check custom-radio-pill">
                       <input class="form-check-input" type="radio" name="t-visite" id="v-non" value="planifie">
                       <label class="form-check-label" for="v-non">Je planifie de le visiter prochainement</label>
                     </div>
                   </div>
                 </div>
-
+                 <!-- ===== Liste des villes ===== -->
                 <div class="col-12">
                   <label class="form-label"
                     style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Quelle est
                     (ou serait) votre ville préférée ?</label>
-                  <select class="form-select" id="t-ville">
+                   <!-- Menu déroulant -->
+                    <select class="form-select" id="t-ville">
                     <option value="" selected disabled>Choisissez une ville...</option>
                     <option value="Marrakech">Marrakech</option>
                     <option value="Fès">Fès</option>
@@ -598,18 +676,20 @@
                     <option value="Ifrane">Ifrane</option>
                   </select>
                 </div>
-
+                    <!-- ===== Cases à cocher ===== -->
                 <div class="col-12">
                   <label class="form-label d-block mb-3"
                     style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Qu'est-ce
                     qui vous attire le plus ? (Plusieurs choix possibles)</label>
                   <div class="row g-3">
+                    <!-- Gastronomie -->
                     <div class="col-md-4 col-6">
                       <div class="form-check custom-checkbox-card">
                         <input class="form-check-input" type="checkbox" id="c-cuisine" value="Cuisine">
                         <label class="form-check-label" for="c-cuisine">Gastronomie</label>
                       </div>
                     </div>
+                      <!-- Les autres cases suivent la même structure -->
                     <div class="col-md-4 col-6">
                       <div class="form-check custom-checkbox-card">
                         <input class="form-check-input" type="checkbox" id="c-medina" value="Médina">
@@ -642,7 +722,7 @@
                     </div>
                   </div>
                 </div>
-
+                 <!-- ===== Système de notation ===== -->
                 <div class="col-12 text-center my-2">
                   <label class="form-label d-block"
                     style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Note
@@ -658,15 +738,16 @@
                   <div class="invalid-feedback d-block" id="note-error" style="display:none;">Veuillez donner une note.
                   </div>
                 </div>
-
+                  <!-- ===== Zone de texte ===== -->
                 <div class="col-12">
                   <label class="form-label"
                     style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Votre
                     témoignage ou message</label>
+                    <!-- Champ texte multiligne -->
                   <textarea class="form-control" id="t-message" rows="4"
                     placeholder="Racontez-nous votre meilleur souvenir ou ce qui vous fascine le plus..."></textarea>
                 </div>
-
+                  <!-- ===== Bouton d’envoi ===== -->
                 <div class="col-12 text-center mt-4">
                   <button type="submit" class="w-100"
                     style="max-width: 300px; padding: 12px 30px; background-color: #c5a855; color: #0d1f15; font-weight: bold; border-radius: 50px; border: none; text-transform: uppercase; letter-spacing: 1px; display: inline-block;">
@@ -682,40 +763,46 @@
     </div>
   </section>
 
-  <!-- 13. FOOTER -->
+  <!--  FOOTER -->
   <footer class="footer" id="contact">
     <div class="container">
       <div class="row g-5">
+         <!-- Partie gauche -->
         <div class="col-lg-6">
+           <!-- Logo -->
           <div class="footer-logo">MAROC</div>
+           <!-- Description -->
           <span class="footer-sub"
             style="font-size: 0.9rem; line-height: 1.4; display: block; margin-top: 10px;">Ministère du Tourisme, de
             l'Artisanat<br>et de l'Economie Sociale et Solidaire</span>
           <p class="opacity-75 mb-4 mt-3">Une expérience sensorielle unique où chaque paysage, chaque saveur et
             chaque rencontre raconte une histoire millénaire.</p>
-          <div class="social-links">
+           <!-- Réseaux sociaux -->
+            <div class="social-links">
+               <!-- Facebook -->
             <a href="https://www.facebook.com/mtaessmaroc" target="_blank" class="social-link"
               title="Facebook Officiel"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/mtaessmaroc" target="_blank" class="social-link"
+            <!-- Instagram -->
+              <a href="https://www.instagram.com/mtaessmaroc" target="_blank" class="social-link"
               title="Instagram Officiel"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-
+               <!-- Partie droite -->
         <div class="col-lg-6">
           <h5 class="footer-title">Contactez-Nous</h5>
           <div class="contact-info">
-            <p>
+            <p> <!-- Adresse -->
               <a href="https://maps.google.com/?q=Centre+d'affaires,+Av.+Ennakhil,+Hay+Ryad,+Rabat,+Maroc"
                 target="_blank" class="contact-link">
                 <i class="fas fa-map-marker-alt"></i> Centre d'affaires, Av. Ennakhil, Hay Ryad, Rabat
               </a>
             </p>
-            <p>
+            <p> <!-- Téléphone -->
               <a href="tel:+212537577800" class="contact-link">
                 <i class="fas fa-phone"></i> +212 537 57 78 00
               </a>
             </p>
-            <p>
+            <p>    <!-- Email -->
               <a href="mailto:contact@mtaess.gov.ma" class="contact-link">
                 <i class="fas fa-envelope"></i> contact@mtaess.gov.ma
               </a>
@@ -723,6 +810,7 @@
           </div>
         </div>
       </div>
+       <!-- Bas du footer -->
       <div class="footer-bottom">
         <p>&copy; 2026 MAROC — Royaume des Sens. Site Officiel Premium.</p>
         <div class="mt-2">
