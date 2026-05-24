@@ -1,4 +1,4 @@
-﻿// Data des villes
+// Data des villes
 const cities = [
     { id: 'marrakech', name: 'Marrakech', tag: 'Impériale', img: 'images/accueil/Marrakech.jpg', desc: 'La cité ocre, joyau des Almohades, où le luxe des palais côtoie l\'effervescence des souks.' },
     { id: 'agadir', name: 'Agadir', tag: 'Solaire', img: 'images/accueil/Agadir , Morocco.jpg', desc: 'La première station balnéaire du pays avec sa baie s\'étendant à perte de vue et son ensoleillement permanent.' },
@@ -577,12 +577,6 @@ const transportData = {
                 desc: "Transport touristique traditionnel dans la médina et Jemaa el-Fna.",
                 url: "",
                 img: "images/transport/Calèches – Marrakech.jpeg"
-            },
-            {
-                name: "Location de vélos et motos",
-                desc: "Déplacements courts et tourisme urbain.",
-                url: "",
-                img: "images/transport/Location de vélos et motos.webp"
             }
         ]
     }
@@ -651,6 +645,102 @@ function openTransportModal(categoryId) {
     if (transportModal) {
         transportModal.show();
     }
+}
+
+/* ==================== FORMULAIRE TEMOIGNAGES ==================== */
+document.addEventListener('DOMContentLoaded', () => {
+    // Gestion des étoiles
+    const stars = document.querySelectorAll('#star-rating i');
+    const noteInput = document.getElementById('t-note');
+
+    stars.forEach(star => {
+        star.addEventListener('mouseover', function() {
+            const value = this.getAttribute('data-value');
+            stars.forEach(s => {
+                if (s.getAttribute('data-value') <= value) {
+                    s.classList.add('hover');
+                } else {
+                    s.classList.remove('hover');
+                }
+            });
+        });
+
+        star.addEventListener('mouseout', function() {
+            stars.forEach(s => s.classList.remove('hover'));
+        });
+
+        star.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            noteInput.value = value;
+            document.getElementById('note-error').style.display = 'none';
+            stars.forEach(s => {
+                if (s.getAttribute('data-value') <= value) {
+                    s.classList.add('active');
+                    s.classList.remove('far');
+                    s.classList.add('fas');
+                } else {
+                    s.classList.remove('active');
+                    s.classList.add('far');
+                    s.classList.remove('fas');
+                }
+            });
+        });
+    });
+
+    // Validation et Soumission
+    const form = document.getElementById('temoignage-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Validation basique Bootstrap
+            if (!this.checkValidity()) {
+                isValid = false;
+            }
+            this.classList.add('was-validated');
+
+            // Validation note
+            if (noteInput.value === "0") {
+                document.getElementById('note-error').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Simulation d'envoi
+                const btn = this.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    document.getElementById('temoignage-success').classList.remove('d-none');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    this.classList.remove('was-validated');
+                    alert("Votre formulaire a bien été soumis !");
+                }, 1000);
+            }
+        });
+    }
+});
+
+function resetTemoignageForm() {
+    const form = document.getElementById('temoignage-form');
+    form.reset();
+    form.style.display = 'block';
+    
+    // Reset stars
+    document.getElementById('t-note').value = '0';
+    document.querySelectorAll('#star-rating i').forEach(s => {
+        s.classList.remove('active');
+        s.classList.add('far');
+        s.classList.remove('fas');
+    });
+    
+    document.getElementById('temoignage-success').classList.add('d-none');
 }
 
 

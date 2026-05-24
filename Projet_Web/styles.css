@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --rouge: #C41E3A;
     --rouge-fonce: #8B0000;
     --vert: #006B3C;
@@ -2269,6 +2269,115 @@ body { top: 0px !important; }
 }
 .hero-title, .hero-subtitle, .hero-desc {
     color: #ffffff !important;
+}
+
+/* ==================== FORMULAIRE TEMOIGNAGES ==================== */
+.temoignage-container {
+    background: rgba(20, 45, 30, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(220, 210, 160, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    margin-top: 2rem;
+}
+
+#temoignages .form-control, #temoignages .form-select {
+    background: rgba(13, 31, 21, 0.6);
+    border: 1px solid rgba(220, 210, 160, 0.3);
+    color: white;
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+#temoignages .form-control:focus, #temoignages .form-select:focus {
+    background: rgba(20, 45, 30, 0.8);
+    border-color: var(--dore);
+    box-shadow: 0 0 0 3px rgba(220, 210, 160, 0.2);
+    outline: none;
+}
+
+#temoignages .form-select option {
+    background-color: var(--noir);
+    color: white;
+}
+
+.custom-radio-pill {
+    padding-left: 0;
+}
+.custom-radio-pill input[type="radio"] {
+    display: none;
+}
+.custom-radio-pill label {
+    background: rgba(13, 31, 21, 0.6);
+    border: 1px solid rgba(220, 210, 160, 0.3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+.custom-radio-pill input[type="radio"]:checked + label {
+    background: var(--dore);
+    color: var(--noir);
+    border-color: var(--dore);
+    font-weight: 600;
+}
+
+.custom-checkbox-card {
+    padding-left: 0;
+}
+.custom-checkbox-card input[type="checkbox"] {
+    display: none;
+}
+.custom-checkbox-card label {
+    background: rgba(13, 31, 21, 0.6);
+    border: 1px solid rgba(220, 210, 160, 0.3);
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+}
+.custom-checkbox-card input[type="checkbox"]:checked + label {
+    background: rgba(220, 210, 160, 0.15);
+    border-color: var(--dore);
+    color: var(--dore);
+}
+
+.star-rating {
+    font-size: 2rem;
+    color: rgba(255,255,255,0.2);
+    cursor: pointer;
+    display: inline-flex;
+    gap: 10px;
+    transition: color 0.2s ease;
+}
+.star-rating i.active, .star-rating i.hover {
+    color: var(--dore);
+    text-shadow: 0 0 10px rgba(220, 210, 160, 0.5);
+}
+
+#temoignage-success {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .temoignage-container {
+        padding: 2rem 1.5rem;
+    }
 }
 
 

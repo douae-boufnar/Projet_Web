@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -47,6 +47,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#infos-pratiques">Infos</a>
           </li>
+          <li class="nav-item"><a class="nav-link" href="#temoignages">Témoignages</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
             <div id="google_translate_element"></div>
@@ -72,7 +73,8 @@
     <!-- Ton contenu hero existant (ne change pas) -->
     <div class="hero-content fade-in-up">
       <h1 class="hero-title">MAROC</h1>
-      <p class="hero-subtitle">« Le Maroc est un arbre dont les racines plongent en Afrique et qui respire par ses feuilles en Europe. »</p>
+      <p class="hero-subtitle">« Le Maroc est un arbre dont les racines plongent en Afrique et qui respire par ses
+        feuilles en Europe. »</p>
       <div class="hero-buttons">
         <a href="#villes" class="btn btn-hero btn-explorer">Explorer les villes</a>
       </div>
@@ -121,84 +123,6 @@
             <i class="fas fa-anchor"></i>
             <h5>Essaouira</h5>
             <p>31.5085° N, 9.7595° W</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. TRANSPORT -->
-  <section class="section-padding bg-white" id="transport">
-    <div class="container">
-      <div class="section-title-wrapper fade-in">
-        <span class="theme-subtitle">Déplacements</span>
-        <h2 class="section-title">Tracer sa Route</h2>
-      </div>
-
-      <p class="text-center mx-auto mb-5 fade-in"
-        style="max-width: 800px; font-size: 1.1rem; color: var(--gris); line-height: 1.6;">
-        Le Maroc dispose d’un réseau de transport varié permettant les déplacements nationaux et internationaux. Les
-        moyens de transport peuvent être classés en quatre catégories principales :
-      </p>
-
-      <div class="row g-4 justify-content-center">
-        <!-- 1. Aérien -->
-        <div class="col-lg-3 col-md-6 fade-in">
-          <div class="transport-card" onclick="openTransportModal('aérien')" style="cursor: pointer;">
-            <div class="transport-icon-wrapper bg-aérien">
-              <i class="fas fa-plane"></i>
-            </div>
-            <div class="transport-body">
-              <h4 class="transport-card-title">Transport Aérien</h4>
-              <p class="transport-card-desc">Déplacements rapides nationaux et internationaux. Vols réguliers et
-                low-cost assurés par Royal Air Maroc, Air Arabia et Ryanair.</p>
-              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Maritime -->
-        <div class="col-lg-3 col-md-6 fade-in">
-          <div class="transport-card" onclick="openTransportModal('maritime')" style="cursor: pointer;">
-            <div class="transport-icon-wrapper bg-maritime">
-              <i class="fas fa-ship"></i>
-            </div>
-            <div class="transport-body">
-              <h4 class="transport-card-title">Transport Maritime</h4>
-              <p class="transport-card-desc">Liaisons maritimes régulières reliant le Maroc à l'Europe (principalement
-                l'Espagne) via Balearia, AML et FRS Ferry.</p>
-              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Terrestre -->
-        <div class="col-lg-3 col-md-6 fade-in">
-          <div class="transport-card" onclick="openTransportModal('terrestre')" style="cursor: pointer;">
-            <div class="transport-icon-wrapper bg-terrestre">
-              <i class="fas fa-train-subway"></i>
-            </div>
-            <div class="transport-body">
-              <h4 class="transport-card-title">Transport Terrestre</h4>
-              <p class="transport-card-desc">Réseau ferré national (ONCF, TGV Al Boraq) et autocars interurbains (CTM,
-                Supratours) reliant les grandes villes du Royaume.</p>
-              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Local & Touristique -->
-        <div class="col-lg-3 col-md-6 fade-in">
-          <div class="transport-card" onclick="openTransportModal('local')" style="cursor: pointer;">
-            <div class="transport-icon-wrapper bg-local">
-              <i class="fas fa-bicycle"></i>
-            </div>
-            <div class="transport-body">
-              <h4 class="transport-card-title">Local & Touristique</h4>
-              <p class="transport-card-desc">Circuits touristiques en bus à impériale, balades traditionnelles en
-                calèche à Marrakech, ou location de vélos et motos.</p>
-              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
-            </div>
           </div>
         </div>
       </div>
@@ -461,6 +385,84 @@
     </div>
   </section>
 
+  <!-- 5. TRANSPORT -->
+  <section class="section-padding bg-white" id="transport">
+    <div class="container">
+      <div class="section-title-wrapper fade-in">
+        <span class="theme-subtitle">Déplacements</span>
+        <h2 class="section-title">Tracer sa Route</h2>
+      </div>
+
+      <p class="text-center mx-auto mb-5 fade-in"
+        style="max-width: 800px; font-size: 1.1rem; color: var(--gris); line-height: 1.6;">
+        Le Maroc dispose d’un réseau de transport varié permettant les déplacements nationaux et internationaux. Les
+        moyens de transport peuvent être classés en quatre catégories principales :
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <!-- 1. Aérien -->
+        <div class="col-lg-3 col-md-6 fade-in">
+          <div class="transport-card" onclick="openTransportModal('aérien')" style="cursor: pointer;">
+            <div class="transport-icon-wrapper bg-aérien">
+              <i class="fas fa-plane"></i>
+            </div>
+            <div class="transport-body">
+              <h4 class="transport-card-title">Transport Aérien</h4>
+              <p class="transport-card-desc">Déplacements rapides nationaux et internationaux. Vols réguliers et
+                low-cost assurés par Royal Air Maroc, Air Arabia et Ryanair.</p>
+              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Maritime -->
+        <div class="col-lg-3 col-md-6 fade-in">
+          <div class="transport-card" onclick="openTransportModal('maritime')" style="cursor: pointer;">
+            <div class="transport-icon-wrapper bg-maritime">
+              <i class="fas fa-ship"></i>
+            </div>
+            <div class="transport-body">
+              <h4 class="transport-card-title">Transport Maritime</h4>
+              <p class="transport-card-desc">Liaisons maritimes régulières reliant le Maroc à l'Europe (principalement
+                l'Espagne) via Balearia, AML et FRS Ferry.</p>
+              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Terrestre -->
+        <div class="col-lg-3 col-md-6 fade-in">
+          <div class="transport-card" onclick="openTransportModal('terrestre')" style="cursor: pointer;">
+            <div class="transport-icon-wrapper bg-terrestre">
+              <i class="fas fa-train-subway"></i>
+            </div>
+            <div class="transport-body">
+              <h4 class="transport-card-title">Transport Terrestre</h4>
+              <p class="transport-card-desc">Réseau ferré national (ONCF, TGV Al Boraq) et autocars interurbains (CTM,
+                Supratours) reliant les grandes villes du Royaume.</p>
+              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Local & Touristique -->
+        <div class="col-lg-3 col-md-6 fade-in">
+          <div class="transport-card" onclick="openTransportModal('local')" style="cursor: pointer;">
+            <div class="transport-icon-wrapper bg-local">
+              <i class="fas fa-bicycle"></i>
+            </div>
+            <div class="transport-body">
+              <h4 class="transport-card-title">Local & Touristique</h4>
+              <p class="transport-card-desc">Circuits touristiques en bus à impériale, balades traditionnelles en
+                calèche à Marrakech, ou location de vélos et motos.</p>
+              <button class="btn-city mt-auto w-100">Explorer <i class="fas fa-arrow-right ms-1"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 11. INFOS PRATIQUES -->
   <section id="infos-pratiques" class="section-padding bg-beige">
     <div class="container">
@@ -512,6 +514,172 @@
     </div>
   </section>
 
+  <!-- ==================== SECTION TÉMOIGNAGES ==================== -->
+  <section id="temoignages" class="section-padding"
+    style="background: linear-gradient(135deg, #0d1f15 0%, #1a3a26 50%, #0a1810 100%); position: relative; overflow: hidden;">
+    <div class="zellige-pattern" style="opacity: 0.03; z-index: 0;"></div>
+    <div class="container position-relative" style="z-index: 1;">
+      <div class="section-title-wrapper fade-in text-center mb-5">
+        <h2 class="section-title" style="color: var(--dore); text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Partagez Votre
+          Expérience</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto;">Votre avis nous aide à promouvoir la
+          magie du Maroc.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="temoignage-container fade-in">
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="temoignage-success" class="d-none text-center py-5">
+              <h3
+                style="color: var(--dore); font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">
+                Merci !
+              </h3>
+              <p style="color: white; font-size: 1.1rem; margin-bottom: 30px;">
+                Nous vous remercions chaleureusement pour votre témoignage. Votre voix contribue à faire rayonner le
+                Maroc à travers le monde !
+              </p>
+              <button class="btn btn-outline-light" onclick="resetTemoignageForm()">Soumettre un autre
+                témoignage</button>
+            </div>
+
+            <!-- The Form -->
+            <form id="temoignage-form">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <label class="form-label"
+                    style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Votre
+                    prénom <span style="color:#e74c3c">*</span></label>
+                  <input type="text" class="form-control" id="t-prenom" required placeholder="Ex: Jean">
+                  <div class="invalid-feedback">Veuillez entrer votre prénom.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Pays
+                    d'origine <span style="color:#e74c3c">*</span></label>
+                  <input type="text" class="form-control" id="t-pays" required placeholder="Ex: France">
+                  <div class="invalid-feedback">Veuillez renseigner votre pays.</div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label d-block"
+                    style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Avez-vous
+                    déjà visité le Maroc ?</label>
+                  <div class="d-flex gap-3">
+                    <div class="form-check custom-radio-pill">
+                      <input class="form-check-input" type="radio" name="t-visite" id="v-oui" value="jamais" checked>
+                      <label class="form-check-label" for="v-oui">Jamais visité</label>
+                    </div>
+                    <div class="form-check custom-radio-pill">
+                      <input class="form-check-input" type="radio" name="t-visite" id="v-non" value="planifie">
+                      <label class="form-check-label" for="v-non">Je planifie de le visiter prochainement</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label"
+                    style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Quelle est
+                    (ou serait) votre ville préférée ?</label>
+                  <select class="form-select" id="t-ville">
+                    <option value="" selected disabled>Choisissez une ville...</option>
+                    <option value="Marrakech">Marrakech</option>
+                    <option value="Fès">Fès</option>
+                    <option value="Chefchaouen">Chefchaouen</option>
+                    <option value="Rabat">Rabat</option>
+                    <option value="Casablanca">Casablanca</option>
+                    <option value="Tanger">Tanger</option>
+                    <option value="Essaouira">Essaouira</option>
+                    <option value="Agadir">Agadir</option>
+                    <option value="Ouarzazate">Ouarzazate</option>
+                    <option value="Merzouga">Merzouga</option>
+                    <option value="Dakhla">Dakhla</option>
+                    <option value="Ifrane">Ifrane</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label d-block mb-3"
+                    style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Qu'est-ce
+                    qui vous attire le plus ? (Plusieurs choix possibles)</label>
+                  <div class="row g-3">
+                    <div class="col-md-4 col-6">
+                      <div class="form-check custom-checkbox-card">
+                        <input class="form-check-input" type="checkbox" id="c-cuisine" value="Cuisine">
+                        <label class="form-check-label" for="c-cuisine">Gastronomie</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                      <div class="form-check custom-checkbox-card">
+                        <input class="form-check-input" type="checkbox" id="c-medina" value="Médina">
+                        <label class="form-check-label" for="c-medina">Médinas & Histoire</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                      <div class="form-check custom-checkbox-card">
+                        <input class="form-check-input" type="checkbox" id="c-desert" value="Désert">
+                        <label class="form-check-label" for="c-desert">Désert du Sahara</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                      <div class="form-check custom-checkbox-card">
+                        <input class="form-check-input" type="checkbox" id="c-nature" value="Nature">
+                        <label class="form-check-label" for="c-nature">Montagnes & Nature</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                      <div class="form-check custom-checkbox-card">
+                        <input class="form-check-input" type="checkbox" id="c-artisanat" value="Artisanat">
+                        <label class="form-check-label" for="c-artisanat">Artisanat local</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                      <div class="form-check custom-checkbox-card">
+                        <input class="form-check-input" type="checkbox" id="c-festivals" value="Festivals">
+                        <label class="form-check-label" for="c-festivals">Festivals & Musique</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 text-center my-2">
+                  <label class="form-label d-block"
+                    style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Note
+                    globale de votre expérience</label>
+                  <div class="star-rating" id="star-rating">
+                    <i class="fas fa-star" data-value="1"></i>
+                    <i class="fas fa-star" data-value="2"></i>
+                    <i class="fas fa-star" data-value="3"></i>
+                    <i class="fas fa-star" data-value="4"></i>
+                    <i class="fas fa-star" data-value="5"></i>
+                  </div>
+                  <input type="hidden" id="t-note" value="0">
+                  <div class="invalid-feedback d-block" id="note-error" style="display:none;">Veuillez donner une note.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label"
+                    style="color: var(--dore); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em;">Votre
+                    témoignage ou message</label>
+                  <textarea class="form-control" id="t-message" rows="4"
+                    placeholder="Racontez-nous votre meilleur souvenir ou ce qui vous fascine le plus..."></textarea>
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="w-100" style="max-width: 300px; padding: 12px 30px; background-color: #c5a855; color: #0d1f15; font-weight: bold; border-radius: 50px; border: none; text-transform: uppercase; letter-spacing: 1px; display: inline-block;">
+                    Soumettre le formulaire
+                  </button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 13. FOOTER -->
   <footer class="footer" id="contact">
@@ -2162,7 +2330,8 @@
             Corniche</strong>. Le quartier Habous le vendredi matin est une expérience authentique unique. Pour se
           déplacer : le tramway couvre l'essentiel du centre. <strong>Bon plan :</strong> le restaurant Ma Bretagne à
           Sidi Abderrahman pour des fruits de mer face à l'Atlantique, avec la vue sur les rochers mystiques. Comptez
-          <strong>2 à 3 jours</strong> pour profiter pleinement de la ville.</p>
+          <strong>2 à 3 jours</strong> pour profiter pleinement de la ville.
+        </p>
       </div>
 
     </div>
@@ -4501,8 +4670,8 @@
 
         <div class="city-card">
           <div class="city-card-img-wrap">
-            <img src="images/dakhla/Les sites archéologiques de Lemhignat.jpg"
-              alt="Sites archéologiques de Lemhignat" onerror="this.parentElement.innerHTML='🏺'">
+            <img src="images/dakhla/Les sites archéologiques de Lemhignat.jpg" alt="Sites archéologiques de Lemhignat"
+              onerror="this.parentElement.innerHTML='🏺'">
           </div>
           <h3>Les sites archéologiques de Lemhignat</h3>
           <p>Ces vestiges archéologiques font partie du patrimoine historique national et témoignent des anciennes
