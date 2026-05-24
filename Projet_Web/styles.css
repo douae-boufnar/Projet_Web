@@ -97,131 +97,132 @@ h3,
 
 /* Navbar après scroll */
 .navbar.scrolled {
-    padding: 8px 0;
     /* Réduit le padding */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    padding: 8px 0;
     /* Ombre plus forte */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Logo principal */
 .navbar-brand {
-    display: flex;
     /* Utilise flexbox */
-    flex-direction: column;
+    display: flex;
     /* Empile verticalement */
-    line-height: 1;
+    flex-direction: column;
     /* Réduit l’espace entre lignes */
+    line-height: 1;
 }
 
 /* Texte principal du logo */
 .brand-main {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
     /* Taille du texte */
-    font-weight: 900;
+    font-size: 1.8rem;
     /* Texte très gras */
-    color: var(--dore) !important;
+    font-weight: 900;
     /* Couleur dorée */
-    letter-spacing: 2px;
+    color: var(--dore) !important;
     /* Espacement entre lettres */
+    letter-spacing: 2px;
 }
 
 /* Sous-titre du logo */
 .brand-sub {
-    font-size: 0.65rem;
     /* Petite taille */
-    color: #fff;
+    font-size: 0.65rem;
     /* Couleur blanche */
-    letter-spacing: 4px;
+    color: #fff;
     /* Espacement entre lettres */
-    text-transform: uppercase;
+    letter-spacing: 4px;
     /* Texte en majuscules */
-    margin-top: 2px;
+    text-transform: uppercase;
     /* Petite marge supérieure */
+    margin-top: 2px;
 }
 
 /* Liens du menu */
 .nav-link {
-    color: rgba(255, 255, 255, 0.9) !important;
     /* Couleur blanche semi-transparente */
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9) !important;
     /* Texte semi-gras */
-    font-size: 0.95rem;
+    font-weight: 500;
     /* Taille du texte */
-    padding: 10px 15px !important;
+    font-size: 0.95rem;
     /* Espacement interne */
-    margin: 0 5px;
+    padding: 10px 15px !important;
     /* Marge horizontale */
-    position: relative;
+    margin: 0 5px;
     /* Position relative pour pseudo-éléments */
-    transition: var(--transition);
+    position: relative;
     /* Transition fluide */
+    transition: var(--transition);
 }
 
 /* Effet hover des liens */
 .nav-link:hover {
     /* Fond doré transparent */
     background: rgba(212, 175, 55, 0.2);
-    border-radius: 4px;
     /* Coins arrondis */
+    border-radius: 4px;
 }
 
 /* Ligne animée sous les liens */
 .nav-link::after {
-    content: '';
     /* Crée un pseudo-élément vide */
-    position: absolute;
+    content: '';
     /* Position absolue */
-    bottom: 5px;
+    position: absolute;
     /* Placement bas */
-    left: 15px;
+    bottom: 5px;
     /* Décalage gauche */
-    width: 0;
+    left: 15px;
     /* Largeur initiale à zéro */
-    height: 2px;
+    width: 0;
     /* Hauteur de la ligne */
-    background: var(--dore);
+    height: 2px;
     /* Couleur dorée */
-    transition: width 0.3s ease;
+    background: var(--dore);
     /* Animation largeur */
+    transition: width 0.3s ease;
 }
 
 /* Animation de la ligne au hover */
 .nav-link:hover::after {
-    width: calc(100% - 30px);
     /* Étend la ligne */
+    width: calc(100% - 30px);
 }
 
 /* 2. HERO SECTION */
 .hero {
-    height: 100vh;
     /* Hauteur plein écran */
-    min-height: 700px;
+    height: 100vh;
     /* Hauteur minimale */
-    position: relative;
+    min-height: 700px;
     /* Position relative */
-    background-color: var(--rouge-fonce);
+    position: relative;
     /* Couleur de secours */
+    background-color: var(--rouge-fonce);
     /* Dégradé de fond */
     background-image: linear-gradient(135deg, rgba(196, 30, 58, 0.8), rgba(139, 0, 0, 0.9), rgba(0, 107, 60, 0.7));
-    display: flex;
     /* Active flexbox */
-    align-items: center;
+    display: flex;
     /* Centre verticalement */
-    justify-content: center;
+    align-items: center;
     /* Centre horizontalement */
-    text-align: center;
+    justify-content: center;
     /* Centre le texte */
-    overflow: hidden;
+    text-align: center;
     /* Cache les debordements */
+    overflow: hidden;
 }
 
 /* Image de fond du hero */
 .hero::before {
-    content: '';
     /* elément vide */
-    position: absolute;
+    content: '';
     /* Position absolue */
+    position: absolute;
     /* Placement */
     top: 0;
     left: 0;
@@ -230,105 +231,104 @@ h3,
     height: 100%;
     /* Image de fond */
     background: url('images/accueil/hero_maroc_cinematic_1778374742658.png') center/cover no-repeat;
-    opacity: 0.6;
     /* Transparence */
-    z-index: 0;
+    opacity: 0.6;
     /* Derriere le contenu */
+    z-index: 0;
 }
 
 /* Contenu principal du hero */
 .hero-content {
     /* Position relative */
     position: relative;
-    z-index: 10;
     /* Place au-dessus du fond */
-    max-width: 900px;
+    z-index: 10;
     /* Largeur maximale */
-    padding: 0 20px;
+    max-width: 900px;
     /* Padding horizontal */
+    padding: 0 20px;
 }
 
 /* Sous-titre du hero */
 .hero-subtitle {
-    color: #F4E4BC;
     /* couleur beige doré */
+    color: #F4E4BC;
     /* espace entre lettres pour effet luxe */
     letter-spacing: 8px;
-    font-weight: 600;
     /* semi-bold */
-    text-transform: uppercase;
+    font-weight: 600;
     /* majuscules */
-    margin-bottom: 20px;
+    text-transform: uppercase;
     /* espace sous le texte */
+    margin-bottom: 20px;
     /* ombre légère pour lisibilité */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
     /* taille standard */
+    font-size: 1rem;
 }
 
 /* Titre principal du hero */
 .hero-title {
-    font-size: 4.5rem;
     /* très grand titre */
-    color: #fff;
+    font-size: 4.5rem;
     /* blanc */
+    color: #fff;
     /* très gras */
     font-weight: 900;
-    margin-bottom: 25px;
     /* espace sous le titre */
+    margin-bottom: 25px;
     /* lignes serrées pour style impactant */
     line-height: 1.1;
 }
 
 /* Partie colorée du titre */
 .hero-title span {
-    color: var(--dore);
     /* couleur dorée principale du thème */
+    color: var(--dore);
     /* effet glow doré */
     text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
 /* Texte descriptif du hero */
 .hero-text {
-    color: #fff;
     /* blanc */
-    font-size: 1.25rem;
+    color: #fff;
     /* texte assez grand */
-    margin-bottom: 40px;
+    font-size: 1.25rem;
     /* espace avant boutons */
+    margin-bottom: 40px;
     /* améliore lisibilité */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    opacity: 0.9;
     /* légrement transparent */
+    opacity: 0.9;
 }
 
 /* Boutons du hero  */
 .btn-hero {
-    padding: 15px 40px;
     /* taille du bouton */
-    font-weight: 700;
+    padding: 15px 40px;
     /* texte bold */
-    text-transform: uppercase;
+    font-weight: 700;
     /* majuscules */
+    text-transform: uppercase;
     /* espacement lettres */
     letter-spacing: 1px;
-    transition: var(--transition);
     /* animation fluide */
+    transition: var(--transition);
     /* espace entre boutons */
     margin: 10px;
 }
 
 /* Bouton principal (Explorer) */
-
 .btn-explorer {
     /* dégradé doré */
     background: linear-gradient(to right, var(--dore), #B8941F);
     /* texte noir forcé */
     color: var(--noir) !important;
-    border: none;
     /* pas de bordure */
-    border-radius: 50px;
+    border: none;
     /* bouton arrondi */
+    border-radius: 50px;
     /* ombre dorée */
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
 }
@@ -343,18 +343,18 @@ h3,
 
 /* Particules animées en arrière-plan */
 .particle {
+    /* Position absolue */
     position: absolute;
-    /* Particules animées en arrière-plan */
+    /* couleur dorée */
     background: var(--dore);
-    /* couleur dorée */
+    /* forme ronde */
     border-radius: 50%;
-    /* couleur dorée */
-    opacity: 0.4;
     /* transparent */
-    pointer-events: none;
+    opacity: 0.4;
     /* non cliquable */
-    z-index: 1;
+    pointer-events: none;
     /* derrière le contenu */
+    z-index: 1;
     /* animation continue */
     animation: float 15s infinite linear;
 }
@@ -364,15 +364,15 @@ h3,
     0% {
         transform: translateY(0) translateX(0);
     }
-
+    /* Premier tiers : monte et va à droite */
     33% {
         transform: translateY(-50px) translateX(20px);
     }
-
+    /* Deuxième tiers : descend et va à gauche */
     66% {
         transform: translateY(50px) translateX(-20px);
     }
-
+    /* Retour à la position initiale */
     100% {
         transform: translateY(0) translateX(0);
     }
@@ -380,23 +380,30 @@ h3,
 
 /*  HERO VIDEO  */
 .hero::before {
-    display: none;
     /* Désactive l'ancienne image de fond */
+    display: none;
 }
 
 /* Wrapper vidéo hero (centrage plein écran) */
 .hero-video-wrapper {
+    /* Position absolue pour centrage */
     position: absolute;
+    /* Centre vertical */
     top: 50%;
+    /* Centre horizontal */
     left: 50%;
-    width: 177.78vh;
     /* format 16:9 adaptatif */
+    width: 177.78vh;
+    /* Hauteur pleine */
     height: 100vh;
+    /* Largeur minimale pleine */
     min-width: 100%;
+    /* Hauteur minimale adaptative */
     min-height: 56.25vw;
+    /* Centre parfait */
     transform: translate(-50%, -50%);
-    z-index: 0;
     /* derrière contenu */
+    z-index: 0;
     /* vidéo non interactive */
     pointer-events: none;
 }
@@ -404,16 +411,21 @@ h3,
 /* Vidéo iframe ou video HTML */
 .hero-video-wrapper iframe,
 .hero-video-wrapper video {
+    /* Pleine largeur */
     width: 100%;
+    /* Pleine hauteur */
     height: 100%;
     /* couvre tout l’écran */
     object-fit: cover;
+    /* Supprime la bordure */
     border: none;
 }
 
 /* Overlay sombre sur vidéo */
 .hero-video-overlay {
+    /* Position absolue couvrante */
     position: absolute;
+    /* Remplit tout l'espace parent */
     inset: 0;
     /* filtre sombre */
     background: rgba(0, 0, 0, 0.3);
@@ -423,18 +435,21 @@ h3,
 
 /* Contenu au-dessus de la vidéo */
 .hero-content {
+    /* Position relative pour empiler */
     position: relative;
+    /* toujours au-dessus de l'overlay */
     z-index: 2;
-    /* toujours au-dessus */
 }
 
 /* Conteneur particules */
 #particles-container {
-    position: absolute;
     /* positionné */
+    position: absolute;
+    /* Remplit tout l'espace */
     inset: 0;
     /* au-dessus du fond mais derrière certains éléments */
     z-index: 1;
+    /* Laisse passer les clics */
     pointer-events: none;
 }
 
@@ -445,58 +460,63 @@ h3,
 }
 
 .section-title-wrapper {
-    margin-bottom: 60px;
     /* espace sous le titre */
+    margin-bottom: 60px;
     /* centre le texte */
     text-align: center;
 }
 
 .theme-subtitle {
-    display: inline-block;
     /* bloc en ligne */
+    display: inline-block;
     /* rouge transparent */
     background: rgba(196, 30, 58, 0.1);
     /* couleur principale rouge */
     color: var(--rouge);
-    padding: 5px 15px;
     /* espace intérieur */
-    border-radius: 20px;
+    padding: 5px 15px;
     /* bords arrondis */
+    border-radius: 20px;
+    /* gras */
     font-weight: 700;
-    font-size: 0.85rem;
     /* petite taille */
+    font-size: 0.85rem;
+    /* majuscules */
     text-transform: uppercase;
+    /* marge basse */
     margin-bottom: 15px;
 }
 
 .section-title {
-    font-size: 3rem;
     /* grand titre */
-    font-weight: 900;
+    font-size: 3rem;
     /* très gras */
+    font-weight: 900;
+    /* couleur noire */
     color: var(--noir);
     /* pour pseudo-élément ::after */
     position: relative;
+    /* espace sous le titre */
     padding-bottom: 20px;
 }
 
 .section-title::after {
-    /*  afficher un pseudo-élément */
+    /* afficher un pseudo-élément */
     content: '';
     /* positionné par rapport au titre */
     position: absolute;
-    bottom: 0;
     /* collé en bas */
+    bottom: 0;
     /* centré horizontalement */
     left: 50%;
     /* ajuste parfaitement le centrage */
     transform: translateX(-50%);
-    width: 80px;
     /* longueur de la ligne */
-    height: 4px;
+    width: 80px;
     /* épaisseur de la ligne */
-    background: var(--dore);
+    height: 4px;
     /* couleur dorée */
+    background: var(--dore);
 }
 
 .theme-card {
@@ -504,6 +524,7 @@ h3,
     height: 300px;
     /* arrondit les coins de la carte */
     border-radius: 20px;
+    /* cache le débordement */
     overflow: hidden;
     /* permet de positionner des éléments internes en absolute */
     position: relative;
@@ -511,8 +532,8 @@ h3,
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     /* applique une animation fluide lors des changements (hover, etc.) */
     transition: var(--transition);
-    margin-bottom: 30px;
     /* espace en bas entre les cartes */
+    margin-bottom: 30px;
 }
 
 .theme-card:hover {
@@ -529,66 +550,66 @@ h3,
     height: 100%;
     /* l’image garde ses proportions et remplit la carte sans se déformer */
     object-fit: cover;
-    transition: transform 0.6s ease;
     /* animation fluide pour le zoom de l’image */
+    transition: transform 0.6s ease;
 }
 
 .theme-card:hover img {
+    /* agrandit légèrement l’image au survol */
     transform: scale(1.1);
-    /* agrandit légèrement l’image au survol  */
-
 }
 
 .theme-overlay {
-    /* positionne l’overlay par-dessus la carte  */
+    /* positionne l’overlay par-dessus la carte */
     position: absolute;
+    /* couvre toute la surface */
     inset: 0;
-    /* couvre toute la surface*/
     /* dégradé noir en bas vers transparent en haut pour améliorer la lisibilité */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 70%);
-    display: flex;
     /* active flexbox pour organiser le contenu */
+    display: flex;
+    /* orientation verticale */
     flex-direction: column;
-    justify-content: flex-end;
     /* pousse le contenu vers le bas de la carte */
-    padding: 25px;
+    justify-content: flex-end;
     /* espace intérieur autour du contenu */
+    padding: 25px;
 }
 
 .theme-icon {
     /* position libre dans la carte */
     position: absolute;
-    top: 20px;
     /* distance depuis le haut */
-    left: 20px;
+    top: 20px;
     /* distance depuis la gauche */
+    left: 20px;
     /* taille du cercle */
     width: 45px;
     height: 45px;
-    background: var(--blanc-casse);
     /* fond clair */
-    border-radius: 50%;
+    background: var(--blanc-casse);
     /* forme circulaire */
-    display: flex;
+    border-radius: 50%;
     /* centre l’icône */
+    display: flex;
     /* centrage vertical et horizontal */
     align-items: center;
     justify-content: center;
-    color: var(--dore);
     /* couleur de l’icône */
-    font-size: 1.2rem;
+    color: var(--dore);
     /* taille de l’icône */
+    font-size: 1.2rem;
     /* ombre pour effet de profondeur */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .theme-name {
-    color: #fff;
     /* texte blanc */
-    font-size: 1.4rem;
+    color: #fff;
     /* taille du texte */
-    font-weight: 700;
+    font-size: 1.4rem;
     /* texte en gras */
+    font-weight: 700;
     /* supprime les marges par défaut */
     margin: 0;
 }
@@ -601,33 +622,33 @@ h3,
 }
 
 .map-container {
-    height: 500px;
     /* hauteur fixe de la carte */
-    border-radius: 20px;
+    height: 500px;
     /* coins arrondis */
+    border-radius: 20px;
     /* cache les débordements (map, images) */
     overflow: hidden;
-    border: 4px solid var(--dore);
     /* bordure dorée autour de la carte */
+    border: 4px solid var(--dore);
     /* ombre pour effet de profondeur */
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-    margin-bottom: 40px;
     /* espace en bas */
+    margin-bottom: 40px;
 }
 
 .map-card {
-    background: #fff;
     /* fond blanc */
-    padding: 20px;
+    background: #fff;
     /* espace intérieur */
-    border-radius: 15px;
+    padding: 20px;
     /* coins arrondis */
+    border-radius: 15px;
     /* petite ombre légère */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
     /* animation fluide au hover */
-    text-align: center;
+    transition: var(--transition);
     /* centre le texte */
+    text-align: center;
     /* prend toute la hauteur disponible */
     height: 100%;
 }
@@ -638,10 +659,10 @@ h3,
 }
 
 .map-card i {
-    font-size: 1.8rem;
     /* taille des icônes */
-    margin-bottom: 15px;
+    font-size: 1.8rem;
     /* espace sous l’icône */
+    margin-bottom: 15px;
 }
 
 .city-marrakech {
@@ -652,61 +673,67 @@ h3,
 }
 
 .city-agadir {
+    /* barre verte en haut */
     border-top: 5px solid var(--vert);
+    /* texte vert */
     color: var(--vert);
 }
 
 .city-fes {
+    /* barre dorée en haut */
     border-top: 5px solid var(--dore);
+    /* texte doré */
     color: var(--dore);
 }
 
 .city-essaouira {
+    /* barre corail en haut */
     border-top: 5px solid #E2725B;
+    /* texte corail */
     color: #E2725B;
 }
 
 .map-card h5 {
-    color: var(--noir);
     /* couleur titre */
-    font-weight: 700;
+    color: var(--noir);
     /* texte gras */
-    margin-bottom: 5px;
+    font-weight: 700;
     /* petit espace en bas */
+    margin-bottom: 5px;
 }
 
 .map-card p {
-    font-size: 0.8rem;
     /* texte petit */
-    color: var(--gris);
+    font-size: 0.8rem;
     /* couleur grise */
+    color: var(--gris);
     /* supprime marge par défaut */
     margin: 0;
 }
 
 /* 7. 12 VILLES */
 .city-grid-card {
-    background: #fff;
     /* fond blanc */
-    border-radius: 20px;
+    background: #fff;
     /* coins arrondis */
+    border-radius: 20px;
     /* cache débordement image */
     overflow: hidden;
     /* ombre */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
     /* animation fluide */
-    cursor: pointer;
+    transition: var(--transition);
     /* curseur main */
-    height: 100%;
+    cursor: pointer;
     /* hauteur complète */
+    height: 100%;
 }
 
 .city-grid-card:hover {
-    transform: translateY(-12px);
     /* remonte la carte */
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(-12px);
     /* ombre plus forte */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
 .city-img-top {
@@ -722,97 +749,138 @@ h3,
     /* image bien remplie sans déformation */
     width: 100%;
     height: 100%;
+    /* garde les proportions */
     object-fit: cover;
-    transition: transform 0.6s ease;
     /* animation zoom */
+    transition: transform 0.6s ease;
 }
 
 .city-grid-card:hover .city-img-top img {
-    transform: scale(1.08);
     /* zoom image au hover */
+    transform: scale(1.08);
 }
 
 .city-cat-badge {
+    /* Position absolue */
     position: absolute;
+    /* En haut à droite */
     top: 15px;
     right: 15px;
     /* dégradé rouge */
     background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
+    /* Texte blanc */
     color: #fff;
+    /* Espacement interne */
     padding: 6px 18px;
+    /* Coins arrondis */
     border-radius: 25px;
+    /* Petite taille */
     font-size: 0.75rem;
+    /* Semi-gras */
     font-weight: 600;
 }
 
 .city-card-body {
+    /* Espacement interne */
     padding: 25px;
 }
 
 .city-card-title {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Taille */
     font-size: 1.4rem;
+    /* Très gras */
     font-weight: 800;
+    /* Noir */
     color: var(--noir);
+    /* Marge basse */
     margin-bottom: 12px;
 }
 
 .city-card-text {
+    /* Noir */
     color: var(--noir);
+    /* Semi-transparent */
     opacity: 0.7;
+    /* Taille standard */
     font-size: 0.9rem;
+    /* Marge basse */
     margin-bottom: 20px;
 }
 
 .city-card-footer {
+    /* Espacement entre éléments */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* Ligne de séparation */
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding-top: 15px;
 }
 
 .city-rating {
+    /* Doré */
     color: var(--dore);
+    /* Gras */
     font-weight: 700;
 }
 
 .btn-city {
+    /* Vert */
     background: var(--vert);
+    /* Blanc */
     color: #fff !important;
+    /* Espacement */
     padding: 8px 20px;
+    /* Arrondi */
     border-radius: 30px;
+    /* Taille */
     font-size: 0.85rem;
+    /* Gras */
     font-weight: 600;
+    /* Pas de bordure */
     border: none;
+    /* Transition */
     transition: var(--transition);
 }
 
 .btn-city:hover {
+    /* Devient rouge */
     background: var(--rouge);
+    /* Légère remontée */
     transform: translateY(-2px);
 }
 
 .city-buttons-wrapper {
+    /* Espacement entre boutons */
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
 .city-card-footer .btn-city {
+    /* Plus petit padding */
     padding: 6px 14px;
+    /* Plus petite taille */
     font-size: 0.8rem;
+    /* Moins arrondi */
     border-radius: 20px;
 }
 
 .city-card-footer .btn-hotel {
+    /* Fond doré */
     background: var(--dore);
+    /* Texte noir */
     color: var(--noir) !important;
 }
 
 .city-card-footer .btn-hotel:hover {
+    /* Devient rouge */
     background: var(--rouge);
+    /* Texte blanc */
     color: #fff !important;
+    /* Remonte */
     transform: translateY(-2px);
 }
 
@@ -820,204 +888,304 @@ h3,
 .hotel-card {
     /* alignement horizontal image + contenu */
     display: flex;
+    /* Fond blanc */
     background: #fff;
+    /* Coins arrondis */
     border-radius: 15px;
+    /* Cache débordement */
     overflow: hidden;
+    /* Ombre légère */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    /* Marge basse */
     margin-bottom: 20px;
+    /* Transition */
     transition: var(--transition);
+    /* Bordure discrète */
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .hotel-card:hover {
+    /* Remonte */
     transform: translateY(-4px);
+    /* Ombre plus forte */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .hotel-img-wrap {
+    /* Largeur fixe */
     width: 150px;
+    /* Hauteur min */
     min-height: 120px;
+    /* Fond beige */
     background: var(--beige);
+    /* Centre l'icône */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Cache débordement */
     overflow: hidden;
+    /* Position relative pour les enfants */
     position: relative;
 }
 
 .hotel-img-wrap img {
+    /* Remplit */
     width: 100%;
     height: 100%;
+    /* Garde proportions */
     object-fit: cover;
 }
 
 .hotel-img-wrap i {
+    /* Grande icône */
     font-size: 2.5rem;
+    /* Dorée */
     color: var(--dore);
 }
 
 .hotel-details {
+    /* Espacement interne */
     padding: 20px;
+    /* Prend l'espace restant */
     flex-grow: 1;
+    /* Colonne */
     display: flex;
     flex-direction: column;
+    /* Espace entre */
     justify-content: space-between;
 }
 
 .hotel-header {
+    /* Ligne horizontale */
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    /* Espacement */
     gap: 10px;
 }
 
 .hotel-name {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Taille */
     font-size: 1.25rem;
+    /* Très gras */
     font-weight: 800;
+    /* Noir */
     color: var(--noir);
+    /* Supprime marges */
     margin: 0 0 5px 0;
 }
 
 .hotel-type {
+    /* Petite taille */
     font-size: 0.8rem;
+    /* Gris */
     color: var(--gris);
+    /* Médium */
     font-weight: 500;
+    /* Supprime marge */
     margin: 0;
 }
 
 .hotel-rating-badge {
+    /* Fond doré transparent */
     background: rgba(212, 175, 55, 0.15);
+    /* Texte doré foncé */
     color: #b8941f;
+    /* Espacement */
     padding: 4px 10px;
+    /* Arrondi */
     border-radius: 10px;
+    /* Gras */
     font-weight: 700;
+    /* Petite taille */
     font-size: 0.8rem;
+    /* Empêche le retour à la ligne */
     white-space: nowrap;
 }
 
 .hotel-desc {
+    /* Petite taille */
     font-size: 0.85rem;
+    /* Gris */
     color: var(--gris);
+    /* Marges */
     margin: 10px 0 15px 0;
+    /* Hauteur de ligne */
     line-height: 1.5;
 }
 
 .hotel-footer {
+    /* Aligne à droite */
     display: flex;
     justify-content: flex-end;
 }
 
 .btn-hotel-book {
+    /* Vert */
     background: var(--vert);
+    /* Blanc */
     color: #fff !important;
+    /* Espacement */
     padding: 6px 16px;
+    /* Petite taille */
     font-size: 0.8rem;
+    /* Arrondi */
     border-radius: 20px;
+    /* Gras */
     font-weight: 600;
+    /* Pas de soulignement */
     text-decoration: none;
+    /* Transition */
     transition: var(--transition);
+    /* Pas de bordure */
     border: none;
 }
 
 .btn-hotel-book:hover {
+    /* Devient rouge */
     background: var(--rouge);
+    /* Remonte */
     transform: translateY(-2px);
 }
 
+/* Responsive pour la modale des hôtels */
 @media (max-width: 768px) {
     .hotel-card {
+        /* Passe en colonne sur mobile */
         flex-direction: column;
     }
-
     .hotel-img-wrap {
+        /* Pleine largeur */
         width: 100%;
+        /* Hauteur fixe */
         height: 150px;
     }
 }
 
 /* Currency Converter Styles */
 .btn-swap-currency {
+    /* Taille fixe */
     width: 40px;
     height: 40px;
+    /* Rond */
     border-radius: 50%;
+    /* Pas de bordure */
     border: none;
+    /* Vert */
     background: var(--vert) !important;
+    /* Blanc */
     color: #fff !important;
+    /* Flex pour centrer */
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    /* Transition */
     transition: var(--transition);
+    /* Ombre */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* Curseur main */
     cursor: pointer;
 }
 
 .btn-swap-currency:hover {
+    /* Devient rouge */
     background: var(--rouge) !important;
+    /* Tourne et grandit */
     transform: rotate(180deg) scale(1.1);
 }
 
 .currency-converter-container .form-label {
+    /* Petite taille */
     font-size: 0.85rem;
+    /* Espacement lettres */
     letter-spacing: 0.5px;
+    /* Marge basse */
     margin-bottom: 6px;
 }
 
 .currency-converter-container .form-control:focus,
 .currency-converter-container .form-select:focus {
+    /* Bordure dorée */
     border-color: var(--dore) !important;
+    /* Ombre dorée */
     box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
 }
 
+/* Supprime les flèches des champs number dans le convertisseur */
 .currency-converter-container input[type=number]::-webkit-inner-spin-button,
 .currency-converter-container input[type=number]::-webkit-outer-spin-button {
+    /* Cache les flèches sur Chrome/Safari */
     -webkit-appearance: none;
+    /* Supprime marge */
     margin: 0;
 }
 
 .currency-converter-container input[type=number] {
+    /* Cache flèches sur Firefox */
     -moz-appearance: textfield;
 }
 
 /* MODAL */
 .modal-content {
+    /* Coins très arrondis */
     border-radius: 25px;
+    /* Cache débordement */
     overflow: hidden;
+    /* Pas de bordure */
     border: none;
 }
 
 .modal-header {
+    /* Dégradé rouge */
     background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
+    /* Texte blanc */
     color: #fff;
+    /* Pas de bordure */
     border: none;
+    /* Grand padding */
     padding: 25px;
 }
 
 .modal-header .btn-close {
+    /* Inverse la couleur (blanche) */
     filter: invert(1);
 }
 
 .modal-tabs {
+    /* Fond beige */
     background: var(--beige);
+    /* Padding horizontal */
     padding: 0 15px;
 }
 
 .modal-tabs .nav-link {
+    /* Noir */
     color: var(--noir) !important;
+    /* Pas de bordure */
     border: none;
+    /* Espacement */
     padding: 15px 20px !important;
+    /* Gras */
     font-weight: 600;
+    /* Pas de coins arrondis */
     border-radius: 0;
+    /* Fond transparent */
     background: transparent !important;
 }
 
 .modal-tabs .nav-link.active {
+    /* Rouge */
     color: var(--rouge) !important;
+    /* Ligne rouge en bas */
     border-bottom: 3px solid var(--rouge);
 }
 
 .modal-body {
+    /* Noir */
     color: var(--noir);
+    /* Espacement */
     padding: 35px;
 }
 
@@ -1026,734 +1194,1092 @@ h3,
 
 /* Texte d'introduction */
 #conseillsModal .modal-body>p.text-muted {
+    /* Taille lisible */
     font-size: 0.95rem;
+    /* Hauteur de ligne aérée */
     line-height: 1.7;
+    /* Gris */
     color: var(--gris) !important;
+    /* Ligne de séparation */
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    /* Espacement sous le texte */
     padding-bottom: 20px;
 }
 
 /* Scroll interne stylisé */
 #conseillsModal .modal-body {
+    /* Hauteur max avec scroll */
     max-height: 75vh;
+    /* Scroll vertical */
     overflow-y: auto;
+    /* Barre fine */
     scrollbar-width: thin;
+    /* Couleur de la barre */
     scrollbar-color: var(--dore) transparent;
 }
 
 #conseillsModal .modal-body::-webkit-scrollbar {
+    /* Largeur de la barre */
     width: 5px;
 }
 
 #conseillsModal .modal-body::-webkit-scrollbar-track {
+    /* Fond transparent */
     background: transparent;
 }
 
 #conseillsModal .modal-body::-webkit-scrollbar-thumb {
+    /* Barre dorée */
     background: var(--dore);
+    /* Coins arrondis */
     border-radius: 10px;
 }
 
 /* Cards conseils — titres et textes */
 #conseillsModal .col-md-6>div h5 {
+    /* Taille */
     font-size: 1.05rem;
+    /* Gras */
     font-weight: 700;
+    /* Noir */
     color: var(--noir);
+    /* Marge basse */
     margin-bottom: 8px;
+    /* Hauteur ligne */
     line-height: 1.3;
 }
 
 #conseillsModal .col-md-6>div p {
+    /* Petit texte */
     font-size: 0.875rem;
+    /* Gris */
     color: var(--gris);
+    /* Pas de marge */
     margin-bottom: 0;
+    /* Hauteur ligne */
     line-height: 1.6;
 }
 
 /* Hover sur les cards conseils */
 #conseillsModal .col-md-6>div {
+    /* Transition */
     transition: var(--transition);
+    /* Curseur par défaut */
     cursor: default;
 }
 
 #conseillsModal .col-md-6>div:hover {
+    /* Légère remontée */
     transform: translateY(-4px);
+    /* Ombre au survol */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Responsive modal */
 @media (max-width: 576px) {
     #conseillsModal .modal-body {
+        /* Moins de padding sur mobile */
         padding: 20px 15px;
+        /* Plus haut */
         max-height: 80vh;
     }
-
     #conseillsModal .modal-title {
+        /* Titre plus petit */
         font-size: 1.3rem;
     }
 }
 
 /* 8. CUISINE */
 .cuisine-card {
+    /* Centre le texte */
     text-align: center;
+    /* Marge basse */
     margin-bottom: 40px;
+    /* Transition */
     transition: var(--transition);
 }
 
 .cuisine-img {
+    /* Taille carrée */
     width: 180px;
     height: 180px;
+    /* Rond */
     border-radius: 50%;
+    /* Bordure dorée */
     border: 4px solid var(--dore);
+    /* Espacement interne */
     padding: 5px;
+    /* Fond blanc */
     background: #fff;
+    /* Centré */
     margin: 0 auto 20px;
+    /* Cache débordement */
     overflow: hidden;
+    /* Transition */
     transition: var(--transition);
+    /* Ombre */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .cuisine-img img {
+    /* Remplit */
     width: 100%;
     height: 100%;
+    /* Garde proportions */
     object-fit: cover;
+    /* Rond */
     border-radius: 50%;
 }
 
 .cuisine-card:hover .cuisine-img {
+    /* Bordure rouge */
     border-color: var(--rouge);
+    /* Légère rotation et zoom */
     transform: rotate(3deg) scale(1.05);
+    /* Ombre dorée */
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
 }
 
 .cuisine-title {
+    /* Rouge */
     color: var(--rouge);
+    /* Très gras */
     font-weight: 800;
+    /* Marge basse */
     margin-bottom: 8px;
 }
 
 .cuisine-desc {
+    /* Noir */
     color: var(--noir);
+    /* Semi-transparent */
     opacity: 0.8;
+    /* Petite taille */
     font-size: 0.9rem;
 }
 
 /* 9. CULTURE & ARTISANAT */
 .culture-img-box {
+    /* Coins arrondis */
     border-radius: 20px;
+    /* Cache débordement */
     overflow: hidden;
+    /* Ombre */
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    /* Pleine hauteur */
     height: 100%;
 }
 
 .culture-img-box img {
+    /* Remplit */
     width: 100%;
     height: 100%;
+    /* Garde proportions */
     object-fit: cover;
 }
 
 .culture-item {
+    /* Alignement horizontal */
     display: flex;
     align-items: center;
+    /* Espacement */
     padding: 20px;
+    /* Fond blanc */
     background: #fff;
+    /* Coins arrondis */
     border-radius: 15px;
+    /* Marge basse */
     margin-bottom: 15px;
+    /* Transition */
     transition: var(--transition);
+    /* Ombre légère */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
 }
 
 .culture-item:hover {
+    /* Décalage vers la droite */
     transform: translateX(10px);
+    /* Bordure dorée à gauche */
     border-left: 4px solid var(--dore);
+    /* Fond doré transparent */
     background: rgba(212, 175, 55, 0.05);
 }
 
 .culture-icon {
+    /* Taille fixe */
     width: 60px;
     height: 60px;
+    /* Ne rétrécit pas */
     min-width: 60px;
+    /* Dégradé rouge */
     background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
+    /* Rond */
     border-radius: 50%;
+    /* Centre l'icône */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Icône dorée */
     color: var(--dore);
+    /* Taille icône */
     font-size: 1.5rem;
+    /* Marge droite */
     margin-right: 20px;
+    /* Ombre rouge */
     box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
 }
 
 .culture-icon-img {
+    /* Taille fixe */
     width: 60px;
     height: 60px;
+    /* Ne rétrécit pas */
     min-width: 60px;
+    /* Rond */
     border-radius: 50%;
+    /* Cache débordement */
     overflow: hidden;
+    /* Marge droite */
     margin-right: 20px;
+    /* Ombre */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .culture-icon-img img {
+    /* Remplit */
     width: 100%;
     height: 100%;
+    /* Garde proportions */
     object-fit: cover;
 }
 
 .culture-content h5 {
+    /* Gras */
     font-weight: 700;
+    /* Marge basse */
     margin-bottom: 5px;
 }
 
 .culture-content p {
+    /* Petite taille */
     font-size: 0.9rem;
+    /* Noir */
     color: var(--noir);
+    /* Semi-transparent */
     opacity: 0.8;
+    /* Pas de marge */
     margin: 0;
 }
 
 .culture-card {
+    /* Coins arrondis */
     border-radius: 20px;
+    /* Cache débordement */
     overflow: hidden;
+    /* Fond blanc */
     background: #fff;
+    /* Ombre légère */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Transition */
     transition: var(--transition);
+    /* Marge basse */
     margin-bottom: 30px;
+    /* Pleine hauteur */
     height: 100%;
+    /* Colonne pour flex */
     display: flex;
     flex-direction: column;
 }
 
 .culture-card:hover {
+    /* Remonte */
     transform: translateY(-8px);
+    /* Bordure rouge en bas */
     border-bottom: 4px solid var(--rouge);
 }
 
 .culture-card-img {
+    /* Hauteur fixe */
     height: 220px;
+    /* Cache débordement */
     overflow: hidden;
 }
 
 .culture-card-img img {
+    /* Remplit */
     width: 100%;
     height: 100%;
+    /* Garde proportions */
     object-fit: cover;
 }
 
 .culture-card-body {
+    /* Espacement */
     padding: 25px;
+    /* Centre le texte */
     text-align: center;
+    /* Prend l'espace restant */
     flex-grow: 1;
+    /* Colonne */
     display: flex;
     flex-direction: column;
+    /* Espace entre */
     justify-content: space-between;
 }
 
 .culture-card-title {
+    /* Rouge */
     color: var(--rouge);
+    /* Très gras */
     font-weight: 800;
+    /* Marge basse */
     margin-bottom: 12px;
+    /* Taille */
     font-size: 1.25rem;
 }
 
 .culture-card-desc {
+    /* Noir */
     color: var(--noir);
+    /* Semi-transparent */
     opacity: 0.8;
+    /* Petite taille */
     font-size: 0.9rem;
+    /* Pas de marge */
     margin: 0;
+    /* Hauteur ligne */
     line-height: 1.5;
 }
 
 /* ===== 9. CULTURE CERTIFIÉE PAR L'UNESCO ===== */
 .unesco-section {
+    /* Dégradé beige */
     background: linear-gradient(135deg, #f5ede1 0%, #f0e6d2 100%);
 }
 
+/* Animation d'entrée pour les cartes UNESCO */
 .unesco-card-wrapper {
+    /* Invisible au départ */
     opacity: 0;
+    /* Descendue */
     transform: translateY(35px);
+    /* Transition fluide */
     transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
         transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* État visible des cartes UNESCO */
 .unesco-card-wrapper.visible {
+    /* Devient visible */
     opacity: 1;
+    /* Remonte */
     transform: translateY(0);
 }
 
+/* Délais d'animation pour chaque carte */
 .unesco-card-wrapper.visible:nth-child(1) {
+    /* Première carte : délai court */
     transition-delay: 0.1s;
 }
 
 .unesco-card-wrapper.visible:nth-child(2) {
+    /* Deuxième carte : délai moyen */
     transition-delay: 0.2s;
 }
 
 .unesco-card-wrapper.visible:nth-child(3) {
+    /* Troisième carte : délai long */
     transition-delay: 0.3s;
 }
 
 .unesco-card-wrapper.visible:nth-child(4) {
+    /* Quatrième carte : délai très long */
     transition-delay: 0.4s;
 }
 
 .unesco-card {
+    /* Fond blanc */
     background: #ffffff;
+    /* Coins arrondis */
     border-radius: 16px;
+    /* Cache débordement */
     overflow: hidden;
+    /* Ombre légère */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    /* Position relative */
     position: relative;
+    /* Colonne flex */
     display: flex;
     flex-direction: column;
+    /* Pleine hauteur */
     height: 100%;
+    /* Transition */
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
         box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* Ligne dorée en haut des cartes UNESCO */
 .unesco-gold-line {
+    /* Hauteur fine */
     height: 4px;
+    /* Pleine largeur */
     width: 100%;
+    /* Dégradé doré */
     background: linear-gradient(90deg, #b8941f, #d4af37, #f3e5ab, #d4af37, #b8941f);
 }
 
 .unesco-img-container {
+    /* Hauteur fixe */
     height: 240px;
+    /* Pleine largeur */
     width: 100%;
+    /* Cache débordement */
     overflow: hidden;
+    /* Position relative */
     position: relative;
 }
 
 .unesco-card-img {
+    /* Remplit */
     width: 100%;
     height: 100%;
+    /* Garde proportions */
     object-fit: cover;
+    /* Transition zoom */
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .unesco-card:hover {
+    /* Remonte */
     transform: translateY(-8px);
+    /* Ombre rougeâtre */
     box-shadow: 0 20px 40px rgba(160, 27, 60, 0.12);
 }
 
 .unesco-card:hover .unesco-card-img {
+    /* Zoom au survol */
     transform: scale(1.08);
 }
 
+/* Overlay au survol des cartes UNESCO */
 .unesco-overlay {
+    /* Position absolue couvrante */
     position: absolute;
     top: 0;
     left: 0;
+    /* Pleine taille */
     width: 100%;
     height: 100%;
+    /* Fond sombre */
     background: rgba(0, 0, 0, 0.45);
+    /* Invisible au départ */
     opacity: 0;
+    /* Transition */
     transition: opacity 0.4s ease;
+    /* Centre l'icône */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Au-dessus de l'image */
     z-index: 2;
 }
 
 .unesco-card:hover .unesco-overlay {
+    /* Visible au survol */
     opacity: 1;
 }
 
 .unesco-overlay-icon {
+    /* Plus petite au départ */
     transform: scale(0.7);
+    /* Transition élastique */
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .unesco-card:hover .unesco-overlay-icon {
+    /* Taille normale au survol */
     transform: scale(1);
 }
 
 .unesco-card-body {
+    /* Espacement */
     padding: 25px;
+    /* Colonne */
     display: flex;
     flex-direction: column;
+    /* Prend l'espace restant */
     flex-grow: 1;
+    /* Centre le texte */
     text-align: center;
 }
 
 .unesco-card-title {
+    /* Police élégante */
     font-family: 'Playfair Display', Georgia, serif;
+    /* Taille */
     font-size: 1.45rem;
+    /* Gras */
     font-weight: 700;
+    /* Rouge spécifique */
     color: #a01b3c;
+    /* Marge basse */
     margin-bottom: 12px;
+    /* Espacement lettres négatif */
     letter-spacing: -0.2px;
 }
 
 .unesco-card-desc {
+    /* Petite taille */
     font-size: 0.92rem;
+    /* Hauteur ligne */
     line-height: 1.6;
+    /* Gris */
     color: #555555;
+    /* Prend l'espace */
     flex-grow: 1;
+    /* Pas de marge */
     margin: 0;
 }
 
 
 /* 10. NATURE & AVENTURE */
 .nature-card {
+    /* Coins arrondis */
     border-radius: 20px;
+    /* Cache débordement */
     overflow: hidden;
+    /* Fond blanc */
     background: #fff;
+    /* Ombre */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Transition */
     transition: var(--transition);
+    /* Marge basse */
     margin-bottom: 30px;
 }
 
 .nature-card:hover {
+    /* Remonte */
     transform: translateY(-8px);
+    /* Bordure dorée en bas */
     border-bottom: 4px solid var(--dore);
 }
 
 .nature-img {
+    /* Hauteur fixe */
     height: 250px;
+    /* Cache débordement */
     overflow: hidden;
 }
 
 .nature-img img {
+    /* Remplit */
     width: 100%;
     height: 100%;
+    /* Garde proportions */
     object-fit: cover;
 }
 
 .nature-body {
+    /* Espacement */
     padding: 25px;
+    /* Centre le texte */
     text-align: center;
 }
 
 .nature-icon-big {
+    /* Grande icône */
     font-size: 2rem;
+    /* Marge basse */
     margin-bottom: 15px;
+    /* Bloc */
     display: block;
 }
 
 .icon-desert {
+    /* Couleur désert */
     color: #E2725B;
 }
 
 .icon-montagne {
+    /* Vert */
     color: var(--vert);
 }
 
 .icon-ocean {
+    /* Doré */
     color: var(--dore);
 }
 
 .feature-box {
+    /* Alignement horizontal */
     display: flex;
     align-items: center;
+    /* Espacement */
     padding: 25px;
+    /* Fond blanc */
     background: #fff;
+    /* Coins arrondis */
     border-radius: 20px;
+    /* Marge haute */
     margin-top: 20px;
+    /* Ombre légère */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
 }
 
 .feature-box i {
+    /* Grande icône */
     font-size: 2.5rem;
+    /* Marge droite */
     margin-right: 25px;
 }
 
 /* 11. INFOS PRATIQUES */
 .info-card {
+    /* Fond blanc */
     background: #fff;
+    /* Espacement */
     padding: 35px;
+    /* Coins arrondis */
     border-radius: 15px;
+    /* Bordure verte à gauche */
     border-left: 5px solid var(--vert);
+    /* Ombre */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    /* Transition */
     transition: var(--transition);
+    /* Pleine hauteur */
     height: 100%;
 }
 
 .info-card:hover {
+    /* Décalage droite */
     transform: translateX(8px);
+    /* Bordure dorée */
     border-left-color: var(--dore);
+    /* Ombre plus forte */
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
 }
 
 .info-icon {
+    /* Grande icône */
     font-size: 2.5rem;
+    /* Rouge */
     color: var(--rouge);
+    /* Marge basse */
     margin-bottom: 20px;
+    /* Bloc */
     display: block;
 }
 
 .info-title {
+    /* Gras */
     font-weight: 800;
+    /* Marge basse */
     margin-bottom: 12px;
 }
 
 .info-text {
+    /* Taille */
     font-size: 0.95rem;
+    /* Hauteur ligne */
     line-height: 1.7;
+    /* Semi-transparent */
     opacity: 0.8;
 }
 
 /* 12. NEWSLETTER */
 .newsletter {
+    /* Dégradé rouge */
     background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
+    /* Grand padding vertical */
     padding: 100px 0;
+    /* Position relative */
     position: relative;
+    /* Cache débordement */
     overflow: hidden;
+    /* Texte blanc */
     color: #fff;
+    /* Centre le texte */
     text-align: center;
 }
 
+/* Animation décorative de la newsletter */
 .newsletter::before {
+    /* Élément vide */
     content: '';
+    /* Position absolue */
     position: absolute;
+    /* Centré */
     top: 50%;
     left: 50%;
+    /* Grande taille */
     width: 600px;
     height: 600px;
+    /* Dégradé radial doré */
     background: radial-gradient(circle, var(--dore) 0%, transparent 70%);
+    /* Très transparent */
     opacity: 0.15;
+    /* Centre parfait */
     transform: translate(-50%, -50%);
+    /* Rotation continue */
     animation: rotateGlow 20s infinite linear;
 }
 
+/* Animation de rotation pour l'effet glow */
 @keyframes rotateGlow {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
-
     to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
 .newsletter-content {
+    /* Au-dessus de l'animation */
     position: relative;
     z-index: 2;
 }
 
 .newsletter h2 {
+    /* Grande taille */
     font-size: 2.8rem;
+    /* Très gras */
     font-weight: 900;
+    /* Marge basse */
     margin-bottom: 15px;
 }
 
 .newsletter-form {
+    /* Alignement horizontal */
     display: flex;
+    /* Largeur max */
     max-width: 650px;
+    /* Centré */
     margin: 40px auto 0;
+    /* Espacement */
     gap: 15px;
 }
 
 .newsletter-form input {
+    /* Prend l'espace restant */
     flex: 1;
+    /* Fond blanc transparent */
     background: rgba(255, 255, 255, 0.15);
+    /* Bordure semi-transparente */
     border: 2px solid rgba(255, 255, 255, 0.3);
+    /* Coins arrondis */
     border-radius: 50px;
+    /* Espacement */
     padding: 15px 30px;
+    /* Texte blanc */
     color: #fff;
+    /* Semi-gras */
     font-weight: 500;
+    /* Transition */
     transition: var(--transition);
 }
 
 .newsletter-form input::placeholder {
+    /* Placeholder blanc transparent */
     color: rgba(255, 255, 255, 0.6);
 }
 
 .newsletter-form input:focus {
+    /* Supprime contour par défaut */
     outline: none;
+    /* Fond plus opaque */
     background: rgba(255, 255, 255, 0.25);
+    /* Bordure dorée */
     border-color: var(--dore);
 }
 
 .btn-newsletter {
+    /* Fond doré */
     background: var(--dore);
+    /* Texte noir */
     color: var(--noir);
+    /* Pas de bordure */
     border: none;
+    /* Coins arrondis */
     border-radius: 50px;
+    /* Espacement horizontal */
     padding: 0 45px;
+    /* Gras */
     font-weight: 700;
+    /* Transition */
     transition: var(--transition);
 }
 
 .btn-newsletter:hover {
+    /* Légère augmentation */
     transform: scale(1.05);
+    /* Ombre dorée */
     box-shadow: 0 0 20px var(--dore);
 }
 
 /* 13. FOOTER */
 .footer {
+    /* Dégradé rouge très foncé vers noir */
     background: linear-gradient(to bottom, #4A0000, #1A1A1A);
+    /* Texte blanc */
     color: #fff;
+    /* Grand padding haut, plus petit bas */
     padding: 100px 0 40px;
 }
 
 .footer-logo {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Grande taille */
     font-size: 2.2rem;
+    /* Très gras */
     font-weight: 900;
+    /* Doré */
     color: var(--dore);
+    /* Marge basse */
     margin-bottom: 5px;
 }
 
 .footer-sub {
+    /* Petite taille */
     font-size: 0.8rem;
+    /* Grand espacement lettres */
     letter-spacing: 3px;
+    /* Marge basse */
     margin-bottom: 25px;
+    /* Bloc */
     display: block;
+    /* Semi-transparent */
     opacity: 0.8;
 }
 
 .social-link {
+    /* Taille fixe */
     width: 45px;
     height: 45px;
+    /* Fond doré transparent */
     background: rgba(212, 175, 55, 0.2);
+    /* Doré */
     color: var(--dore);
+    /* Alignement inline */
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    /* Rond */
     border-radius: 50%;
+    /* Marge droite */
     margin-right: 12px;
+    /* Taille icône */
     font-size: 1.2rem;
+    /* Transition */
     transition: var(--transition);
+    /* Pas de soulignement */
     text-decoration: none;
 }
 
 .social-link:hover {
+    /* Fond doré */
     background: var(--dore);
+    /* Texte noir */
     color: var(--noir);
+    /* Remonte */
     transform: translateY(-5px);
 }
 
 .footer-title {
+    /* Doré */
     color: var(--dore);
+    /* Très gras */
     font-weight: 800;
+    /* Marge basse */
     margin-bottom: 30px;
+    /* Position pour pseudo-élément */
     position: relative;
+    /* Espacement sous le texte */
     padding-bottom: 12px;
 }
 
 .footer-title::after {
+    /* Pseudo-élément décoratif */
     content: '';
+    /* Position absolue */
     position: absolute;
+    /* En bas */
     bottom: 0;
+    /* À gauche */
     left: 0;
+    /* Largeur */
     width: 50px;
+    /* Hauteur */
     height: 3px;
+    /* Doré */
     background: var(--dore);
 }
 
 .footer-links {
+    /* Pas de puces */
     list-style: none;
+    /* Supprime padding */
     padding: 0;
 }
 
 .footer-links li {
+    /* Marge basse */
     margin-bottom: 15px;
 }
 
 .footer-links a {
+    /* Blanc transparent */
     color: rgba(255, 255, 255, 0.7);
+    /* Pas de soulignement */
     text-decoration: none;
+    /* Transition */
     transition: var(--transition);
+    /* Alignement horizontal */
     display: flex;
     align-items: center;
 }
 
 .footer-links a i {
+    /* Petite icône */
     font-size: 0.7rem;
+    /* Marge droite */
     margin-right: 12px;
+    /* Doré */
     color: var(--dore);
+    /* Transition */
     transition: var(--transition);
 }
 
 .footer-links a:hover {
+    /* Doré */
     color: var(--dore);
+    /* Décalage gauche */
     padding-left: 10px;
 }
 
 .contact-info p {
+    /* Blanc transparent */
     color: rgba(255, 255, 255, 0.7);
+    /* Alignement horizontal */
     display: flex;
+    /* Marge basse */
     margin-bottom: 15px;
 }
 
 .contact-info i {
+    /* Doré */
     color: var(--dore);
+    /* Marge droite */
     margin-right: 15px;
+    /* Taille */
     font-size: 1.1rem;
 }
 
 .footer-bottom {
+    /* Ligne de séparation */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Marge haute */
     margin-top: 60px;
+    /* Padding haut */
     padding-top: 30px;
+    /* Centre le texte */
     text-align: center;
+    /* Taille */
     font-size: 0.9rem;
+    /* Blanc très transparent */
     color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-bottom a {
+    /* Doré */
     color: var(--dore);
+    /* Pas de soulignement */
     text-decoration: none;
+    /* Marge horizontale */
     margin: 0 10px;
 }
 
 /* ANIMATIONS */
 .fade-in {
+    /* Invisible au départ */
     opacity: 0;
+    /* Descendu */
     transform: translateY(30px);
+    /* Transition */
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-in.visible {
+    /* Devient visible */
     opacity: 1;
+    /* Remonte */
     transform: translateY(0);
 }
 
 /* RESPONSIVE */
 @media (max-width: 576px) {
     .hero-title {
+        /* Titre plus petit sur mobile */
         font-size: 2.2rem;
     }
-
     .newsletter h2 {
+        /* Titre plus petit */
         font-size: 1.8rem;
     }
-
     .newsletter-form {
+        /* Colonne sur mobile */
         flex-direction: column;
     }
-
     .btn-newsletter {
+        /* Padding plus grand */
         padding: 15px;
     }
 }
 
 /* CUSTOM CURSOR */
 #custom-cursor {
+    /* Taille */
     width: 30px;
     height: 30px;
+    /* Doré transparent */
     background: rgba(212, 175, 55, 0.3);
+    /* Bordure dorée */
     border: 2px solid var(--dore);
+    /* Rond */
     border-radius: 50%;
+    /* Position fixe suit la souris */
     position: fixed;
+    /* Ignore les clics */
     pointer-events: none;
+    /* Au-dessus de tout */
     z-index: 10000;
+    /* Transition fluide */
     transition: transform 0.1s ease-out, background 0.3s ease;
+    /* Centre sur le pointeur */
     transform: translate(-50%, -50%);
 }
 
+/* État du curseur quand il survol un élément cliquable */
 .cursor-hover {
+    /* S'agrandit */
     transform: translate(-50%, -50%) scale(2.5);
+    /* Fond plus transparent */
     background: rgba(212, 175, 55, 0.1);
+    /* Bordure rouge */
     border-color: var(--rouge);
 }
 
+/* Cache le curseur personnalisé sur tablette et mobile */
 @media (max-width: 1024px) {
     #custom-cursor {
+        /* Pas de curseur custom */
         display: none;
     }
-
     body {
+        /* Curseur par défaut */
         cursor: auto;
     }
 }
@@ -1761,73 +2287,116 @@ h3,
 
 /* ===== CITY PAGE OVERLAY ===== */
 .city-page {
+    /* Position fixe couvre tout l'écran */
     position: fixed;
+    /* Remplit tout */
     inset: 0;
+    /* Fond beige cassé */
     background: var(--blanc-casse);
+    /* Au-dessus du contenu principal */
     z-index: 9000;
+    /* Scroll vertical */
     overflow-y: auto;
+    /* Cachée à droite au départ */
     transform: translateX(100%);
+    /* Transition fluide */
     transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    /* Scroll fluide */
     scroll-behavior: smooth;
 }
 
+/* État ouvert de la page ville */
 .city-page.open {
+    /* Visible */
     transform: translateX(0);
 }
 
 /* ===== BACK BUTTON ===== */
 .city-back {
+    /* Position fixe */
     position: fixed;
+    /* En haut à gauche */
     top: 20px;
     left: 20px;
+    /* Au-dessus de tout */
     z-index: 9100;
+    /* Dégradé rouge */
     background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
+    /* Texte blanc */
     color: #fff;
+    /* Pas de bordure */
     border: none;
+    /* Espacement */
     padding: 12px 22px;
+    /* Arrondi */
     border-radius: 50px;
+    /* Police */
     font-family: 'Poppins', sans-serif;
+    /* Gras */
     font-weight: 700;
+    /* Taille */
     font-size: 0.9rem;
+    /* Curseur main */
     cursor: pointer;
+    /* Ombre rouge */
     box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
+    /* Transition */
     transition: all 0.3s ease;
+    /* Alignement */
     display: flex;
     align-items: center;
+    /* Espacement */
     gap: 8px;
 }
 
 .city-back:hover {
+    /* Décalage gauche */
     transform: translateX(-5px);
+    /* Ombre plus forte */
     box-shadow: 0 12px 30px rgba(196, 30, 58, 0.5);
 }
 
 /* ===== HERO ===== */
 .city-hero {
+    /* Plein écran */
     height: 100vh;
+    /* Hauteur min */
     min-height: 600px;
+    /* Position relative */
     position: relative;
+    /* Cache débordement */
     overflow: hidden;
 }
 
 .city-hero-img {
+    /* Pleine largeur/hauteur */
     width: 100%;
     height: 100%;
+    /* Image de fond */
     background-image: url('images/destinations/merzouga/hero.jpg'),
         url('https://images.unsplash.com/photo-1539498508910-091b5e859b1d?w=1600');
+    /* Couvre */
     background-size: cover;
+    /* Centre */
     background-position: center;
+    /* Légèrement zoomée */
     transform: scale(1.05);
+    /* Transition lente */
     transition: transform 8s ease;
 }
 
+/* Quand la page s'ouvre, l'image se dézoome */
 .city-page.open .city-hero-img {
+    /* Retour à taille normale */
     transform: scale(1);
 }
 
 .city-hero-overlay {
+    /* Position absolue couvrante */
     position: absolute;
+    /* Remplit tout */
     inset: 0;
+    /* Dégradé sombre */
     background: linear-gradient(to bottom,
             rgba(20, 10, 0, 0.3) 0%,
             rgba(20, 10, 0, 0.1) 40%,
@@ -1836,301 +2405,461 @@ h3,
 }
 
 .city-hero-content {
+    /* Position absolue */
     position: absolute;
+    /* Collé en bas */
     bottom: 0;
     left: 0;
     right: 0;
+    /* Espacement */
     padding: 60px 8%;
 }
 
 .city-tag {
+    /* Bloc en ligne */
     display: inline-block;
+    /* Doré transparent */
     background: rgba(212, 175, 55, 0.25);
+    /* Bordure dorée */
     border: 1px solid rgba(212, 175, 55, 0.5);
+    /* Texte doré */
     color: var(--dore);
+    /* Espacement */
     padding: 7px 20px;
+    /* Arrondi */
     border-radius: 30px;
+    /* Taille */
     font-size: 0.85rem;
+    /* Gras */
     font-weight: 600;
+    /* Espacement lettres */
     letter-spacing: 1px;
+    /* Marge basse */
     margin-bottom: 20px;
+    /* Flou en arrière-plan */
     backdrop-filter: blur(10px);
 }
 
 .city-title {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Taille responsive */
     font-size: clamp(3.5rem, 8vw, 7rem);
+    /* Blanc */
     color: #fff;
+    /* Très gras */
     font-weight: 900;
+    /* Lignes serrées */
     line-height: 0.9;
+    /* Marge basse */
     margin-bottom: 20px;
+    /* Ombre */
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .city-title em {
+    /* Doré */
     color: var(--dore);
+    /* Pas d'italique */
     font-style: normal;
 }
 
 .city-intro {
+    /* Blanc semi-transparent */
     color: rgba(253, 248, 239, 0.85);
+    /* Taille */
     font-size: 1.05rem;
+    /* Largeur max */
     max-width: 650px;
+    /* Hauteur ligne */
     line-height: 1.8;
 }
 
 /* ===== STATS BAR ===== */
 .city-stats-bar {
+    /* Dégradé rouge foncé vers marron */
     background: linear-gradient(135deg, var(--rouge-fonce), #4A1800);
+    /* Alignement horizontal */
     display: flex;
     justify-content: space-around;
+    /* Retour à la ligne */
     flex-wrap: wrap;
+    /* Espacement */
     padding: 30px 5%;
+    /* Espacement entre */
     gap: 20px;
 }
 
 .city-stat {
+    /* Centre le texte */
     text-align: center;
+    /* Chaque élément prend une part égale */
     flex: 1;
+    /* Largeur min */
     min-width: 120px;
 }
 
 .city-stat-num {
+    /* Bloc */
     display: block;
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Grande taille */
     font-size: 2.2rem;
+    /* Très gras */
     font-weight: 900;
+    /* Doré */
     color: var(--dore);
+    /* Ligne serrée */
     line-height: 1;
 }
 
 .city-stat-label {
+    /* Petite taille */
     font-size: 0.75rem;
+    /* Blanc transparent */
     color: rgba(255, 255, 255, 0.65);
+    /* Majuscules */
     text-transform: uppercase;
+    /* Espacement lettres */
     letter-spacing: 1px;
+    /* Marge haute */
     margin-top: 5px;
+    /* Bloc */
     display: block;
 }
 
 /* ===== BODY CONTENT ===== */
 .city-body {
+    /* Largeur max */
     max-width: 1300px;
+    /* Centré */
     margin: 0 auto;
+    /* Espacement */
     padding: 80px 5%;
 }
 
 /* ===== SECTION TITLES ===== */
 .city-section-title {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Taille */
     font-size: 2rem;
+    /* Très gras */
     font-weight: 900;
+    /* Noir */
     color: var(--noir);
+    /* Marge */
     margin: 60px 0 35px;
+    /* Espacement sous le texte */
     padding-bottom: 15px;
+    /* Bordure dorée en bas */
     border-bottom: 3px solid var(--dore);
+    /* Position relative */
     position: relative;
 }
 
 .city-section-title::after {
+    /* Pseudo-élément */
     content: '';
+    /* Position absolue */
     position: absolute;
+    /* Collé en bas */
     bottom: -3px;
+    /* À gauche */
     left: 0;
+    /* Largeur */
     width: 60px;
+    /* Hauteur */
     height: 3px;
+    /* Rouge */
     background: var(--rouge);
 }
 
 /* ===== CARDS GRID ===== */
 .city-grid-2 {
+    /* Grille responsive */
     display: grid;
+    /* Colonnes auto avec minimum 360px */
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    /* Espacement */
     gap: 28px;
 }
 
 .city-grid-3 {
+    /* Grille responsive */
     display: grid;
+    /* Colonnes auto avec minimum 300px */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Espacement */
     gap: 28px;
 }
 
 .city-card {
+    /* Fond blanc */
     background: #fff;
+    /* Coins arrondis */
     border-radius: 16px;
+    /* Espacement */
     padding: 24px;
+    /* Ombre légère */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    /* Transition */
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Bordure discrète */
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .city-card:hover {
+    /* Remonte */
     transform: translateY(-8px);
+    /* Ombre plus forte */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    /* Bordure dorée transparente */
     border-color: rgba(212, 175, 55, 0.3);
 }
 
+/* Fallback pour les images manquantes (déjà commenté plus bas) */
 .city-card-img {
+    /* Pleine largeur */
     width: 100%;
+    /* Hauteur fixe */
     height: 200px;
+    /* Remplit sans déformation */
     object-fit: cover;
+    /* Coins arrondis */
     border-radius: 10px;
+    /* Marge basse */
     margin-bottom: 18px;
+    /* Fond de secours */
     background: #f0ece4;
 }
 
 .city-card h3 {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Taille */
     font-size: 1.25rem;
+    /* Très gras */
     font-weight: 800;
+    /* Noir */
     color: var(--noir);
+    /* Marge basse */
     margin-bottom: 10px;
 }
 
 .city-card p {
+    /* Taille */
     font-size: 0.9rem;
+    /* Noir transparent */
     color: rgba(26, 26, 26, 0.75);
+    /* Hauteur ligne */
     line-height: 1.7;
+    /* Marge basse */
     margin-bottom: 12px;
 }
 
 .city-card-tag {
+    /* Bloc en ligne */
     display: inline-block;
+    /* Doré transparent */
     background: rgba(212, 175, 55, 0.12);
+    /* Texte doré foncé */
     color: #8a6800;
+    /* Espacement */
     padding: 5px 12px;
+    /* Arrondi */
     border-radius: 20px;
+    /* Petite taille */
     font-size: 0.75rem;
+    /* Gras */
     font-weight: 600;
 }
 
 /* ===== FOOD STRIP ===== */
 .food-strip {
+    /* Colonne */
     display: flex;
     flex-direction: column;
+    /* Espacement */
     gap: 16px;
 }
 
 .food-pill {
+    /* Alignement horizontal */
     display: flex;
     align-items: center;
+    /* Espacement */
     gap: 20px;
+    /* Fond blanc */
     background: #fff;
+    /* Coins arrondis */
     border-radius: 14px;
+    /* Espacement */
     padding: 16px 22px;
+    /* Ombre légère */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    /* Bordure dorée à gauche */
     border-left: 4px solid var(--dore);
+    /* Transition */
     transition: all 0.3s ease;
 }
 
 .food-pill:hover {
+    /* Décalage droite */
     transform: translateX(8px);
+    /* Bordure rouge */
     border-left-color: var(--rouge);
+    /* Ombre plus forte */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .food-pill-img {
+    /* Taille fixe */
     width: 70px;
     height: 70px;
+    /* Rond */
     border-radius: 50%;
+    /* Remplit */
     object-fit: cover;
+    /* Ne rétrécit pas */
     flex-shrink: 0;
+    /* Bordure dorée */
     border: 3px solid var(--dore);
 }
 
 .food-pill-name {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Taille */
     font-size: 1.1rem;
+    /* Très gras */
     font-weight: 800;
+    /* Rouge */
     color: var(--rouge);
+    /* Marge basse */
     margin-bottom: 4px;
 }
 
 .food-pill-detail {
+    /* Petite taille */
     font-size: 0.88rem;
+    /* Noir transparent */
     color: rgba(26, 26, 26, 0.7);
+    /* Hauteur ligne */
     line-height: 1.5;
 }
 
 /* ===== TIP BOX ===== */
 .tip-box {
+    /* Dégradé beige */
     background: linear-gradient(135deg, #fffbee, #fff8d6);
+    /* Bordure dorée */
     border: 2px solid var(--dore);
+    /* Coins arrondis */
     border-radius: 16px;
+    /* Espacement */
     padding: 35px 40px;
+    /* Marge haute */
     margin-top: 50px;
+    /* Position relative */
     position: relative;
+    /* Cache débordement */
     overflow: hidden;
 }
 
 .tip-box::before {
+    /* Pseudo-élément icône */
     content: '💡';
+    /* Position absolue */
     position: absolute;
+    /* En haut à droite */
     right: 30px;
     top: 20px;
+    /* Grande taille */
     font-size: 3rem;
+    /* Très transparent */
     opacity: 0.15;
 }
 
 .tip-box-title {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Taille */
     font-size: 1.3rem;
+    /* Très gras */
     font-weight: 800;
+    /* Rouge */
     color: var(--rouge);
+    /* Marge basse */
     margin-bottom: 15px;
 }
 
 .tip-box p {
+    /* Taille */
     font-size: 0.95rem;
+    /* Hauteur ligne */
     line-height: 1.8;
+    /* Noir transparent */
     color: rgba(26, 26, 26, 0.8);
+    /* Pas de marge */
     margin: 0;
 }
 
 /* ===== FALLBACK IMAGE ===== */
 .city-card-img-wrap {
+    /* Pleine largeur */
     width: 100%;
+    /* Hauteur fixe */
     height: 200px;
+    /* Cache débordement */
     overflow: hidden;
+    /* Coins arrondis */
     border-radius: 10px;
+    /* Marge basse */
     margin-bottom: 18px;
+    /* Dégradé de secours */
     background: linear-gradient(135deg, #e8d5b0, #c4a87a);
+    /* Centre l'emoji */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Grande taille pour l'emoji */
     font-size: 3rem;
 }
 
 .city-card-img-wrap img {
+    /* Remplit */
     width: 100%;
     height: 100%;
+    /* Garde proportions */
     object-fit: cover;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-
+    /* Une seule colonne sur mobile */
     .city-grid-2,
     .city-grid-3 {
         grid-template-columns: 1fr;
     }
-
+    /* Titre plus petit */
     .city-title {
         font-size: 3rem;
     }
-
+    /* Moins de padding */
     .city-hero-content {
         padding: 40px 6%;
     }
-
+    /* Moins de padding */
     .city-body {
         padding: 50px 5%;
     }
-
+    /* Moins de padding */
     .tip-box {
         padding: 25px 20px;
     }
-
+    /* Espacement réduit */
     .city-stats-bar {
         gap: 15px;
     }
@@ -2138,84 +2867,117 @@ h3,
 
 /* ===== PAGE CHEFCHAOUEN — Hero spécifique ===== */
 #city-chefchaouen .city-hero-img {
+    /* Image spécifique pour Chefchaouen */
     background-image: url('images/chefchaouen/chefchaouen_hero.jpg'),
         url('https://images.unsplash.com/photo-1548296846-820373f7293d?w=1600');
+    /* Position centrée plus bas */
     background-position: center 60%;
 }
 
 #city-chefchaouen .city-stats-bar {
+    /* Dégradé bleu pour Chefchaouen */
     background: linear-gradient(135deg, #0a1e5e, #1a3a8a);
 }
 
 #city-chefchaouen .tip-box {
+    /* Fond bleu clair */
     background: linear-gradient(135deg, #eef3ff, #dce8ff);
+    /* Bordure bleue */
     border-color: #3a6bc9;
 }
 
 #city-chefchaouen .city-stat-num {
+    /* Taille spécifique */
     font-size: 1.1rem;
 }
 
 /* Interactive Leaflet Map Styles */
 #interactive-map {
+    /* Ombre */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Custom Tooltip Styling */
 .map-tooltip {
+    /* Fond blanc */
     background-color: #fff !important;
+    /* Bordure dorée transparente */
     border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    /* Coins arrondis */
     border-radius: 8px !important;
+    /* Espacement */
     padding: 6px 12px !important;
+    /* Police élégante */
     font-family: 'Playfair Display', serif !important;
+    /* Taille */
     font-size: 0.9rem !important;
+    /* Gras */
     font-weight: 700 !important;
+    /* Noir */
     color: var(--noir) !important;
+    /* Ombre */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
 .map-tooltip::before {
+    /* Couleur de la flèche */
     border-top-color: #fff !important;
 }
 
 /* Custom Pin Styling & Animation */
 .custom-pin {
+    /* Centre le contenu */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Taille fixe */
     width: 26px !important;
     height: 26px !important;
+    /* Curseur main */
     cursor: pointer;
+    /* Position relative */
     position: relative;
 }
 
 /* Discret Gold Dot by Default */
 .custom-pin .map-dot {
+    /* Taille */
     width: 12px;
     height: 12px;
+    /* Doré */
     background-color: var(--dore);
+    /* Bordure blanche */
     border: 2px solid #fff;
+    /* Rond */
     border-radius: 50%;
+    /* Ombre dorée */
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+    /* Transition */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Red Pin Hidden by Default */
 .custom-pin .pin-icon {
+    /* Caché par défaut */
     display: none;
+    /* Taille */
     font-size: 26px;
+    /* Ombre */
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
-    transform: translateY(-10px);
     /* Décale vers le haut pour que la pointe soit alignée avec la coordonnée */
+    transform: translateY(-10px);
 }
 
 /* Hover State: Hide Gold Dot and Reveal Red Pin */
 .custom-pin:hover .map-dot {
+    /* Cache le point doré */
     display: none;
 }
 
 .custom-pin:hover .pin-icon {
+    /* Affiche l'icône rouge */
     display: block;
+    /* Animation de pulsation */
     animation: pinPulse 1.8s infinite ease-in-out;
 }
 
@@ -2223,11 +2985,9 @@ h3,
     0% {
         transform: translateY(-10px);
     }
-
     50% {
         transform: translateY(-15px);
     }
-
     100% {
         transform: translateY(-10px);
     }
@@ -2235,201 +2995,284 @@ h3,
 
 /* ==================== SECTION TRANSPORT ==================== */
 .transport-card {
+    /* Fond blanc */
     background: #fff;
+    /* Coins arrondis */
     border-radius: 20px;
+    /* Espacement */
     padding: 30px;
+    /* Ombre légère */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Bordure discrète */
     border: 1px solid rgba(0, 0, 0, 0.03);
+    /* Transition */
     transition: var(--transition);
+    /* Pleine hauteur */
     height: 100%;
+    /* Colonne flex */
     display: flex;
     flex-direction: column;
+    /* Position relative */
     position: relative;
+    /* Cache débordement */
     overflow: hidden;
 }
 
 .transport-card:hover {
+    /* Remonte */
     transform: translateY(-8px);
+    /* Ombre plus forte */
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+    /* Bordure dorée transparente */
     border-color: rgba(212, 175, 55, 0.2);
 }
 
+/* Ligne décorative en haut au survol */
 .transport-card::before {
+    /* Pseudo-élément */
     content: '';
+    /* Position absolue */
     position: absolute;
     top: 0;
     left: 0;
+    /* Pleine largeur */
     width: 100%;
+    /* Hauteur fine */
     height: 4px;
+    /* Verte par défaut */
     background: var(--vert);
+    /* Cachée au départ */
     transform: scaleX(0);
+    /* Animation depuis la gauche */
     transform-origin: left;
+    /* Transition */
     transition: var(--transition);
 }
 
 .transport-card:hover::before {
+    /* Visible au survol */
     transform: scaleX(1);
 }
 
 /* Accent colors for each category top bar on hover */
 .transport-card:hover:has(.bg-aérien)::before {
+    /* Bleu pour aérien */
     background: #3498db;
 }
 
 .transport-card:hover:has(.bg-maritime)::before {
+    /* Turquoise pour maritime */
     background: #1abc9c;
 }
 
 .transport-card:hover:has(.bg-terrestre)::before {
+    /* Rouge pour terrestre */
     background: var(--rouge);
 }
 
 .transport-card:hover:has(.bg-local)::before {
+    /* Doré pour local */
     background: var(--dore);
 }
 
 .transport-icon-wrapper {
+    /* Taille fixe */
     width: 60px;
     height: 60px;
+    /* Coins arrondis */
     border-radius: 15px;
+    /* Centre l'icône */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Taille icône */
     font-size: 1.8rem;
+    /* Marge basse */
     margin-bottom: 25px;
+    /* Transition */
     transition: var(--transition);
 }
 
 .transport-card:hover .transport-icon-wrapper {
+    /* Zoom et rotation légère */
     transform: scale(1.1) rotate(5deg);
 }
 
 .bg-aérien {
+    /* Fond bleu transparent */
     background: rgba(52, 152, 219, 0.1);
+    /* Icône bleue */
     color: #3498db;
 }
 
 .bg-maritime {
+    /* Fond turquoise transparent */
     background: rgba(26, 188, 156, 0.1);
+    /* Icône turquoise */
     color: #1abc9c;
 }
 
 .bg-terrestre {
+    /* Fond rouge transparent */
     background: rgba(196, 30, 58, 0.1);
+    /* Icône rouge */
     color: var(--rouge);
 }
 
 .bg-local {
+    /* Fond doré transparent */
     background: rgba(212, 175, 55, 0.15);
+    /* Icône dorée */
     color: var(--dore);
 }
 
 .transport-body {
+    /* Colonne flex */
     display: flex;
     flex-direction: column;
+    /* Prend l'espace restant */
     flex-grow: 1;
 }
 
 .transport-card-title {
+    /* Police élégante */
     font-family: 'Playfair Display', serif;
+    /* Taille */
     font-size: 1.25rem;
+    /* Très gras */
     font-weight: 800;
+    /* Noir */
     color: var(--noir);
+    /* Marge basse */
     margin-bottom: 15px;
 }
 
 .transport-card-desc {
+    /* Taille */
     font-size: 0.9rem;
+    /* Gris */
     color: var(--gris);
+    /* Hauteur ligne */
     line-height: 1.6;
+    /* Marge basse */
     margin-bottom: 15px;
 }
 
 .transport-list {
+    /* Pas de puces */
     list-style: none;
+    /* Supprime padding */
     padding-left: 0;
+    /* Pas de marge */
     margin-bottom: 0;
+    /* Pousse vers le bas */
     margin-top: auto;
 }
 
 .transport-list li {
+    /* Petite taille */
     font-size: 0.85rem;
+    /* Noir */
     color: var(--noir);
+    /* Semi-transparent */
     opacity: 0.85;
+    /* Marge basse */
     margin-bottom: 8px;
+    /* Alignement horizontal */
     display: flex;
     align-items: flex-start;
+    /* Espacement */
     gap: 8px;
+    /* Hauteur ligne */
     line-height: 1.4;
 }
 
 .transport-list li i {
+    /* Vert */
     color: var(--vert);
+    /* Taille */
     font-size: 0.9rem;
+    /* Alignement */
     margin-top: 3px;
+    /* Ne rétrécit pas */
     flex-shrink: 0;
 }
 
 .transport-card:has(.bg-terrestre) .transport-list li i {
+    /* Rouge pour terrestre */
     color: var(--rouge);
 }
 
 .transport-card:has(.bg-local) .transport-list li i {
+    /* Doré pour local */
     color: var(--dore);
 }
 
 /* Interactive Transport Cards styles */
 .transport-card .btn-city {
+    /* Transition */
     transition: var(--transition);
 }
 
 .transport-card:hover:has(.bg-aérien) .btn-city {
+    /* Bouton bleu au survol */
     background: #3498db !important;
     border-color: #3498db !important;
 }
 
 .transport-card:hover:has(.bg-maritime) .btn-city {
+    /* Bouton turquoise au survol */
     background: #1abc9c !important;
     border-color: #1abc9c !important;
 }
 
 .transport-card:hover:has(.bg-terrestre) .btn-city {
+    /* Bouton rouge au survol */
     background: var(--rouge) !important;
     border-color: var(--rouge) !important;
 }
 
 .transport-card:hover:has(.bg-local) .btn-city {
+    /* Bouton doré au survol */
     background: var(--dore) !important;
     border-color: var(--dore) !important;
     color: var(--noir) !important;
 }
 
 .transport-modal-icon-wrap {
+    /* Largeur fixe */
     width: 120px;
+    /* Taille icône */
     font-size: 2.2rem;
+    /* Centre */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Ne rétrécit pas */
     flex-shrink: 0;
+    /* Hauteur min */
     min-height: 120px;
 }
 
+/* Responsive pour la modale transport */
 @media (max-width: 768px) {
     .hotel-card:has(.transport-modal-icon-wrap) {
+        /* Retour en ligne sur mobile */
         flex-direction: row !important;
     }
-
     .hotel-card:has(.transport-modal-icon-wrap) .transport-modal-icon-wrap {
+        /* Plus petit */
         width: 90px;
         min-height: 90px;
+        /* Icône plus petite */
         font-size: 1.8rem;
     }
-
     .hotel-card:has(.transport-modal-icon-wrap) .hotel-name {
+        /* Titre plus petit */
         font-size: 1.1rem;
     }
-
     .hotel-card:has(.transport-modal-icon-wrap) .hotel-desc {
+        /* Description plus petite */
         font-size: 0.8rem;
     }
 }
@@ -2437,153 +3280,228 @@ h3,
 
 /* Google Translate Custom Styles */
 .goog-te-banner-frame.skiptranslate {
+    /* Cache la bannière de Google Translate */
     display: none !important;
 }
 
 body {
+    /* Ajuste pour éviter le décalage dû à la bannière */
     top: 0px !important;
 }
 
 #google_translate_element select {
+    /* Fond transparent */
     background-color: transparent;
+    /* Blanc */
     color: var(--blanc);
+    /* Bordure discrète */
     border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Coins arrondis */
     border-radius: 5px;
+    /* Espacement */
     padding: 5px;
+    /* Police */
     font-family: 'Poppins', sans-serif;
+    /* Supprime le contour */
     outline: none;
 }
 
 #google_translate_element select option {
+    /* Fond sombre pour les options */
     background-color: var(--nuit);
+    /* Texte blanc */
     color: var(--blanc);
 }
 
-
-
 .contact-link {
+    /* Hérite de la couleur parente */
     color: inherit;
+    /* Pas de soulignement */
     text-decoration: none;
+    /* Transition */
     transition: color 0.3s ease, transform 0.3s ease;
+    /* Permet la transformation */
     display: inline-block;
 }
 
 .contact-link:hover {
+    /* Doré */
     color: var(--dore);
+    /* Décalage droite */
     transform: translateX(5px);
 }
 
 .hero-title,
 .hero-subtitle,
 .hero-desc {
+    /* Force le blanc sur ces éléments du hero */
     color: #ffffff !important;
 }
 
 /* ==================== FORMULAIRE TEMOIGNAGES ==================== */
 .temoignage-container {
+    /* Fond sombre transparent */
     background: rgba(20, 45, 30, 0.4);
+    /* Effet de flou en arrière-plan */
     backdrop-filter: blur(15px);
+    /* Version Safari */
     -webkit-backdrop-filter: blur(15px);
+    /* Bordure dorée transparente */
     border: 1px solid rgba(220, 210, 160, 0.2);
+    /* Coins arrondis */
     border-radius: 20px;
+    /* Espacement */
     padding: 3rem;
+    /* Ombre */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    /* Marge haute */
     margin-top: 2rem;
 }
 
 #temoignages .form-control,
 #temoignages .form-select {
+    /* Fond sombre */
     background: rgba(13, 31, 21, 0.6);
+    /* Bordure dorée transparente */
     border: 1px solid rgba(220, 210, 160, 0.3);
+    /* Texte blanc */
     color: white;
+    /* Coins arrondis */
     border-radius: 10px;
+    /* Espacement */
     padding: 12px 15px;
+    /* Transition */
     transition: all 0.3s ease;
 }
 
 #temoignages .form-control:focus,
 #temoignages .form-select:focus {
+    /* Fond plus opaque */
     background: rgba(20, 45, 30, 0.8);
+    /* Bordure dorée */
     border-color: var(--dore);
+    /* Ombre dorée */
     box-shadow: 0 0 0 3px rgba(220, 210, 160, 0.2);
+    /* Supprime contour par défaut */
     outline: none;
 }
 
 #temoignages .form-select option {
+    /* Fond noir pour les options */
     background-color: var(--noir);
+    /* Texte blanc */
     color: white;
 }
 
 .custom-radio-pill {
+    /* Supprime le padding gauche par défaut */
     padding-left: 0;
 }
 
 .custom-radio-pill input[type="radio"] {
+    /* Cache le radio natif */
     display: none;
 }
 
 .custom-radio-pill label {
+    /* Fond sombre */
     background: rgba(13, 31, 21, 0.6);
+    /* Bordure dorée transparente */
     border: 1px solid rgba(220, 210, 160, 0.3);
+    /* Texte blanc */
     color: white;
+    /* Espacement */
     padding: 10px 20px;
+    /* Arrondi */
     border-radius: 50px;
+    /* Curseur main */
     cursor: pointer;
+    /* Transition */
     transition: all 0.3s ease;
+    /* Bloc en ligne */
     display: inline-block;
+    /* Taille */
     font-size: 0.9rem;
 }
 
 .custom-radio-pill input[type="radio"]:checked+label {
+    /* Fond doré quand sélectionné */
     background: var(--dore);
+    /* Texte noir */
     color: var(--noir);
+    /* Bordure dorée */
     border-color: var(--dore);
+    /* Gras */
     font-weight: 600;
 }
 
 .custom-checkbox-card {
+    /* Supprime padding */
     padding-left: 0;
 }
 
 .custom-checkbox-card input[type="checkbox"] {
+    /* Cache la checkbox native */
     display: none;
 }
 
 .custom-checkbox-card label {
+    /* Fond sombre */
     background: rgba(13, 31, 21, 0.6);
+    /* Bordure dorée transparente */
     border: 1px solid rgba(220, 210, 160, 0.3);
+    /* Texte blanc */
     color: white;
+    /* Espacement */
     padding: 12px;
+    /* Coins arrondis */
     border-radius: 12px;
+    /* Curseur main */
     cursor: pointer;
+    /* Transition */
     transition: all 0.3s ease;
+    /* Bloc */
     display: block;
+    /* Centre le texte */
     text-align: center;
+    /* Taille */
     font-size: 0.85rem;
 }
 
 .custom-checkbox-card input[type="checkbox"]:checked+label {
+    /* Fond doré transparent quand coché */
     background: rgba(220, 210, 160, 0.15);
+    /* Bordure dorée */
     border-color: var(--dore);
+    /* Texte doré */
     color: var(--dore);
 }
 
 .star-rating {
+    /* Grande taille */
     font-size: 2rem;
+    /* Étoiles grises */
     color: rgba(255, 255, 255, 0.2);
+    /* Curseur main */
     cursor: pointer;
+    /* Alignement horizontal */
     display: inline-flex;
+    /* Espacement */
     gap: 10px;
+    /* Transition */
     transition: color 0.2s ease;
 }
 
 .star-rating i.active,
 .star-rating i.hover {
+    /* Étoile dorée quand active ou survolée */
     color: var(--dore);
+    /* Ombre dorée */
     text-shadow: 0 0 10px rgba(220, 210, 160, 0.5);
 }
 
 #temoignage-success {
+    /* Animation d'apparition */
     animation: fadeIn 0.8s ease forwards;
 }
 
@@ -2592,15 +3510,16 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Responsive formulaire témoignages */
 @media (max-width: 768px) {
     .temoignage-container {
+        /* Moins de padding sur mobile */
         padding: 2rem 1.5rem;
     }
 }
