@@ -1,225 +1,365 @@
+/*   VARIABLES GLOBALES CSS*/
 :root {
+    /* Couleur rouge principale utilisée dans le site */
     --rouge: #C41E3A;
+    /* Variante plus foncée du rouge */
     --rouge-fonce: #8B0000;
+    /* Couleur verte principale */
     --vert: #006B3C;
+    /* Couleur dorée utilisée pour les accents */
     --dore: #D4AF37;
+    /* Couleur beige claire */
     --beige: #F5F5DC;
+    /* Blanc cassé utilisé comme fond principal */
     --blanc-casse: #FAF9F6;
+    /* Noir principal pour les textes */
     --noir: #1A1A1A;
+    /* Gris utilisé pour les textes secondaires */
     --gris: #6C757D;
+    /* Variable globale pour les animations et transitions */
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/*   STYLE GLOBAL DU BODY*/
 body {
+    /* Police principale du site */
     font-family: 'Poppins', sans-serif;
+    /* Couleur de fond générale */
     background-color: var(--blanc-casse);
+    /* Couleur du texte */
     color: var(--noir);
+    /* Empêche le scroll horizontal */
     overflow-x: hidden;
+    /* Active le scroll fluide */
     scroll-behavior: smooth;
+    /* Cache le curseur natif pour utiliser un curseur personnalisé */
     cursor: none;
-    /* Hide default cursor for custom one */
 }
 
+/*   TITRES PRINCIPAUX*/
 h1,
 h2,
 h3,
 .font-serif {
+    /* Police élégante utilisée pour les titres */
     font-family: 'Playfair Display', serif;
 }
 
-/* Zellige Background Pattern */
+/*    MOTIF DE FOND ZELLIGE */
 .zellige-pattern {
+    /* Position fixe pour rester visible au scroll */
     position: fixed;
+    /* Placement en haut à gauche */
     top: 0;
     left: 0;
+    /* Largeur et hauteur complètes */
     width: 100%;
     height: 100%;
+    /* Image SVG utilisée comme motif marocain */
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30-15-30z' fill='%23D4AF37' fill-opacity='0.06'/%3E%3C/svg%3E");
+    /* Place le motif derrière tout le contenu */
     z-index: -1;
+    /* Empêche toute interaction souris */
     pointer-events: none;
 }
 
+/*   ACCENTS GRADIENTS*/
 .bg-gradient-accents {
+    /* Position fixe */
     position: fixed;
+    /* Placement */
     top: 0;
     left: 0;
+    /* Taille plein écran */
     width: 100%;
     height: 100%;
+    /* Dégradés radiaux décoratifs */
     background: radial-gradient(circle at 0% 0%, rgba(196, 30, 58, 0.03) 0%, transparent 30%),
         radial-gradient(circle at 100% 100%, rgba(0, 107, 60, 0.03) 0%, transparent 30%),
         radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 30%);
+    /* Derrière tous les éléments */
     z-index: -2;
+    /* Ignore les clics */
     pointer-events: none;
 }
 
 /* 1. NAVBAR */
 .navbar {
+    /* Dégradé de fond */
     background: linear-gradient(135deg, var(--rouge), var(--rouge-fonce));
+    /* Espacement interne vertical */
     padding: 15px 0;
+    /* Transition fluide */
     transition: var(--transition);
+    /* Ombre sous la navbar */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Navbar après scroll */
 .navbar.scrolled {
     padding: 8px 0;
+    /* Réduit le padding */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    /* Ombre plus forte */
 }
 
+/* Logo principal */
 .navbar-brand {
     display: flex;
+    /* Utilise flexbox */
     flex-direction: column;
+    /* Empile verticalement */
     line-height: 1;
+    /* Réduit l’espace entre lignes */
 }
 
+/* Texte principal du logo */
 .brand-main {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
+    /* Taille du texte */
     font-weight: 900;
+    /* Texte très gras */
     color: var(--dore) !important;
+    /* Couleur dorée */
     letter-spacing: 2px;
+    /* Espacement entre lettres */
 }
 
+/* Sous-titre du logo */
 .brand-sub {
     font-size: 0.65rem;
+    /* Petite taille */
     color: #fff;
+    /* Couleur blanche */
     letter-spacing: 4px;
+    /* Espacement entre lettres */
     text-transform: uppercase;
+    /* Texte en majuscules */
     margin-top: 2px;
+    /* Petite marge supérieure */
 }
 
+/* Liens du menu */
 .nav-link {
     color: rgba(255, 255, 255, 0.9) !important;
+    /* Couleur blanche semi-transparente */
     font-weight: 500;
+    /* Texte semi-gras */
     font-size: 0.95rem;
+    /* Taille du texte */
     padding: 10px 15px !important;
+    /* Espacement interne */
     margin: 0 5px;
+    /* Marge horizontale */
     position: relative;
+    /* Position relative pour pseudo-éléments */
     transition: var(--transition);
+    /* Transition fluide */
 }
 
+/* Effet hover des liens */
 .nav-link:hover {
+    /* Fond doré transparent */
     background: rgba(212, 175, 55, 0.2);
     border-radius: 4px;
+    /* Coins arrondis */
 }
 
+/* Ligne animée sous les liens */
 .nav-link::after {
     content: '';
+    /* Crée un pseudo-élément vide */
     position: absolute;
+    /* Position absolue */
     bottom: 5px;
+    /* Placement bas */
     left: 15px;
+    /* Décalage gauche */
     width: 0;
+    /* Largeur initiale à zéro */
     height: 2px;
+    /* Hauteur de la ligne */
     background: var(--dore);
+    /* Couleur dorée */
     transition: width 0.3s ease;
+    /* Animation largeur */
 }
 
+/* Animation de la ligne au hover */
 .nav-link:hover::after {
     width: calc(100% - 30px);
+    /* Étend la ligne */
 }
 
-/* 2. HERO */
+/* 2. HERO SECTION */
 .hero {
     height: 100vh;
+    /* Hauteur plein écran */
     min-height: 700px;
+    /* Hauteur minimale */
     position: relative;
+    /* Position relative */
     background-color: var(--rouge-fonce);
+    /* Couleur de secours */
+    /* Dégradé de fond */
     background-image: linear-gradient(135deg, rgba(196, 30, 58, 0.8), rgba(139, 0, 0, 0.9), rgba(0, 107, 60, 0.7));
     display: flex;
+    /* Active flexbox */
     align-items: center;
+    /* Centre verticalement */
     justify-content: center;
+    /* Centre horizontalement */
     text-align: center;
+    /* Centre le texte */
     overflow: hidden;
+    /* Cache les debordements */
 }
 
+/* Image de fond du hero */
 .hero::before {
     content: '';
+    /* elément vide */
     position: absolute;
+    /* Position absolue */
+    /* Placement */
     top: 0;
     left: 0;
+    /* Taille complete */
     width: 100%;
     height: 100%;
+    /* Image de fond */
     background: url('images/accueil/hero_maroc_cinematic_1778374742658.png') center/cover no-repeat;
     opacity: 0.6;
+    /* Transparence */
     z-index: 0;
+    /* Derriere le contenu */
 }
 
+/* Contenu principal du hero */
 .hero-content {
+    /* Position relative */
     position: relative;
     z-index: 10;
+    /* Place au-dessus du fond */
     max-width: 900px;
+    /* Largeur maximale */
     padding: 0 20px;
+    /* Padding horizontal */
 }
 
+/* Sous-titre du hero */
 .hero-subtitle {
     color: #F4E4BC;
+    /* couleur beige doré */
+    /* espace entre lettres pour effet luxe */
     letter-spacing: 8px;
     font-weight: 600;
+    /* semi-bold */
     text-transform: uppercase;
+    /* majuscules */
     margin-bottom: 20px;
+    /* espace sous le texte */
+    /* ombre légère pour lisibilité */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     font-size: 1rem;
+    /* taille standard */
 }
 
+/* Titre principal du hero */
 .hero-title {
     font-size: 4.5rem;
+    /* très grand titre */
     color: #fff;
+    /* blanc */
+    /* très gras */
     font-weight: 900;
     margin-bottom: 25px;
+    /* espace sous le titre */
+    /* lignes serrées pour style impactant */
     line-height: 1.1;
 }
 
+/* Partie colorée du titre */
 .hero-title span {
     color: var(--dore);
+    /* couleur dorée principale du thème */
+    /* effet glow doré */
     text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
+/* Texte descriptif du hero */
 .hero-text {
     color: #fff;
+    /* blanc */
     font-size: 1.25rem;
+    /* texte assez grand */
     margin-bottom: 40px;
+    /* espace avant boutons */
+    /* améliore lisibilité */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     opacity: 0.9;
+    /* légrement transparent */
 }
 
+/* Boutons du hero  */
 .btn-hero {
     padding: 15px 40px;
+    /* taille du bouton */
     font-weight: 700;
+    /* texte bold */
     text-transform: uppercase;
+    /* majuscules */
+    /* espacement lettres */
     letter-spacing: 1px;
     transition: var(--transition);
+    /* animation fluide */
+    /* espace entre boutons */
     margin: 10px;
 }
 
+/* Bouton principal (Explorer) */
+
 .btn-explorer {
+    /* dégradé doré */
     background: linear-gradient(to right, var(--dore), #B8941F);
+    /* texte noir forcé */
     color: var(--noir) !important;
     border: none;
+    /* pas de bordure */
     border-radius: 50px;
+    /* bouton arrondi */
+    /* ombre dorée */
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
 }
 
-.btn-planifier {
-    background: transparent;
-    color: #fff !important;
-    border: 2px solid var(--dore);
-    border-radius: 50px;
-}
-
+/* Hover sur tous les boutons hero */
 .btn-hero:hover {
+    /* remonte légèrement */
     transform: translateY(-5px);
+    /* ombre plus forte */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* Particules animées en arrière-plan */
 .particle {
     position: absolute;
+    /* Particules animées en arrière-plan */
     background: var(--dore);
+    /* couleur dorée */
     border-radius: 50%;
+    /* couleur dorée */
     opacity: 0.4;
+    /* transparent */
     pointer-events: none;
+    /* non cliquable */
     z-index: 1;
+    /* derrière le contenu */
+    /* animation continue */
     animation: float 15s infinite linear;
 }
 
+/* Animation des particules */
 @keyframes float {
     0% {
         transform: translateY(0) translateX(0);
@@ -238,186 +378,276 @@ h3,
     }
 }
 
-/* ========== HERO VIDEO YOUTUBE ========== */
+/*  HERO VIDEO  */
 .hero::before {
-    display: none; /* Désactive l'ancienne image de fond */
+    display: none;
+    /* Désactive l'ancienne image de fond */
 }
 
+/* Wrapper vidéo hero (centrage plein écran) */
 .hero-video-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 177.78vh;
+    /* format 16:9 adaptatif */
     height: 100vh;
     min-width: 100%;
     min-height: 56.25vw;
     transform: translate(-50%, -50%);
     z-index: 0;
+    /* derrière contenu */
+    /* vidéo non interactive */
     pointer-events: none;
 }
 
+/* Vidéo iframe ou video HTML */
 .hero-video-wrapper iframe,
 .hero-video-wrapper video {
     width: 100%;
     height: 100%;
+    /* couvre tout l’écran */
     object-fit: cover;
     border: none;
 }
 
+/* Overlay sombre sur vidéo */
 .hero-video-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* Voile sombre neutre pour conserver les vraies couleurs de la vidéo tout en garantissant la lisibilité du texte */
+    /* filtre sombre */
+    background: rgba(0, 0, 0, 0.3);
+    /* Voile sombre neutre pour conserver les vraies couleurs de la vidéo tout en garantissant la lisibilité du texte */
     z-index: 1;
 }
 
+/* Contenu au-dessus de la vidéo */
 .hero-content {
     position: relative;
     z-index: 2;
+    /* toujours au-dessus */
 }
 
+/* Conteneur particules */
 #particles-container {
     position: absolute;
+    /* positionné */
     inset: 0;
+    /* au-dessus du fond mais derrière certains éléments */
     z-index: 1;
     pointer-events: none;
 }
 
 /* 3. THÉMATIQUES */
 .section-padding {
+    /* espace vertical haut/bas pour les sections */
     padding: 100px 0;
 }
 
 .section-title-wrapper {
     margin-bottom: 60px;
+    /* espace sous le titre */
+    /* centre le texte */
     text-align: center;
 }
 
 .theme-subtitle {
     display: inline-block;
+    /* bloc en ligne */
+    /* rouge transparent */
     background: rgba(196, 30, 58, 0.1);
+    /* couleur principale rouge */
     color: var(--rouge);
     padding: 5px 15px;
+    /* espace intérieur */
     border-radius: 20px;
+    /* bords arrondis */
     font-weight: 700;
     font-size: 0.85rem;
+    /* petite taille */
     text-transform: uppercase;
     margin-bottom: 15px;
 }
 
 .section-title {
     font-size: 3rem;
+    /* grand titre */
     font-weight: 900;
+    /* très gras */
     color: var(--noir);
+    /* pour pseudo-élément ::after */
     position: relative;
     padding-bottom: 20px;
 }
 
 .section-title::after {
+    /*  afficher un pseudo-élément */
     content: '';
+    /* positionné par rapport au titre */
     position: absolute;
     bottom: 0;
+    /* collé en bas */
+    /* centré horizontalement */
     left: 50%;
+    /* ajuste parfaitement le centrage */
     transform: translateX(-50%);
     width: 80px;
+    /* longueur de la ligne */
     height: 4px;
+    /* épaisseur de la ligne */
     background: var(--dore);
+    /* couleur dorée */
 }
 
 .theme-card {
+    /* définit la hauteur fixe de la carte */
     height: 300px;
+    /* arrondit les coins de la carte */
     border-radius: 20px;
     overflow: hidden;
+    /* permet de positionner des éléments internes en absolute */
     position: relative;
+    /* ajoute une ombre légère autour de la carte */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    /* applique une animation fluide lors des changements (hover, etc.) */
     transition: var(--transition);
     margin-bottom: 30px;
+    /* espace en bas entre les cartes */
 }
 
 .theme-card:hover {
+    /* déplace la carte vers le haut au survol */
     transform: translateY(-10px);
+    /* augmente l’ombre pour donner un effet de profondeur */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
 .theme-card img {
+    /* l’image prend toute la largeur de la carte */
     width: 100%;
+    /* l’image prend toute la hauteur de la carte */
     height: 100%;
+    /* l’image garde ses proportions et remplit la carte sans se déformer */
     object-fit: cover;
     transition: transform 0.6s ease;
+    /* animation fluide pour le zoom de l’image */
 }
 
 .theme-card:hover img {
     transform: scale(1.1);
+    /* agrandit légèrement l’image au survol  */
+
 }
 
 .theme-overlay {
+    /* positionne l’overlay par-dessus la carte  */
     position: absolute;
     inset: 0;
+    /* couvre toute la surface*/
+    /* dégradé noir en bas vers transparent en haut pour améliorer la lisibilité */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 70%);
     display: flex;
+    /* active flexbox pour organiser le contenu */
     flex-direction: column;
     justify-content: flex-end;
+    /* pousse le contenu vers le bas de la carte */
     padding: 25px;
+    /* espace intérieur autour du contenu */
 }
 
 .theme-icon {
+    /* position libre dans la carte */
     position: absolute;
     top: 20px;
+    /* distance depuis le haut */
     left: 20px;
+    /* distance depuis la gauche */
+    /* taille du cercle */
     width: 45px;
     height: 45px;
     background: var(--blanc-casse);
+    /* fond clair */
     border-radius: 50%;
+    /* forme circulaire */
     display: flex;
+    /* centre l’icône */
+    /* centrage vertical et horizontal */
     align-items: center;
     justify-content: center;
     color: var(--dore);
+    /* couleur de l’icône */
     font-size: 1.2rem;
+    /* taille de l’icône */
+    /* ombre pour effet de profondeur */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .theme-name {
     color: #fff;
+    /* texte blanc */
     font-size: 1.4rem;
+    /* taille du texte */
     font-weight: 700;
+    /* texte en gras */
+    /* supprime les marges par défaut */
     margin: 0;
 }
 
 /* 4. GOOGLE MAPS */
+/* Section des cartes et map */
 .bg-beige {
+    /* définit un fond beige pour la section */
     background-color: var(--beige);
 }
 
 .map-container {
     height: 500px;
+    /* hauteur fixe de la carte */
     border-radius: 20px;
+    /* coins arrondis */
+    /* cache les débordements (map, images) */
     overflow: hidden;
     border: 4px solid var(--dore);
+    /* bordure dorée autour de la carte */
+    /* ombre pour effet de profondeur */
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
     margin-bottom: 40px;
+    /* espace en bas */
 }
 
 .map-card {
     background: #fff;
+    /* fond blanc */
     padding: 20px;
+    /* espace intérieur */
     border-radius: 15px;
+    /* coins arrondis */
+    /* petite ombre légère */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
+    /* animation fluide au hover */
     text-align: center;
+    /* centre le texte */
+    /* prend toute la hauteur disponible */
     height: 100%;
 }
 
 .map-card:hover {
+    /* remonte légèrement la carte */
     transform: translateY(-5px);
 }
 
 .map-card i {
     font-size: 1.8rem;
+    /* taille des icônes */
     margin-bottom: 15px;
+    /* espace sous l’icône */
 }
 
 .city-marrakech {
+    /* barre rouge en haut */
     border-top: 5px solid var(--rouge);
+    /* texte rouge */
     color: var(--rouge);
 }
 
@@ -438,131 +668,75 @@ h3,
 
 .map-card h5 {
     color: var(--noir);
+    /* couleur titre */
     font-weight: 700;
+    /* texte gras */
     margin-bottom: 5px;
+    /* petit espace en bas */
 }
 
 .map-card p {
     font-size: 0.8rem;
+    /* texte petit */
     color: var(--gris);
+    /* couleur grise */
+    /* supprime marge par défaut */
     margin: 0;
-}
-
-
-/* 6. ACTUALITÉS */
-.news-card {
-    display: flex;
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-    margin-bottom: 30px;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-.news-img {
-    width: 40%;
-    min-height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin: 15px;
-}
-
-.news-content {
-    width: 60%;
-    padding: 25px 25px 25px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.news-badge {
-    background-color: var(--dore);
-    color: var(--noir);
-    padding: 4px 12px;
-    border-radius: 5px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    display: inline-block;
-    width: fit-content;
-    margin-bottom: 10px;
-}
-
-.news-date {
-    color: var(--rouge);
-    font-weight: 700;
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-}
-
-.news-title {
-    color: var(--noir);
-    font-weight: 800;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    line-height: 1.3;
-}
-
-.news-text {
-    color: var(--noir);
-    opacity: 0.8;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.news-link {
-    color: var(--vert);
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.news-link:hover {
-    color: var(--dore);
 }
 
 /* 7. 12 VILLES */
 .city-grid-card {
     background: #fff;
+    /* fond blanc */
     border-radius: 20px;
+    /* coins arrondis */
+    /* cache débordement image */
     overflow: hidden;
+    /* ombre */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    /* animation fluide */
     cursor: pointer;
+    /* curseur main */
     height: 100%;
+    /* hauteur complète */
 }
 
 .city-grid-card:hover {
     transform: translateY(-12px);
+    /* remonte la carte */
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    /* ombre plus forte */
 }
 
 .city-img-top {
+    /* hauteur image */
     height: 220px;
+    /* pour badges positionnés dessus */
     position: relative;
+    /* cache zoom */
     overflow: hidden;
 }
 
 .city-img-top img {
+    /* image bien remplie sans déformation */
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
+    /* animation zoom */
 }
 
 .city-grid-card:hover .city-img-top img {
     transform: scale(1.08);
+    /* zoom image au hover */
 }
 
 .city-cat-badge {
     position: absolute;
     top: 15px;
     right: 15px;
+    /* dégradé rouge */
     background: linear-gradient(to right, var(--rouge), var(--rouge-fonce));
     color: #fff;
     padding: 6px 18px;
@@ -644,6 +818,7 @@ h3,
 
 /* Hotels Modal Styles */
 .hotel-card {
+    /* alignement horizontal image + contenu */
     display: flex;
     background: #fff;
     border-radius: 15px;
@@ -754,6 +929,7 @@ h3,
     .hotel-card {
         flex-direction: column;
     }
+
     .hotel-img-wrap {
         width: 100%;
         height: 150px;
@@ -772,7 +948,7 @@ h3,
     align-items: center;
     justify-content: center;
     transition: var(--transition);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
 
@@ -793,10 +969,10 @@ h3,
     box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
 }
 
-.currency-converter-container input[type=number]::-webkit-inner-spin-button, 
-.currency-converter-container input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+.currency-converter-container input[type=number]::-webkit-inner-spin-button,
+.currency-converter-container input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .currency-converter-container input[type=number] {
@@ -847,16 +1023,16 @@ h3,
 
 
 /* ========== MODAL CONSEILS CULTURELS ========== */
- 
+
 /* Texte d'introduction */
-#conseillsModal .modal-body > p.text-muted {
+#conseillsModal .modal-body>p.text-muted {
     font-size: 0.95rem;
     line-height: 1.7;
     color: var(--gris) !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     padding-bottom: 20px;
 }
- 
+
 /* Scroll interne stylisé */
 #conseillsModal .modal-body {
     max-height: 75vh;
@@ -864,58 +1040,59 @@ h3,
     scrollbar-width: thin;
     scrollbar-color: var(--dore) transparent;
 }
- 
+
 #conseillsModal .modal-body::-webkit-scrollbar {
     width: 5px;
 }
- 
+
 #conseillsModal .modal-body::-webkit-scrollbar-track {
     background: transparent;
 }
- 
+
 #conseillsModal .modal-body::-webkit-scrollbar-thumb {
     background: var(--dore);
     border-radius: 10px;
 }
- 
+
 /* Cards conseils — titres et textes */
-#conseillsModal .col-md-6 > div h5 {
+#conseillsModal .col-md-6>div h5 {
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--noir);
     margin-bottom: 8px;
     line-height: 1.3;
 }
- 
-#conseillsModal .col-md-6 > div p {
+
+#conseillsModal .col-md-6>div p {
     font-size: 0.875rem;
     color: var(--gris);
     margin-bottom: 0;
     line-height: 1.6;
 }
- 
+
 /* Hover sur les cards conseils */
-#conseillsModal .col-md-6 > div {
+#conseillsModal .col-md-6>div {
     transition: var(--transition);
     cursor: default;
 }
- 
-#conseillsModal .col-md-6 > div:hover {
+
+#conseillsModal .col-md-6>div:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
 }
- 
+
 /* Responsive modal */
 @media (max-width: 576px) {
     #conseillsModal .modal-body {
         padding: 20px 15px;
         max-height: 80vh;
     }
- 
+
     #conseillsModal .modal-title {
         font-size: 1.3rem;
     }
 }
+
 /* 8. CUISINE */
 .cuisine-card {
     text-align: center;
@@ -2028,7 +2205,8 @@ h3,
     display: none;
     font-size: 26px;
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
-    transform: translateY(-10px); /* Décale vers le haut pour que la pointe soit alignée avec la coordonnée */
+    transform: translateY(-10px);
+    /* Décale vers le haut pour que la pointe soit alignée avec la coordonnée */
 }
 
 /* Hover State: Hide Gold Dot and Reveal Red Pin */
@@ -2045,9 +2223,11 @@ h3,
     0% {
         transform: translateY(-10px);
     }
+
     50% {
         transform: translateY(-15px);
     }
+
     100% {
         transform: translateY(-10px);
     }
@@ -2095,12 +2275,15 @@ h3,
 .transport-card:hover:has(.bg-aérien)::before {
     background: #3498db;
 }
+
 .transport-card:hover:has(.bg-maritime)::before {
     background: #1abc9c;
 }
+
 .transport-card:hover:has(.bg-terrestre)::before {
     background: var(--rouge);
 }
+
 .transport-card:hover:has(.bg-local)::before {
     background: var(--dore);
 }
@@ -2235,14 +2418,17 @@ h3,
     .hotel-card:has(.transport-modal-icon-wrap) {
         flex-direction: row !important;
     }
+
     .hotel-card:has(.transport-modal-icon-wrap) .transport-modal-icon-wrap {
         width: 90px;
         min-height: 90px;
         font-size: 1.8rem;
     }
+
     .hotel-card:has(.transport-modal-icon-wrap) .hotel-name {
         font-size: 1.1rem;
     }
+
     .hotel-card:has(.transport-modal-icon-wrap) .hotel-desc {
         font-size: 0.8rem;
     }
@@ -2250,10 +2436,28 @@ h3,
 
 
 /* Google Translate Custom Styles */
-.goog-te-banner-frame.skiptranslate { display: none !important; }
-body { top: 0px !important; }
-#google_translate_element select { background-color: transparent; color: var(--blanc); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 5px; padding: 5px; font-family: 'Poppins', sans-serif; outline: none; }
-#google_translate_element select option { background-color: var(--nuit); color: var(--blanc); }
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+#google_translate_element select {
+    background-color: transparent;
+    color: var(--blanc);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+#google_translate_element select option {
+    background-color: var(--nuit);
+    color: var(--blanc);
+}
 
 
 
@@ -2263,11 +2467,15 @@ body { top: 0px !important; }
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
 }
+
 .contact-link:hover {
     color: var(--dore);
     transform: translateX(5px);
 }
-.hero-title, .hero-subtitle, .hero-desc {
+
+.hero-title,
+.hero-subtitle,
+.hero-desc {
     color: #ffffff !important;
 }
 
@@ -2279,11 +2487,12 @@ body { top: 0px !important; }
     border: 1px solid rgba(220, 210, 160, 0.2);
     border-radius: 20px;
     padding: 3rem;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     margin-top: 2rem;
 }
 
-#temoignages .form-control, #temoignages .form-select {
+#temoignages .form-control,
+#temoignages .form-select {
     background: rgba(13, 31, 21, 0.6);
     border: 1px solid rgba(220, 210, 160, 0.3);
     color: white;
@@ -2292,7 +2501,8 @@ body { top: 0px !important; }
     transition: all 0.3s ease;
 }
 
-#temoignages .form-control:focus, #temoignages .form-select:focus {
+#temoignages .form-control:focus,
+#temoignages .form-select:focus {
     background: rgba(20, 45, 30, 0.8);
     border-color: var(--dore);
     box-shadow: 0 0 0 3px rgba(220, 210, 160, 0.2);
@@ -2307,9 +2517,11 @@ body { top: 0px !important; }
 .custom-radio-pill {
     padding-left: 0;
 }
+
 .custom-radio-pill input[type="radio"] {
     display: none;
 }
+
 .custom-radio-pill label {
     background: rgba(13, 31, 21, 0.6);
     border: 1px solid rgba(220, 210, 160, 0.3);
@@ -2321,7 +2533,8 @@ body { top: 0px !important; }
     display: inline-block;
     font-size: 0.9rem;
 }
-.custom-radio-pill input[type="radio"]:checked + label {
+
+.custom-radio-pill input[type="radio"]:checked+label {
     background: var(--dore);
     color: var(--noir);
     border-color: var(--dore);
@@ -2331,9 +2544,11 @@ body { top: 0px !important; }
 .custom-checkbox-card {
     padding-left: 0;
 }
+
 .custom-checkbox-card input[type="checkbox"] {
     display: none;
 }
+
 .custom-checkbox-card label {
     background: rgba(13, 31, 21, 0.6);
     border: 1px solid rgba(220, 210, 160, 0.3);
@@ -2346,7 +2561,8 @@ body { top: 0px !important; }
     text-align: center;
     font-size: 0.85rem;
 }
-.custom-checkbox-card input[type="checkbox"]:checked + label {
+
+.custom-checkbox-card input[type="checkbox"]:checked+label {
     background: rgba(220, 210, 160, 0.15);
     border-color: var(--dore);
     color: var(--dore);
@@ -2354,13 +2570,15 @@ body { top: 0px !important; }
 
 .star-rating {
     font-size: 2rem;
-    color: rgba(255,255,255,0.2);
+    color: rgba(255, 255, 255, 0.2);
     cursor: pointer;
     display: inline-flex;
     gap: 10px;
     transition: color 0.2s ease;
 }
-.star-rating i.active, .star-rating i.hover {
+
+.star-rating i.active,
+.star-rating i.hover {
     color: var(--dore);
     text-shadow: 0 0 10px rgba(220, 210, 160, 0.5);
 }
@@ -2370,8 +2588,15 @@ body { top: 0px !important; }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
@@ -2379,5 +2604,3 @@ body { top: 0px !important; }
         padding: 2rem 1.5rem;
     }
 }
-
-
